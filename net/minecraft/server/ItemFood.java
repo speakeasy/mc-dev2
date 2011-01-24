@@ -7,12 +7,12 @@ public class ItemFood extends Item {
     public ItemFood(int i, int j) {
         super(i);
         this.a = j;
-        this.aX = 1;
+        this.bb = 1;
     }
 
     public ItemStack a(ItemStack itemstack, World world, EntityPlayer entityplayer) {
         --itemstack.a;
-        entityplayer.c(this.a);
+        entityplayer.d(this.a);
         return itemstack;
     }
 }

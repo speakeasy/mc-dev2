@@ -11,11 +11,11 @@ public class Packet130 extends Packet {
     public String[] d;
 
     public Packet130() {
-        this.k = true;
+        this.l = true;
     }
 
     public Packet130(int i, int j, int k, String[] astring) {
-        this.k = true;
+        this.l = true;
         this.a = i;
         this.b = j;
         this.c = k;

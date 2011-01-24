@@ -6,20 +6,20 @@ public class BlockCrops extends BlockFlower {
 
     protected BlockCrops(int i, int j) {
         super(i, j);
-        this.bg = j;
+        this.bh = j;
         this.a(true);
         float f1 = 0.5F;
 
         this.a(0.5F - f1, 0.0F, 0.5F - f1, 0.5F + f1, 0.25F, 0.5F + f1);
     }
 
-    protected boolean b(int i) {
-        return i == Block.aA.bh;
+    protected boolean c(int i) {
+        return i == Block.aA.bi;
     }
 
     public void a(World world, int i, int j, int k, Random random) {
         super.a(world, i, j, k, random);
-        if (world.i(i, j + 1, k) >= 9) {
+        if (world.j(i, j + 1, k) >= 9) {
             int l = world.b(i, j, k);
 
             if (l < 7) {
@@ -27,10 +27,14 @@ public class BlockCrops extends BlockFlower {
 
                 if (random.nextInt((int) (100.0F / f1)) == 0) {
                     ++l;
-                    world.b(i, j, k, l);
+                    world.c(i, j, k, l);
                 }
             }
         }
+    }
+
+    public void c(World world, int i, int j, int k) {
+        world.c(i, j, k, 7);
     }
 
     private float h(World world, int i, int j, int k) {
@@ -43,16 +47,16 @@ public class BlockCrops extends BlockFlower {
         int i2 = world.a(i + 1, j, k - 1);
         int j2 = world.a(i + 1, j, k + 1);
         int k2 = world.a(i - 1, j, k + 1);
-        boolean flag = j1 == this.bh || k1 == this.bh;
-        boolean flag1 = l == this.bh || i1 == this.bh;
-        boolean flag2 = l1 == this.bh || i2 == this.bh || j2 == this.bh || k2 == this.bh;
+        boolean flag = j1 == this.bi || k1 == this.bi;
+        boolean flag1 = l == this.bi || i1 == this.bi;
+        boolean flag2 = l1 == this.bi || i2 == this.bi || j2 == this.bi || k2 == this.bi;
 
         for (int l2 = i - 1; l2 <= i + 1; ++l2) {
             for (int i3 = k - 1; i3 <= k + 1; ++i3) {
                 int j3 = world.a(l2, j - 1, i3);
                 float f2 = 0.0F;
 
-                if (j3 == Block.aA.bh) {
+                if (j3 == Block.aA.bi) {
                     f2 = 1.0F;
                     if (world.b(l2, j - 1, i3) > 0) {
                         f2 = 3.0F;
@@ -93,7 +97,7 @@ public class BlockCrops extends BlockFlower {
     }
 
     public int a(int i, Random random) {
-        return i == 7 ? Item.R.aW : -1;
+        return i == 7 ? Item.R.ba : -1;
     }
 
     public int a(Random random) {

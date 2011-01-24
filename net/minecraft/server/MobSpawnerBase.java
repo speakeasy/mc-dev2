@@ -1,14 +1,16 @@
 package net.minecraft.server;
 
+import java.util.Random;
+
 public class MobSpawnerBase {
 
-    public static final MobSpawnerBase a = (new MobSpawnerBase()).b(588342).a("Rainforest").a(2094168);
+    public static final MobSpawnerBase a = (new MobSpawnerRainforest()).b(588342).a("Rainforest").a(2094168);
     public static final MobSpawnerBase b = (new MobSpawnerSwamp()).b(522674).a("Swampland").a(9154376);
     public static final MobSpawnerBase c = (new MobSpawnerBase()).b(10215459).a("Seasonal Forest");
-    public static final MobSpawnerBase d = (new MobSpawnerBase()).b(353825).a("Forest").a(5159473);
+    public static final MobSpawnerBase d = (new MobSpawnerForest()).b(353825).a("Forest").a(5159473);
     public static final MobSpawnerBase e = (new MobSpawnerDesert()).b(14278691).a("Savanna");
     public static final MobSpawnerBase f = (new MobSpawnerBase()).b(10595616).a("Shrubland");
-    public static final MobSpawnerBase g = (new MobSpawnerBase()).b(3060051).a("Taiga").b().a(8107825);
+    public static final MobSpawnerBase g = (new MobSpawnerTaiga()).b(3060051).a("Taiga").b().a(8107825);
     public static final MobSpawnerBase h = (new MobSpawnerDesert()).b(16421912).a("Desert");
     public static final MobSpawnerBase i = (new MobSpawnerDesert()).b(16767248).a("Plains");
     public static final MobSpawnerBase j = (new MobSpawnerDesert()).b(16772499).a("Ice Desert").b().a(12899129);
@@ -21,25 +23,31 @@ public class MobSpawnerBase {
     public int q;
     protected Class[] r;
     protected Class[] s;
-    private static MobSpawnerBase[] t = new MobSpawnerBase[4096];
+    protected Class[] t;
+    private static MobSpawnerBase[] u = new MobSpawnerBase[4096];
 
     public MobSpawnerBase() {
-        this.o = (byte) Block.u.bh;
-        this.p = (byte) Block.v.bh;
+        this.o = (byte) Block.u.bi;
+        this.p = (byte) Block.v.bi;
         this.q = 5169201;
         this.r = new Class[] { EntitySpider.class, EntityZombie.class, EntitySkeleton.class, EntityCreeper.class};
         this.s = new Class[] { EntitySheep.class, EntityPig.class, EntityChicken.class, EntityCow.class};
+        this.t = new Class[] { EntitySquid.class};
     }
 
     public static void a() {
         for (int i = 0; i < 64; ++i) {
             for (int j = 0; j < 64; ++j) {
-                t[i + j * 64] = a((float) i / 63.0F, (float) j / 63.0F);
+                u[i + j * 64] = a((float) i / 63.0F, (float) j / 63.0F);
             }
         }
 
-        h.o = h.p = (byte) Block.E.bh;
-        j.o = j.p = (byte) Block.E.bh;
+        h.o = h.p = (byte) Block.E.bi;
+        j.o = j.p = (byte) Block.E.bi;
+    }
+
+    public WorldGenerator a(Random random) {
+        return (WorldGenerator) (random.nextInt(10) == 0 ? new WorldGenBigTree() : new WorldGenTrees());
     }
 
     protected MobSpawnerBase b() {
@@ -65,7 +73,7 @@ public class MobSpawnerBase {
         int i = (int) (d1 * 63.0D);
         int j = (int) (d2 * 63.0D);
 
-        return t[i + j * 64];
+        return u[i + j * 64];
     }
 
     public static MobSpawnerBase a(float f1, float f2) {
@@ -74,7 +82,7 @@ public class MobSpawnerBase {
     }
 
     public Class[] a(EnumCreatureType enumcreaturetype) {
-        return enumcreaturetype == EnumCreatureType.a ? this.r : (enumcreaturetype == EnumCreatureType.b ? this.s : null);
+        return enumcreaturetype == EnumCreatureType.a ? this.r : (enumcreaturetype == EnumCreatureType.b ? this.s : (enumcreaturetype == EnumCreatureType.c ? this.t : null));
     }
 
     static {

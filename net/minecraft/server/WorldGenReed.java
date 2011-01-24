@@ -17,7 +17,7 @@ public class WorldGenReed extends WorldGenerator {
 
                 for (int i2 = 0; i2 < l1; ++i2) {
                     if (Block.aX.f(world, i1, j1 + i2, k1)) {
-                        world.a(i1, j1 + i2, k1, Block.aX.bh);
+                        world.b(i1, j1 + i2, k1, Block.aX.bi);
                     }
                 }
             }

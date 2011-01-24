@@ -10,8 +10,8 @@ public abstract class Packet {
 
     private static Map a = new HashMap();
     private static Map b = new HashMap();
-    public final long j = System.currentTimeMillis();
-    public boolean k = false;
+    public final long k = System.currentTimeMillis();
+    public boolean l = false;
 
     public Packet() {}
 
@@ -91,11 +91,13 @@ public abstract class Packet {
         a(15, Packet15Place.class);
         a(16, Packet16BlockItemSwitch.class);
         a(18, Packet18ArmAnimation.class);
+        a(19, Packet19.class);
         a(20, Packet20NamedEntitySpawn.class);
         a(21, Packet21PickupSpawn.class);
         a(22, Packet22Collect.class);
         a(23, Packet23VehicleSpawn.class);
         a(24, Packet24MobSpawn.class);
+        a(25, Packet25.class);
         a(28, Packet28.class);
         a(29, Packet29DestroyEntity.class);
         a(30, Packet30Entity.class);
@@ -105,10 +107,12 @@ public abstract class Packet {
         a(34, Packet34EntityTeleport.class);
         a(38, Packet38.class);
         a(39, Packet39.class);
+        a(40, Packet40.class);
         a(50, Packet50PreChunk.class);
         a(51, Packet51MapChunk.class);
         a(52, Packet52MultiBlockChange.class);
         a(53, Packet53BlockChange.class);
+        a(54, Packet54.class);
         a(60, Packet60.class);
         a(100, Packet100.class);
         a(101, Packet101.class);

@@ -124,7 +124,7 @@ public class ServerConfigurationManager {
         this.d.a(entityplayermp1);
         this.c.e.a(entityplayermp1);
         this.b.add(entityplayermp1);
-        entityplayermp1.k();
+        entityplayermp1.l();
         return entityplayermp1;
     }
 

@@ -17,6 +17,6 @@ class SlotArmor extends Slot {
     }
 
     public boolean a(ItemStack itemstack) {
-        return itemstack.a() instanceof ItemArmor ? ((ItemArmor) itemstack.a()).bb == this.a : (itemstack.a().aW == Block.ba.bh ? this.a == 0 : false);
+        return itemstack.a() instanceof ItemArmor ? ((ItemArmor) itemstack.a()).bg == this.a : (itemstack.a().ba == Block.ba.bi ? this.a == 0 : false);
     }
 }

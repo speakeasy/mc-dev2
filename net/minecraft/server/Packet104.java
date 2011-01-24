@@ -18,7 +18,7 @@ public class Packet104 extends Packet {
         for (int j = 0; j < this.b.length; ++j) {
             ItemStack itemstack = (ItemStack) list.get(j);
 
-            this.b[j] = itemstack == null ? null : itemstack.d();
+            this.b[j] = itemstack == null ? null : itemstack.j();
         }
     }
 
@@ -50,7 +50,7 @@ public class Packet104 extends Packet {
             } else {
                 dataoutputstream.writeShort((short) this.b[i].c);
                 dataoutputstream.writeByte((byte) this.b[i].a);
-                dataoutputstream.writeShort((short) this.b[i].d);
+                dataoutputstream.writeShort((short) this.b[i].h());
             }
         }
     }

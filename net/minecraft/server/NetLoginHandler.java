@@ -86,7 +86,7 @@ public class NetLoginHandler extends NetHandler {
             netserverhandler.a(entityplayermp.p, entityplayermp.q, entityplayermp.r, entityplayermp.v, entityplayermp.w);
             this.e.c.a(netserverhandler);
             netserverhandler.b((Packet) (new Packet4UpdateTime(this.e.e.e)));
-            entityplayermp.k();
+            entityplayermp.l();
         }
 
         this.c = true;

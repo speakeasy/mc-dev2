@@ -117,7 +117,7 @@ public class WorldGenBigTree extends WorldGenerator {
                     if (l1 != 0 && l1 != 18) {
                         ++k1;
                     } else {
-                        this.c.a(aint1[0], aint1[1], aint1[2], l);
+                        this.c.b(aint1[0], aint1[1], aint1[2], l);
                         ++k1;
                     }
                 }
@@ -193,7 +193,7 @@ public class WorldGenBigTree extends WorldGenerator {
                 aint3[b2] = MathHelper.b((double) (aint[b2] + j) + 0.5D);
                 aint3[b3] = MathHelper.b((double) aint[b3] + (double) j * d1 + 0.5D);
                 aint3[b4] = MathHelper.b((double) aint[b4] + (double) j * d2 + 0.5D);
-                this.c.a(aint3[0], aint3[1], aint3[2], i);
+                this.c.b(aint3[0], aint3[1], aint3[2], i);
             }
         }
     }

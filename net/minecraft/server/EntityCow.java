@@ -2,11 +2,9 @@ package net.minecraft.server;
 
 public class EntityCow extends EntityAnimals {
 
-    public boolean a = false;
-
     public EntityCow(World world) {
         super(world);
-        this.aQ = "/mob/cow.png";
+        this.aP = "/mob/cow.png";
         this.a(0.9F, 1.3F);
     }
 
@@ -18,30 +16,30 @@ public class EntityCow extends EntityAnimals {
         super.b(nbttagcompound);
     }
 
-    protected String d() {
-        return "mob.cow";
-    }
-
     protected String e() {
-        return "mob.cowhurt";
+        return "mob.cow";
     }
 
     protected String f() {
         return "mob.cowhurt";
     }
 
-    protected float h() {
+    protected String g() {
+        return "mob.cowhurt";
+    }
+
+    protected float i() {
         return 0.4F;
     }
 
-    protected int g() {
-        return Item.aD.aW;
+    protected int h() {
+        return Item.aD.ba;
     }
 
     public boolean a(EntityPlayer entityplayer) {
         ItemStack itemstack = entityplayer.an.e();
 
-        if (itemstack != null && itemstack.c == Item.au.aW) {
+        if (itemstack != null && itemstack.c == Item.au.ba) {
             entityplayer.an.a(entityplayer.an.c, new ItemStack(Item.aE));
             return true;
         } else {

@@ -62,7 +62,7 @@ public class NetServerHandler extends NetHandler implements ICommandListener {
                 float f1 = this.e.v;
                 float f2 = this.e.w;
 
-                this.e.k.A();
+                this.e.k.E();
                 d2 = this.e.p;
                 d3 = this.e.q;
                 d4 = this.e.r;
@@ -80,7 +80,7 @@ public class NetServerHandler extends NetHandler implements ICommandListener {
                 }
 
                 this.e.A = packet10flying.g;
-                this.e.F();
+                this.e.n();
                 this.e.c(d6, 0.0D, d5);
                 this.e.b(d2, d3, d4, f1, f2);
                 this.e.s = d6;
@@ -90,7 +90,7 @@ public class NetServerHandler extends NetHandler implements ICommandListener {
                 }
 
                 if (this.e.k != null) {
-                    this.e.k.A();
+                    this.e.k.E();
                 }
 
                 this.d.f.b(this.e);
@@ -125,7 +125,7 @@ public class NetServerHandler extends NetHandler implements ICommandListener {
                     a.warning(this.e.aw + " had an illegal stance: " + d5);
                 }
 
-                this.e.ak = packet10flying.d;
+                this.e.al = packet10flying.d;
             }
 
             if (packet10flying.i) {
@@ -133,7 +133,7 @@ public class NetServerHandler extends NetHandler implements ICommandListener {
                 f4 = packet10flying.f;
             }
 
-            this.e.F();
+            this.e.n();
             this.e.R = 0.0F;
             this.e.b(this.g, this.h, this.i, f3, f4);
             d5 = d2 - this.e.p;
@@ -185,7 +185,7 @@ public class NetServerHandler extends NetHandler implements ICommandListener {
 
     public void a(Packet14BlockDig packet14blockdig) {
         if (packet14blockdig.e == 4) {
-            this.e.L();
+            this.e.O();
         } else {
             boolean flag = this.d.e.B = this.d.f.g(this.e.aw);
             boolean flag1 = false;
@@ -214,7 +214,7 @@ public class NetServerHandler extends NetHandler implements ICommandListener {
 
                 double d5 = this.e.q;
 
-                this.e.q = this.e.ak;
+                this.e.q = this.e.al;
                 this.e.q = d5;
             }
 
@@ -310,7 +310,7 @@ public class NetServerHandler extends NetHandler implements ICommandListener {
         }
 
         this.e.am = true;
-        this.e.an.a[this.e.an.c] = ItemStack.a(this.e.an.a[this.e.an.c]);
+        this.e.an.a[this.e.an.c] = ItemStack.b(this.e.an.a[this.e.an.c]);
         Slot slot = this.e.ap.a(this.e.an, this.e.an.c);
 
         this.e.ap.a();
@@ -402,11 +402,16 @@ public class NetServerHandler extends NetHandler implements ICommandListener {
 
     public void a(Packet18ArmAnimation packet18armanimation) {
         if (packet18armanimation.b == 1) {
-            this.e.H();
-        } else if (packet18armanimation.b == 104) {
-            this.e.al = true;
-        } else if (packet18armanimation.b == 105) {
-            this.e.al = false;
+            this.e.K();
+        }
+    }
+
+    public void a(Packet19 packet19) {
+        System.out.println("handlePlayerCommand " + packet19.a + " " + packet19.b);
+        if (packet19.b == 1) {
+            this.e.b(true);
+        } else if (packet19.b == 2) {
+            this.e.b(false);
         }
     }
 
@@ -439,13 +444,13 @@ public class NetServerHandler extends NetHandler implements ICommandListener {
     }
 
     public void a(Packet9 packet9) {
-        if (this.e.ba <= 0) {
+        if (this.e.aZ <= 0) {
             this.e = this.d.f.d(this.e);
         }
     }
 
     public void a(Packet101 packet101) {
-        this.e.K();
+        this.e.N();
     }
 
     public void a(Packet102 packet102) {
@@ -456,7 +461,7 @@ public class NetServerHandler extends NetHandler implements ICommandListener {
                 this.e.a.b((Packet) (new Packet106(packet102.a, packet102.d, true)));
                 this.e.am = true;
                 this.e.ap.a();
-                this.e.J();
+                this.e.M();
                 this.e.am = false;
             } else {
                 this.k.put(Integer.valueOf(this.e.ap.f), Short.valueOf(packet102.d));
@@ -483,7 +488,7 @@ public class NetServerHandler extends NetHandler implements ICommandListener {
 
     public void a(Packet130 packet130) {
         if (this.d.e.f(packet130.a, packet130.b, packet130.c)) {
-            TileEntity tileentity = this.d.e.l(packet130.a, packet130.b, packet130.c);
+            TileEntity tileentity = this.d.e.m(packet130.a, packet130.b, packet130.c);
 
             int i;
             int j;

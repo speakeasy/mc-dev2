@@ -31,7 +31,7 @@ public class BlockSnow extends Block {
     private boolean g(World world, int i, int j, int k) {
         if (!this.a(world, i, j, k)) {
             this.a_(world, i, j, k, world.b(i, j, k));
-            world.d(i, j, k, 0);
+            world.e(i, j, k, 0);
             return false;
         } else {
             return true;
@@ -39,20 +39,20 @@ public class BlockSnow extends Block {
     }
 
     public void g(World world, int i, int j, int k, int l) {
-        int i1 = Item.aB.aW;
+        int i1 = Item.aB.ba;
         float f1 = 0.7F;
         double d1 = (double) (world.l.nextFloat() * f1) + (double) (1.0F - f1) * 0.5D;
         double d2 = (double) (world.l.nextFloat() * f1) + (double) (1.0F - f1) * 0.5D;
         double d3 = (double) (world.l.nextFloat() * f1) + (double) (1.0F - f1) * 0.5D;
-        EntityItem entityitem = new EntityItem(world, (double) i + d1, (double) j + d2, (double) k + d3, new ItemStack(i1));
+        EntityItem entityitem = new EntityItem(world, (double) i + d1, (double) j + d2, (double) k + d3, new ItemStack(i1, 1, 0));
 
         entityitem.c = 10;
         world.a((Entity) entityitem);
-        world.d(i, j, k, 0);
+        world.e(i, j, k, 0);
     }
 
     public int a(int i, Random random) {
-        return Item.aB.aW;
+        return Item.aB.ba;
     }
 
     public int a(Random random) {
@@ -62,13 +62,13 @@ public class BlockSnow extends Block {
     public void a(World world, int i, int j, int k, Random random) {
         if (world.a(EnumSkyBlock.b, i, j, k) > 11) {
             this.a_(world, i, j, k, world.b(i, j, k));
-            world.d(i, j, k, 0);
+            world.e(i, j, k, 0);
         }
     }
 
     public boolean a(IBlockAccess iblockaccess, int i, int j, int k, int l) {
         Material material = iblockaccess.c(i, j, k);
 
-        return l == 1 ? true : (material == this.bs ? false : super.a(iblockaccess, i, j, k, l));
+        return l == 1 ? true : (material == this.bt ? false : super.a(iblockaccess, i, j, k, l));
     }
 }

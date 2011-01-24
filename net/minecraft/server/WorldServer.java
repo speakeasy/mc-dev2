@@ -23,8 +23,8 @@ public class WorldServer extends World {
     }
 
     public void a(Entity entity, boolean flag) {
-        if (!this.D.m && entity instanceof EntityAnimals) {
-            entity.l();
+        if (!this.D.m && (entity instanceof EntityAnimals || entity instanceof EntityWaterMob)) {
+            entity.q();
         }
 
         if (entity.j == null || !(entity.j instanceof EntityPlayer)) {
@@ -91,5 +91,10 @@ public class WorldServer extends World {
 
         this.D.f.a(d1, d2, d3, 64.0D, new Packet60(d1, d2, d3, f1, explosion.g));
         return explosion;
+    }
+
+    public void c(int i, int j, int k, int l, int i1) {
+        super.c(i, j, k, l, i1);
+        this.D.f.a((double) i, (double) j, (double) k, 64.0D, new Packet54(i, j, k, l, i1));
     }
 }

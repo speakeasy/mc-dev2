@@ -7,7 +7,7 @@ public class BlockJukeBox extends Block {
     }
 
     public int a(int i) {
-        return this.bg + (i == 1 ? 1 : 0);
+        return this.bh + (i == 1 ? 1 : 0);
     }
 
     public boolean a(World world, int i, int j, int k, EntityPlayer entityplayer) {
@@ -23,13 +23,13 @@ public class BlockJukeBox extends Block {
 
     public void f(World world, int i, int j, int k, int l) {
         world.a((String) null, i, j, k);
-        world.b(i, j, k, 0);
-        int i1 = Item.aU.aW + l - 1;
+        world.c(i, j, k, 0);
+        int i1 = Item.aY.ba + l - 1;
         float f1 = 0.7F;
         double d1 = (double) (world.l.nextFloat() * f1) + (double) (1.0F - f1) * 0.5D;
         double d2 = (double) (world.l.nextFloat() * f1) + (double) (1.0F - f1) * 0.2D + 0.6D;
         double d3 = (double) (world.l.nextFloat() * f1) + (double) (1.0F - f1) * 0.5D;
-        EntityItem entityitem = new EntityItem(world, (double) i + d1, (double) j + d2, (double) k + d3, new ItemStack(i1));
+        EntityItem entityitem = new EntityItem(world, (double) i + d1, (double) j + d2, (double) k + d3, new ItemStack(i1, 1, 0));
 
         entityitem.c = 10;
         world.a((Entity) entityitem);

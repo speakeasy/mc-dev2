@@ -9,13 +9,13 @@ public class EntityFlying extends EntityLiving {
     protected void a(float f1) {}
 
     public void c(float f1, float f2) {
-        if (this.r()) {
+        if (this.v()) {
             this.a(f1, f2, 0.02F);
             this.c(this.s, this.t, this.u);
             this.s *= 0.800000011920929D;
             this.t *= 0.800000011920929D;
             this.u *= 0.800000011920929D;
-        } else if (this.t()) {
+        } else if (this.x()) {
             this.a(f1, f2, 0.02F);
             this.c(this.s, this.t, this.u);
             this.s *= 0.5D;
@@ -29,7 +29,7 @@ public class EntityFlying extends EntityLiving {
                 int i = this.l.a(MathHelper.b(this.p), MathHelper.b(this.z.b) - 1, MathHelper.b(this.r));
 
                 if (i > 0) {
-                    f3 = Block.m[i].bt * 0.91F;
+                    f3 = Block.m[i].bu * 0.91F;
                 }
             }
 
@@ -42,7 +42,7 @@ public class EntityFlying extends EntityLiving {
                 int j = this.l.a(MathHelper.b(this.p), MathHelper.b(this.z.b) - 1, MathHelper.b(this.r));
 
                 if (j > 0) {
-                    f3 = Block.m[j].bt * 0.91F;
+                    f3 = Block.m[j].bu * 0.91F;
                 }
             }
 
@@ -52,7 +52,7 @@ public class EntityFlying extends EntityLiving {
             this.u *= (double) f3;
         }
 
-        this.bm = this.bn;
+        this.bl = this.bm;
         double d1 = this.p - this.m;
         double d2 = this.r - this.o;
         float f5 = MathHelper.a(d1 * d1 + d2 * d2) * 4.0F;
@@ -61,11 +61,11 @@ public class EntityFlying extends EntityLiving {
             f5 = 1.0F;
         }
 
-        this.bn += (f5 - this.bn) * 0.4F;
-        this.bo += this.bn;
+        this.bm += (f5 - this.bm) * 0.4F;
+        this.bn += this.bm;
     }
 
-    public boolean d_() {
+    public boolean m() {
         return false;
     }
 }

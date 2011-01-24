@@ -9,7 +9,7 @@ public class BlockClay extends Block {
     }
 
     public int a(int i, Random random) {
-        return Item.aG.aW;
+        return Item.aG.ba;
     }
 
     public int a(Random random) {

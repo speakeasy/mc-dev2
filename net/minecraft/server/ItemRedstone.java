@@ -36,7 +36,7 @@ public class ItemRedstone extends Item {
         } else {
             if (Block.av.a(world, i, j, k)) {
                 --itemstack.a;
-                world.d(i, j, k, Block.av.bh);
+                world.e(i, j, k, Block.av.bi);
             }
 
             return true;

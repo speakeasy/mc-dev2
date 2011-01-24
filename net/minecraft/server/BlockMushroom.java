@@ -9,11 +9,11 @@ public class BlockMushroom extends BlockFlower {
         this.a(0.5F - f1, 0.0F, 0.5F - f1, 0.5F + f1, f1 * 2.0F, 0.5F + f1);
     }
 
-    protected boolean b(int i) {
+    protected boolean c(int i) {
         return Block.o[i];
     }
 
     public boolean f(World world, int i, int j, int k) {
-        return world.i(i, j, k) <= 13 && this.b(world.a(i, j - 1, k));
+        return world.j(i, j, k) <= 13 && this.c(world.a(i, j - 1, k));
     }
 }

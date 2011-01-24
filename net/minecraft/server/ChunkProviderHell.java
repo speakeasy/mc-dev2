@@ -76,11 +76,11 @@ public class ChunkProviderHell implements IChunkProvider {
                                 int l2 = 0;
 
                                 if (k1 * 8 + l1 < b2) {
-                                    l2 = Block.D.bh;
+                                    l2 = Block.D.bi;
                                 }
 
                                 if (d16 > 0.0D) {
-                                    l2 = Block.bb.bh;
+                                    l2 = Block.bb.bi;
                                 }
 
                                 abyte[j2] = (byte) l2;
@@ -116,48 +116,48 @@ public class ChunkProviderHell implements IChunkProvider {
                 boolean flag1 = this.q[k + l * 16] + this.h.nextDouble() * 0.2D > 0.0D;
                 int i1 = (int) (this.r[k + l * 16] / 3.0D + 3.0D + this.h.nextDouble() * 0.25D);
                 int j1 = -1;
-                byte b2 = (byte) Block.bb.bh;
-                byte b3 = (byte) Block.bb.bh;
+                byte b2 = (byte) Block.bb.bi;
+                byte b3 = (byte) Block.bb.bi;
 
                 for (int k1 = 127; k1 >= 0; --k1) {
                     int l1 = (k * 16 + l) * 128 + k1;
 
                     if (k1 >= 127 - this.h.nextInt(5)) {
-                        abyte[l1] = (byte) Block.z.bh;
+                        abyte[l1] = (byte) Block.z.bi;
                     } else if (k1 <= 0 + this.h.nextInt(5)) {
-                        abyte[l1] = (byte) Block.z.bh;
+                        abyte[l1] = (byte) Block.z.bi;
                     } else {
                         byte b4 = abyte[l1];
 
                         if (b4 == 0) {
                             j1 = -1;
-                        } else if (b4 == Block.bb.bh) {
+                        } else if (b4 == Block.bb.bi) {
                             if (j1 == -1) {
                                 if (i1 <= 0) {
                                     b2 = 0;
-                                    b3 = (byte) Block.bb.bh;
+                                    b3 = (byte) Block.bb.bi;
                                 } else if (k1 >= b1 - 4 && k1 <= b1 + 1) {
-                                    b2 = (byte) Block.bb.bh;
-                                    b3 = (byte) Block.bb.bh;
+                                    b2 = (byte) Block.bb.bi;
+                                    b3 = (byte) Block.bb.bi;
                                     if (flag1) {
-                                        b2 = (byte) Block.F.bh;
+                                        b2 = (byte) Block.F.bi;
                                     }
 
                                     if (flag1) {
-                                        b3 = (byte) Block.bb.bh;
+                                        b3 = (byte) Block.bb.bi;
                                     }
 
                                     if (flag) {
-                                        b2 = (byte) Block.bc.bh;
+                                        b2 = (byte) Block.bc.bi;
                                     }
 
                                     if (flag) {
-                                        b3 = (byte) Block.bc.bh;
+                                        b3 = (byte) Block.bc.bi;
                                     }
                                 }
 
                                 if (k1 < b1 && b2 == 0) {
-                                    b2 = (byte) Block.D.bh;
+                                    b2 = (byte) Block.D.bi;
                                 }
 
                                 j1 = i1;
@@ -186,8 +186,6 @@ public class ChunkProviderHell implements IChunkProvider {
         this.s.a(this, this.n, i, j, abyte);
         Chunk chunk = new Chunk(this.n, abyte, i, j);
 
-        chunk.b();
-        chunk.c();
         return chunk;
     }
 
@@ -324,7 +322,7 @@ public class ChunkProviderHell implements IChunkProvider {
             j1 = k + this.h.nextInt(16) + 8;
             k1 = this.h.nextInt(120) + 4;
             l1 = l + this.h.nextInt(16) + 8;
-            (new WorldGenHellLava(Block.C.bh)).a(this.n, this.h, j1, k1, l1);
+            (new WorldGenHellLava(Block.C.bi)).a(this.n, this.h, j1, k1, l1);
         }
 
         i1 = this.h.nextInt(this.h.nextInt(10) + 1) + 1;
@@ -358,14 +356,14 @@ public class ChunkProviderHell implements IChunkProvider {
             j1 = k + this.h.nextInt(16) + 8;
             k1 = this.h.nextInt(128);
             l1 = l + this.h.nextInt(16) + 8;
-            (new WorldGenFlowers(Block.af.bh)).a(this.n, this.h, j1, k1, l1);
+            (new WorldGenFlowers(Block.af.bi)).a(this.n, this.h, j1, k1, l1);
         }
 
         if (this.h.nextInt(1) == 0) {
             j1 = k + this.h.nextInt(16) + 8;
             k1 = this.h.nextInt(128);
             l1 = l + this.h.nextInt(16) + 8;
-            (new WorldGenFlowers(Block.ag.bh)).a(this.n, this.h, j1, k1, l1);
+            (new WorldGenFlowers(Block.ag.bi)).a(this.n, this.h, j1, k1, l1);
         }
 
         BlockSand.a = false;

@@ -8,5 +8,6 @@ public class RecipesCrafting {
         craftingmanager.a(new ItemStack(Block.au), new Object[] { "###", "# #", "###", Character.valueOf('#'), Block.x});
         craftingmanager.a(new ItemStack(Block.aB), new Object[] { "###", "# #", "###", Character.valueOf('#'), Block.w});
         craftingmanager.a(new ItemStack(Block.ay), new Object[] { "##", "##", Character.valueOf('#'), Block.x});
+        craftingmanager.a(new ItemStack(Block.Q), new Object[] { "##", "##", Character.valueOf('#'), Block.E});
     }
 }
