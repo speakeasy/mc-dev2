@@ -14,19 +14,19 @@ public class EntityFallingSand extends Entity {
         this.a = i;
         this.i = true;
         this.a(0.98F, 0.98F);
-        this.G = this.I / 2.0F;
+        this.H = this.J / 2.0F;
         this.a((double) f1, (double) f2, (double) f3);
         this.s = 0.0D;
         this.t = 0.0D;
         this.u = 0.0D;
-        this.L = false;
+        this.M = false;
         this.m = (double) f1;
         this.n = (double) f2;
         this.o = (double) f3;
     }
 
     public boolean c_() {
-        return !this.F;
+        return !this.G;
     }
 
     public void b_() {

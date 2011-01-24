@@ -12,7 +12,7 @@ public class ItemBoat extends Item {
         float f2 = entityplayer.y + (entityplayer.w - entityplayer.y) * f1;
         float f3 = entityplayer.x + (entityplayer.v - entityplayer.x) * f1;
         double d1 = entityplayer.m + (entityplayer.p - entityplayer.m) * (double) f1;
-        double d2 = entityplayer.n + (entityplayer.q - entityplayer.n) * (double) f1 + 1.62D - (double) entityplayer.G;
+        double d2 = entityplayer.n + (entityplayer.q - entityplayer.n) * (double) f1 + 1.62D - (double) entityplayer.H;
         double d3 = entityplayer.o + (entityplayer.r - entityplayer.o) * (double) f1;
         Vec3D vec3d = Vec3D.b(d1, d2, d3);
         float f4 = MathHelper.b(-f3 * 0.017453292F - 3.1415927F);

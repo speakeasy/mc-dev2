@@ -4,13 +4,13 @@ public class EntitySpider extends EntityMobs {
 
     public EntitySpider(World world) {
         super(world);
-        this.aF = "/mob/spider.png";
+        this.aG = "/mob/spider.png";
         this.a(1.4F, 0.9F);
-        this.br = 0.8F;
+        this.bt = 0.8F;
     }
 
     public double j() {
-        return (double) this.I * 0.75D - 0.5D;
+        return (double) this.J * 0.75D - 0.5D;
     }
 
     protected Entity k() {
@@ -40,10 +40,10 @@ public class EntitySpider extends EntityMobs {
     protected void a(Entity entity, float f1) {
         float f2 = this.b(1.0F);
 
-        if (f2 > 0.5F && this.V.nextInt(100) == 0) {
+        if (f2 > 0.5F && this.W.nextInt(100) == 0) {
             this.f = null;
         } else {
-            if (f1 > 2.0F && f1 < 6.0F && this.V.nextInt(10) == 0) {
+            if (f1 > 2.0F && f1 < 6.0F && this.W.nextInt(10) == 0) {
                 if (this.A) {
                     double d1 = entity.p - this.p;
                     double d2 = entity.r - this.r;

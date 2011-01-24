@@ -9,26 +9,26 @@ public class EntityTNTPrimed extends Entity {
         this.a = 0;
         this.i = true;
         this.a(0.98F, 0.98F);
-        this.G = this.I / 2.0F;
+        this.H = this.J / 2.0F;
     }
 
-    public EntityTNTPrimed(World world, float f1, float f2, float f3) {
+    public EntityTNTPrimed(World world, double d1, double d2, double d3) {
         this(world);
-        this.a((double) f1, (double) f2, (double) f3);
-        float f4 = (float) (Math.random() * 3.1415927410125732D * 2.0D);
+        this.a(d1, d2, d3);
+        float f1 = (float) (Math.random() * 3.1415927410125732D * 2.0D);
 
-        this.s = (double) (-MathHelper.a(f4 * 3.1415927F / 180.0F) * 0.02F);
+        this.s = (double) (-MathHelper.a(f1 * 3.1415927F / 180.0F) * 0.02F);
         this.t = 0.20000000298023224D;
-        this.u = (double) (-MathHelper.b(f4 * 3.1415927F / 180.0F) * 0.02F);
-        this.L = false;
+        this.u = (double) (-MathHelper.b(f1 * 3.1415927F / 180.0F) * 0.02F);
+        this.M = false;
         this.a = 80;
-        this.m = (double) f1;
-        this.n = (double) f2;
-        this.o = (double) f3;
+        this.m = d1;
+        this.n = d2;
+        this.o = d3;
     }
 
     public boolean c_() {
-        return !this.F;
+        return !this.G;
     }
 
     public void b_() {

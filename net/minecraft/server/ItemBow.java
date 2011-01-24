@@ -8,7 +8,7 @@ public class ItemBow extends Item {
     }
 
     public ItemStack a(ItemStack itemstack, World world, EntityPlayer entityplayer) {
-        if (entityplayer.ak.b(Item.j.aW)) {
+        if (entityplayer.al.b(Item.j.aW)) {
             world.a(entityplayer, "random.bow", 1.0F, 1.0F / (b.nextFloat() * 0.4F + 0.8F));
             world.a((Entity) (new EntityArrow(world, entityplayer)));
         }

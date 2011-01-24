@@ -9,7 +9,7 @@ public class EntityCreeper extends EntityMobs {
 
     public EntityCreeper(World world) {
         super(world);
-        this.aF = "/mob/creeper.png";
+        this.aG = "/mob/creeper.png";
     }
 
     public void a(NBTTagCompound nbttagcompound) {
@@ -47,7 +47,7 @@ public class EntityCreeper extends EntityMobs {
     public void f(Entity entity) {
         super.f(entity);
         if (entity instanceof EntitySkeleton) {
-            this.a(Item.aU.aW + this.V.nextInt(2), 1);
+            this.a(Item.aU.aW + this.W.nextInt(2), 1);
         }
     }
 
@@ -64,7 +64,7 @@ public class EntityCreeper extends EntityMobs {
                 this.l();
             }
 
-            this.ai = true;
+            this.aj = true;
         }
     }
 

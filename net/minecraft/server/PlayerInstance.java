@@ -35,7 +35,7 @@ class PlayerInstance {
         if (this.b.contains(entityplayermp)) {
             throw new IllegalStateException("Failed to add player. " + entityplayermp + " already is in chunk " + this.c + ", " + this.d);
         } else {
-            entityplayermp.ai.add(this.e);
+            entityplayermp.aj.add(this.e);
             entityplayermp.a.b((Packet) (new Packet50PreChunk(this.e.a, this.e.b, true)));
             this.b.add(entityplayermp);
             entityplayermp.f.add(this.e);
@@ -59,7 +59,7 @@ class PlayerInstance {
             }
 
             entityplayermp.f.remove(this.e);
-            if (entityplayermp.ai.contains(this.e)) {
+            if (entityplayermp.aj.contains(this.e)) {
                 entityplayermp.a.b((Packet) (new Packet50PreChunk(this.c, this.d, false)));
             }
         }
@@ -114,7 +114,7 @@ class PlayerInstance {
         for (int i = 0; i < this.b.size(); ++i) {
             EntityPlayerMP entityplayermp = (EntityPlayerMP) this.b.get(i);
 
-            if (entityplayermp.ai.contains(this.e)) {
+            if (entityplayermp.aj.contains(this.e)) {
                 entityplayermp.a.b(packet);
             }
         }
