@@ -5,7 +5,7 @@ import java.util.LinkedList;
 import java.util.List;
 import java.util.Set;
 
-public class EntityPlayerMP extends EntityPlayer {
+public class EntityPlayerMP extends EntityPlayer implements ICrafting {
 
     public NetServerHandler a;
     public MinecraftServer b;
@@ -16,8 +16,11 @@ public class EntityPlayerMP extends EntityPlayer {
     public Set aj = new HashSet();
     public double ak;
     public boolean al = false;
-    private int bv = -99999999;
-    private int bw = 60;
+    private int bE = -99999999;
+    private int bF = 60;
+    private int[] bG = new int[] { -1, -1, -1, -1, -1};
+    private int bH = 0;
+    public boolean am;
 
     public EntityPlayerMP(MinecraftServer minecraftserver, World world, String s, ItemInWorldManager iteminworldmanager) {
         super(world);
@@ -35,21 +38,47 @@ public class EntityPlayerMP extends EntityPlayer {
         this.b = minecraftserver;
         this.S = 0.0F;
         iteminworldmanager.a = this;
-        this.at = s;
+        this.aw = s;
         this.c = iteminworldmanager;
         this.H = 0.0F;
     }
 
+    public void k() {
+        this.ap.a((ICrafting) this);
+    }
+
+    public int[] E() {
+        return this.bG;
+    }
+
     public void b_() {
-        --this.bw;
+        --this.bF;
+        this.ap.a();
+
+        for (int i = 0; i < 5; ++i) {
+            int j = this.a(i);
+
+            if (j != this.bG[i]) {
+                this.b.k.a(this, new Packet5PlayerInventory(this.g, i, j));
+                this.bG[i] = j;
+            }
+        }
+    }
+
+    public int a(int i) {
+        return i == 0 ? this.c(this.an.e()) : this.c(this.an.b[i - 1]);
+    }
+
+    private int c(ItemStack itemstack) {
+        return itemstack == null ? -1 : itemstack.c;
     }
 
     public void f(Entity entity) {
-        this.am.f();
+        this.an.h();
     }
 
     public boolean a(Entity entity, int i) {
-        if (this.bw > 0) {
+        if (this.bF > 0) {
             return false;
         } else {
             if (!this.b.n) {
@@ -70,11 +99,11 @@ public class EntityPlayerMP extends EntityPlayer {
         }
     }
 
-    public void a(int i) {
-        super.a(i);
+    public void c(int i) {
+        super.c(i);
     }
 
-    public void k() {
+    public void F() {
         super.b_();
         ChunkCoordIntPair chunkcoordintpair = null;
         double d1 = 0.0D;
@@ -106,45 +135,52 @@ public class EntityPlayerMP extends EntityPlayer {
                 List list = this.b.e.d(chunkcoordintpair.a * 16, 0, chunkcoordintpair.b * 16, chunkcoordintpair.a * 16 + 16, 128, chunkcoordintpair.b * 16 + 16);
 
                 for (int j = 0; j < list.size(); ++j) {
-                    TileEntity tileentity = (TileEntity) list.get(j);
-
-                    this.a.b((Packet) (new Packet59ComplexEntity(tileentity.b, tileentity.c, tileentity.d, tileentity)));
+                    this.a((TileEntity) list.get(j));
                 }
             }
         }
 
-        if (this.aR != this.bv) {
-            this.a.b((Packet) (new Packet8(this.aR)));
-            this.bv = this.aR;
+        if (this.ba != this.bE) {
+            this.a.b((Packet) (new Packet8(this.ba)));
+            this.bE = this.ba;
         }
     }
 
-    public void E() {
+    private void a(TileEntity tileentity) {
+        if (tileentity != null) {
+            Packet packet = tileentity.f();
+
+            if (packet != null) {
+                this.a.b(packet);
+            }
+        }
+    }
+
+    public void G() {
         this.s = this.t = this.u = 0.0D;
-        this.bs = false;
-        super.E();
+        this.bB = false;
+        super.G();
     }
 
     public void c(Entity entity, int i) {
         if (!entity.G) {
             if (entity instanceof EntityItem) {
-                this.a.b((Packet) (new Packet17AddToInventory(((EntityItem) entity).a, i)));
                 this.b.k.a(entity, new Packet22Collect(entity.g, this.g));
             }
 
             if (entity instanceof EntityArrow) {
-                this.a.b((Packet) (new Packet17AddToInventory(new ItemStack(Item.j), 1)));
                 this.b.k.a(entity, new Packet22Collect(entity.g, this.g));
             }
         }
 
         super.c(entity, i);
+        this.ap.a();
     }
 
-    public void F() {
-        if (!this.ar) {
-            this.as = -1;
-            this.ar = true;
+    public void H() {
+        if (!this.au) {
+            this.av = -1;
+            this.au = true;
             this.b.k.a(this, new Packet18ArmAnimation(this, 1));
         }
     }
@@ -167,5 +203,68 @@ public class EntityPlayerMP extends EntityPlayer {
 
     public boolean p() {
         return this.al;
+    }
+
+    private void R() {
+        this.bH = this.bH % 100 + 1;
+    }
+
+    public void a(int i, int j, int k) {
+        this.R();
+        this.a.b((Packet) (new Packet100(this.bH, 1, "Crafting", 9)));
+        this.ap = new CraftingInventoryWorkbenchCB(this.an, this.l, i, j, k);
+        this.ap.f = this.bH;
+        this.ap.a((ICrafting) this);
+    }
+
+    public void a(IInventory iinventory) {
+        this.R();
+        this.a.b((Packet) (new Packet100(this.bH, 0, iinventory.b(), iinventory.a())));
+        this.ap = new CraftingInventoryChestCB(this.an, iinventory);
+        this.ap.f = this.bH;
+        this.ap.a((ICrafting) this);
+    }
+
+    public void a(TileEntityFurnace tileentityfurnace) {
+        this.R();
+        this.a.b((Packet) (new Packet100(this.bH, 2, tileentityfurnace.b(), tileentityfurnace.a())));
+        this.ap = new CraftingInventoryFurnaceCB(this.an, tileentityfurnace);
+        this.ap.f = this.bH;
+        this.ap.a((ICrafting) this);
+    }
+
+    public void a(CraftingInventoryCB craftinginventorycb, int i, ItemStack itemstack) {
+        if (!(craftinginventorycb.a(i) instanceof SlotCrafting)) {
+            if (!this.am) {
+                this.a.b((Packet) (new Packet103(craftinginventorycb.f, i, itemstack)));
+            }
+        }
+    }
+
+    public void a(CraftingInventoryCB craftinginventorycb, List list) {
+        this.a.b((Packet) (new Packet104(craftinginventorycb.f, list)));
+        this.a.b((Packet) (new Packet103(-1, -1, this.an.i())));
+    }
+
+    public void a(CraftingInventoryCB craftinginventorycb, int i, int j) {
+        this.a.b((Packet) (new Packet105(craftinginventorycb.f, i, j)));
+    }
+
+    public void a(ItemStack itemstack) {}
+
+    public void I() {
+        this.a.b((Packet) (new Packet101(this.ap.f)));
+        this.K();
+    }
+
+    public void J() {
+        if (!this.am) {
+            this.a.b((Packet) (new Packet103(-1, -1, this.an.i())));
+        }
+    }
+
+    public void K() {
+        this.ap.a((EntityPlayer) this);
+        this.ap = this.ao;
     }
 }

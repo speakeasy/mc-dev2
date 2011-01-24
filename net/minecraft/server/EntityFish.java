@@ -30,7 +30,7 @@ public class EntityFish extends Entity {
     public EntityFish(World world, EntityPlayer entityplayer) {
         super(world);
         this.b = entityplayer;
-        this.b.av = this;
+        this.b.aE = this;
         this.a(0.25F, 0.25F);
         this.c(entityplayer.p, entityplayer.q + 1.62D - (double) entityplayer.H, entityplayer.r, entityplayer.v, entityplayer.w);
         this.p -= (double) (MathHelper.b(this.v / 180.0F * 3.1415927F) * 0.16F);
@@ -92,11 +92,11 @@ public class EntityFish extends Entity {
             this.b(this.v, this.w);
         } else {
             if (!this.l.z) {
-                ItemStack itemstack = this.b.H();
+                ItemStack itemstack = this.b.M();
 
                 if (this.b.G || !this.b.x() || itemstack == null || itemstack.a() != Item.aP || this.b(this.b) > 1024.0D) {
                     this.l();
-                    this.b.av = null;
+                    this.b.aE = null;
                     return;
                 }
 
@@ -327,7 +327,7 @@ public class EntityFish extends Entity {
         }
 
         this.l();
-        this.b.av = null;
+        this.b.aE = null;
         return b1;
     }
 }

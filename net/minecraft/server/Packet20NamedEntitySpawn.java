@@ -18,13 +18,13 @@ public class Packet20NamedEntitySpawn extends Packet {
 
     public Packet20NamedEntitySpawn(EntityPlayer entityplayer) {
         this.a = entityplayer.g;
-        this.b = entityplayer.at;
+        this.b = entityplayer.aw;
         this.c = MathHelper.b(entityplayer.p * 32.0D);
         this.d = MathHelper.b(entityplayer.q * 32.0D);
         this.e = MathHelper.b(entityplayer.r * 32.0D);
         this.f = (byte) ((int) (entityplayer.v * 256.0F / 360.0F));
         this.g = (byte) ((int) (entityplayer.w * 256.0F / 360.0F));
-        ItemStack itemstack = entityplayer.am.b();
+        ItemStack itemstack = entityplayer.an.e();
 
         this.h = itemstack == null ? 0 : itemstack.c;
     }

@@ -13,7 +13,7 @@ public class EntityGhast extends EntityFlying implements IMobs {
 
     public EntityGhast(World world) {
         super(world);
-        this.aH = "/mob/ghast.png";
+        this.aQ = "/mob/ghast.png";
         this.a(4.0F, 4.0F);
         this.ae = true;
     }
@@ -66,7 +66,7 @@ public class EntityGhast extends EntityFlying implements IMobs {
             double d7 = this.aj.z.b + (double) (this.aj.J / 2.0F) - (this.q + (double) (this.J / 2.0F));
             double d8 = this.aj.r - this.r;
 
-            this.aA = this.v = -((float) Math.atan2(d6, d8)) * 180.0F / 3.1415927F;
+            this.aJ = this.v = -((float) Math.atan2(d6, d8)) * 180.0F / 3.1415927F;
             if (this.i(this.aj)) {
                 if (this.f == 10) {
                     this.l.a(this, "mob.ghast.charge", this.h(), (this.W.nextFloat() - this.W.nextFloat()) * 0.2F + 1.0F);
@@ -89,13 +89,13 @@ public class EntityGhast extends EntityFlying implements IMobs {
                 --this.f;
             }
         } else {
-            this.aA = this.v = -((float) Math.atan2(this.s, this.u)) * 180.0F / 3.1415927F;
+            this.aJ = this.v = -((float) Math.atan2(this.s, this.u)) * 180.0F / 3.1415927F;
             if (this.f > 0) {
                 --this.f;
             }
         }
 
-        this.aH = this.f > 10 ? "/mob/ghast_fire.png" : "/mob/ghast.png";
+        this.aQ = this.f > 10 ? "/mob/ghast_fire.png" : "/mob/ghast.png";
     }
 
     private boolean a(double d1, double d2, double d3, double d4) {

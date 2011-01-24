@@ -599,6 +599,44 @@ public class EntityMinecart extends Entity implements IInventory {
         return this.ak[i];
     }
 
+    public ItemStack a(int i, int j) {
+        if (this.ak[i] != null) {
+            ItemStack itemstack;
+
+            if (this.ak[i].a <= j) {
+                itemstack = this.ak[i];
+                this.ak[i] = null;
+                return itemstack;
+            } else {
+                itemstack = this.ak[i].a(j);
+                if (this.ak[i].a == 0) {
+                    this.ak[i] = null;
+                }
+
+                return itemstack;
+            }
+        } else {
+            return null;
+        }
+    }
+
+    public void a(int i, ItemStack itemstack) {
+        this.ak[i] = itemstack;
+        if (itemstack != null && itemstack.a > this.c()) {
+            itemstack.a = this.c();
+        }
+    }
+
+    public String b() {
+        return "Minecart";
+    }
+
+    public int c() {
+        return 64;
+    }
+
+    public void d() {}
+
     public boolean a(EntityPlayer entityplayer) {
         if (this.d == 0) {
             if (this.j != null && this.j instanceof EntityPlayer && this.j != entityplayer) {
@@ -609,13 +647,15 @@ public class EntityMinecart extends Entity implements IInventory {
                 entityplayer.e(this);
             }
         } else if (this.d == 1) {
-            entityplayer.a((IInventory) this);
+            if (!this.l.z) {
+                entityplayer.a((IInventory) this);
+            }
         } else if (this.d == 2) {
-            ItemStack itemstack = entityplayer.am.b();
+            ItemStack itemstack = entityplayer.an.e();
 
             if (itemstack != null && itemstack.c == Item.k.aW) {
                 if (--itemstack.a == 0) {
-                    entityplayer.am.a(entityplayer.am.d, (ItemStack) null);
+                    entityplayer.an.a(entityplayer.an.c, (ItemStack) null);
                 }
 
                 this.e += 1200;
@@ -626,5 +666,9 @@ public class EntityMinecart extends Entity implements IInventory {
         }
 
         return true;
+    }
+
+    public boolean a_(EntityPlayer entityplayer) {
+        return this.G ? false : entityplayer.b((Entity) this) <= 64.0D;
     }
 }

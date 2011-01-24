@@ -7,7 +7,7 @@ public abstract class EntityAnimals extends EntityCreature implements IAnimals {
     }
 
     protected float a(int i, int j, int k) {
-        return this.l.a(i, j - 1, k) == Block.u.bh ? 10.0F : this.l.j(i, j, k) - 0.5F;
+        return this.l.a(i, j - 1, k) == Block.u.bh ? 10.0F : this.l.k(i, j, k) - 0.5F;
     }
 
     public void a(NBTTagCompound nbttagcompound) {
@@ -23,7 +23,7 @@ public abstract class EntityAnimals extends EntityCreature implements IAnimals {
         int j = MathHelper.b(this.z.b);
         int k = MathHelper.b(this.r);
 
-        return this.l.a(i, j - 1, k) == Block.u.bh && this.l.h(i, j, k) > 8 && super.a();
+        return this.l.a(i, j - 1, k) == Block.u.bh && this.l.i(i, j, k) > 8 && super.a();
     }
 
     public int b() {
