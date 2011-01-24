@@ -9,11 +9,11 @@ public class BlockFurnace extends BlockContainer {
     protected BlockFurnace(int i, boolean flag) {
         super(i, Material.d);
         this.a = flag;
-        this.bb = 45;
+        this.bh = 45;
     }
 
     public int a(int i, Random random) {
-        return Block.aC.bc;
+        return Block.aC.bi;
     }
 
     public void e(World world, int i, int j, int k) {
@@ -48,7 +48,7 @@ public class BlockFurnace extends BlockContainer {
     }
 
     public int a(int i) {
-        return i == 1 ? Block.u.bc : (i == 0 ? Block.u.bc : (i == 3 ? this.bb - 1 : this.bb));
+        return i == 1 ? Block.u.bi : (i == 0 ? Block.u.bi : (i == 3 ? this.bh - 1 : this.bh));
     }
 
     public boolean a(World world, int i, int j, int k, EntityPlayer entityplayer) {
@@ -63,9 +63,9 @@ public class BlockFurnace extends BlockContainer {
         TileEntity tileentity = world.k(i, j, k);
 
         if (flag) {
-            world.d(i, j, k, Block.aD.bc);
+            world.d(i, j, k, Block.aD.bi);
         } else {
-            world.d(i, j, k, Block.aC.bc);
+            world.d(i, j, k, Block.aC.bi);
         }
 
         world.b(i, j, k, l);
@@ -74,5 +74,25 @@ public class BlockFurnace extends BlockContainer {
 
     protected TileEntity a_() {
         return new TileEntityFurnace();
+    }
+
+    public void a(World world, int i, int j, int k, EntityLiving entityliving) {
+        int l = MathHelper.b((double) (entityliving.v * 4.0F / 360.0F) + 0.5D) & 3;
+
+        if (l == 0) {
+            world.b(i, j, k, 2);
+        }
+
+        if (l == 1) {
+            world.b(i, j, k, 5);
+        }
+
+        if (l == 2) {
+            world.b(i, j, k, 3);
+        }
+
+        if (l == 3) {
+            world.b(i, j, k, 4);
+        }
     }
 }

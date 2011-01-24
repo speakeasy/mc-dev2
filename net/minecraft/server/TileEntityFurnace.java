@@ -72,7 +72,7 @@ public class TileEntityFurnace extends TileEntity implements IInventory {
             --this.f;
         }
 
-        if (!this.a.x) {
+        if (!this.a.z) {
             if (this.f == 0 && this.g()) {
                 this.g = this.f = this.a(this.e[1]);
                 if (this.f > 0) {
@@ -112,7 +112,7 @@ public class TileEntityFurnace extends TileEntity implements IInventory {
         if (this.e[0] == null) {
             return false;
         } else {
-            int i = this.b(this.e[0].a().aS);
+            int i = this.b(this.e[0].a().aW);
 
             return i < 0 ? false : (this.e[2] == null ? true : (this.e[2].c != i ? false : (this.e[2].a < this.d() && this.e[2].a < this.e[2].b() ? true : this.e[2].a < Item.c[i].a())));
         }
@@ -120,7 +120,7 @@ public class TileEntityFurnace extends TileEntity implements IInventory {
 
     public void f() {
         if (this.g()) {
-            int i = this.b(this.e[0].a().aS);
+            int i = this.b(this.e[0].a().aW);
 
             if (this.e[2] == null) {
                 this.e[2] = new ItemStack(i, 1);
@@ -136,16 +136,16 @@ public class TileEntityFurnace extends TileEntity implements IInventory {
     }
 
     private int b(int i) {
-        return i == Block.I.bc ? Item.m.aS : (i == Block.H.bc ? Item.n.aS : (i == Block.ax.bc ? Item.l.aS : (i == Block.F.bc ? Block.N.bc : (i == Item.ao.aS ? Item.ap.aS : (i == Block.x.bc ? Block.u.bc : (i == Item.aG.aS ? Item.aF.aS : -1))))));
+        return i == Block.I.bi ? Item.m.aW : (i == Block.H.bi ? Item.n.aW : (i == Block.ax.bi ? Item.l.aW : (i == Block.F.bi ? Block.N.bi : (i == Item.ao.aW ? Item.ap.aW : (i == Item.aS.aW ? Item.aT.aW : (i == Block.x.bi ? Block.u.bi : (i == Item.aG.aW ? Item.aF.aW : -1)))))));
     }
 
     private int a(ItemStack itemstack) {
         if (itemstack == null) {
             return 0;
         } else {
-            int i = itemstack.a().aS;
+            int i = itemstack.a().aW;
 
-            return i < 256 && Block.n[i].bn == Material.c ? 300 : (i == Item.B.aS ? 100 : (i == Item.k.aS ? 1600 : (i == Item.aw.aS ? 20000 : 0)));
+            return i < 256 && Block.n[i].bt == Material.c ? 300 : (i == Item.B.aW ? 100 : (i == Item.k.aW ? 1600 : (i == Item.aw.aW ? 20000 : 0)));
         }
     }
 }

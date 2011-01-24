@@ -46,9 +46,9 @@ public class WorldGenDungeons extends WorldGenerator {
                             world.d(k1, l1, i2, 0);
                         } else if (world.c(k1, l1, i2).a()) {
                             if (l1 == j - 1 && random.nextInt(4) != 0) {
-                                world.d(k1, l1, i2, Block.ap.bc);
+                                world.d(k1, l1, i2, Block.ap.bi);
                             } else {
-                                world.d(k1, l1, i2, Block.x.bc);
+                                world.d(k1, l1, i2, Block.x.bi);
                             }
                         }
                     }
@@ -86,7 +86,7 @@ public class WorldGenDungeons extends WorldGenerator {
                                 }
 
                                 if (k2 == 1) {
-                                    world.d(i2, j, j2, Block.av.bc);
+                                    world.d(i2, j, j2, Block.av.bi);
                                     TileEntityChest tileentitychest = (TileEntityChest) world.k(i2, j, j2);
 
                                     for (int l2 = 0; l2 < 8; ++l2) {
@@ -110,7 +110,7 @@ public class WorldGenDungeons extends WorldGenerator {
                 }
             }
 
-            world.d(i, j, k, Block.at.bc);
+            world.d(i, j, k, Block.at.bi);
             TileEntityMobSpawner tileentitymobspawner = (TileEntityMobSpawner) world.k(i, j, k);
 
             tileentitymobspawner.f = this.b(random);
@@ -123,7 +123,7 @@ public class WorldGenDungeons extends WorldGenerator {
     private ItemStack a(Random random) {
         int i = random.nextInt(11);
 
-        return i == 0 ? new ItemStack(Item.ay) : (i == 1 ? new ItemStack(Item.m, random.nextInt(4) + 1) : (i == 2 ? new ItemStack(Item.S) : (i == 3 ? new ItemStack(Item.R, random.nextInt(4) + 1) : (i == 4 ? new ItemStack(Item.K, random.nextInt(4) + 1) : (i == 5 ? new ItemStack(Item.I, random.nextInt(4) + 1) : (i == 6 ? new ItemStack(Item.au) : (i == 7 && random.nextInt(100) == 0 ? new ItemStack(Item.ar) : (i == 8 && random.nextInt(2) == 0 ? new ItemStack(Item.aA, random.nextInt(4) + 1) : (i == 9 && random.nextInt(10) == 0 ? new ItemStack(Item.c[Item.aQ.aS + random.nextInt(2)]) : null)))))))));
+        return i == 0 ? new ItemStack(Item.ay) : (i == 1 ? new ItemStack(Item.m, random.nextInt(4) + 1) : (i == 2 ? new ItemStack(Item.S) : (i == 3 ? new ItemStack(Item.R, random.nextInt(4) + 1) : (i == 4 ? new ItemStack(Item.K, random.nextInt(4) + 1) : (i == 5 ? new ItemStack(Item.I, random.nextInt(4) + 1) : (i == 6 ? new ItemStack(Item.au) : (i == 7 && random.nextInt(100) == 0 ? new ItemStack(Item.ar) : (i == 8 && random.nextInt(2) == 0 ? new ItemStack(Item.aA, random.nextInt(4) + 1) : (i == 9 && random.nextInt(10) == 0 ? new ItemStack(Item.c[Item.aU.aW + random.nextInt(2)]) : null)))))))));
     }
 
     private String b(Random random) {

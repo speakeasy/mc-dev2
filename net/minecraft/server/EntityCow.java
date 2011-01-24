@@ -6,7 +6,7 @@ public class EntityCow extends EntityAnimals {
 
     public EntityCow(World world) {
         super(world);
-        this.aC = "/mob/cow.png";
+        this.aF = "/mob/cow.png";
         this.a(0.9F, 1.3F);
     }
 
@@ -18,23 +18,23 @@ public class EntityCow extends EntityAnimals {
         super.b(nbttagcompound);
     }
 
-    protected String c() {
-        return "mob.cow";
-    }
-
     protected String d() {
-        return "mob.cowhurt";
+        return "mob.cow";
     }
 
     protected String e() {
         return "mob.cowhurt";
     }
 
-    protected float f() {
+    protected String f() {
+        return "mob.cowhurt";
+    }
+
+    protected float h() {
         return 0.4F;
     }
 
     protected int g() {
-        return Item.aD.aS;
+        return Item.aD.aW;
     }
 }

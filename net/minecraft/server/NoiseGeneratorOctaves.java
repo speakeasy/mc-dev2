@@ -46,4 +46,8 @@ public class NoiseGeneratorOctaves extends NoiseGenerator {
 
         return adouble;
     }
+
+    public double[] a(double[] adouble, int i, int j, int k, int l, double d1, double d2, double d3) {
+        return this.a(adouble, (double) i, 10.0D, (double) j, k, 1, l, d1, 1.0D, d2);
+    }
 }

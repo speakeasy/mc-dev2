@@ -7,12 +7,12 @@ public class ItemRecord extends Item {
     protected ItemRecord(int i, String s) {
         super(i);
         this.a = s;
-        this.aT = 1;
+        this.aX = 1;
     }
 
     public boolean a(ItemStack itemstack, EntityPlayer entityplayer, World world, int i, int j, int k, int l) {
-        if (world.a(i, j, k) == Block.aZ.bc && world.b(i, j, k) == 0) {
-            world.b(i, j, k, this.aS - Item.aQ.aS + 1);
+        if (world.a(i, j, k) == Block.aZ.bi && world.b(i, j, k) == 0) {
+            world.b(i, j, k, this.aW - Item.aU.aW + 1);
             world.a(this.a, i, j, k);
             --itemstack.a;
             return true;

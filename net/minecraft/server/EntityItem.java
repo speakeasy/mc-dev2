@@ -3,78 +3,78 @@ package net.minecraft.server;
 public class EntityItem extends Entity {
 
     public ItemStack a;
-    private int af;
+    private int e;
     public int b = 0;
-    public int ad;
-    private int ag = 5;
-    public float ae = (float) (Math.random() * 3.141592653589793D * 2.0D);
+    public int c;
+    private int f = 5;
+    public float d = (float) (Math.random() * 3.141592653589793D * 2.0D);
 
     public EntityItem(World world, double d1, double d2, double d3, ItemStack itemstack) {
         super(world);
         this.a(0.25F, 0.25F);
-        this.C = this.E / 2.0F;
+        this.G = this.I / 2.0F;
         this.a(d1, d2, d3);
         this.a = itemstack;
-        this.r = (float) (Math.random() * 360.0D);
-        this.o = (double) ((float) (Math.random() * 0.20000000298023224D - 0.10000000149011612D));
-        this.p = 0.20000000298023224D;
-        this.q = (double) ((float) (Math.random() * 0.20000000298023224D - 0.10000000149011612D));
-        this.H = false;
+        this.v = (float) (Math.random() * 360.0D);
+        this.s = (double) ((float) (Math.random() * 0.20000000298023224D - 0.10000000149011612D));
+        this.t = 0.20000000298023224D;
+        this.u = (double) ((float) (Math.random() * 0.20000000298023224D - 0.10000000149011612D));
+        this.L = false;
     }
 
     public EntityItem(World world) {
         super(world);
         this.a(0.25F, 0.25F);
-        this.C = this.E / 2.0F;
+        this.G = this.I / 2.0F;
     }
 
     public void b_() {
         super.b_();
-        if (this.ad > 0) {
-            --this.ad;
+        if (this.c > 0) {
+            --this.c;
         }
 
-        this.i = this.l;
-        this.j = this.m;
-        this.k = this.n;
-        this.p -= 0.03999999910593033D;
-        if (this.h.c(MathHelper.b(this.l), MathHelper.b(this.m), MathHelper.b(this.n)) == Material.g) {
-            this.p = 0.20000000298023224D;
-            this.o = (double) ((this.R.nextFloat() - this.R.nextFloat()) * 0.2F);
-            this.q = (double) ((this.R.nextFloat() - this.R.nextFloat()) * 0.2F);
-            this.h.a(this, "random.fizz", 0.4F, 2.0F + this.R.nextFloat() * 0.4F);
+        this.m = this.p;
+        this.n = this.q;
+        this.o = this.r;
+        this.t -= 0.03999999910593033D;
+        if (this.l.c(MathHelper.b(this.p), MathHelper.b(this.q), MathHelper.b(this.r)) == Material.g) {
+            this.t = 0.20000000298023224D;
+            this.s = (double) ((this.V.nextFloat() - this.V.nextFloat()) * 0.2F);
+            this.u = (double) ((this.V.nextFloat() - this.V.nextFloat()) * 0.2F);
+            this.l.a(this, "random.fizz", 0.4F, 2.0F + this.V.nextFloat() * 0.4F);
         }
 
-        this.g(this.l, this.m, this.n);
-        this.o();
-        this.c(this.o, this.p, this.q);
+        this.g(this.p, this.q, this.r);
+        this.r();
+        this.c(this.s, this.t, this.u);
         float f1 = 0.98F;
 
-        if (this.w) {
+        if (this.A) {
             f1 = 0.58800006F;
-            int i = this.h.a(MathHelper.b(this.l), MathHelper.b(this.v.b) - 1, MathHelper.b(this.n));
+            int i = this.l.a(MathHelper.b(this.p), MathHelper.b(this.z.b) - 1, MathHelper.b(this.r));
 
             if (i > 0) {
-                f1 = Block.n[i].bo * 0.98F;
+                f1 = Block.n[i].bu * 0.98F;
             }
         }
 
-        this.o *= (double) f1;
-        this.p *= 0.9800000190734863D;
-        this.q *= (double) f1;
-        if (this.w) {
-            this.p *= -0.5D;
+        this.s *= (double) f1;
+        this.t *= 0.9800000190734863D;
+        this.u *= (double) f1;
+        if (this.A) {
+            this.t *= -0.5D;
         }
 
-        ++this.af;
+        ++this.e;
         ++this.b;
         if (this.b >= 6000) {
-            this.j();
+            this.l();
         }
     }
 
-    public boolean o() {
-        return this.h.a(this.v, Material.f, this);
+    public boolean r() {
+        return this.l.a(this.z, Material.f, this);
     }
 
     private boolean g(double d1, double d2, double d3) {
@@ -85,13 +85,13 @@ public class EntityItem extends Entity {
         double d5 = d2 - (double) j;
         double d6 = d3 - (double) k;
 
-        if (Block.p[this.h.a(i, j, k)]) {
-            boolean flag = !Block.p[this.h.a(i - 1, j, k)];
-            boolean flag1 = !Block.p[this.h.a(i + 1, j, k)];
-            boolean flag2 = !Block.p[this.h.a(i, j - 1, k)];
-            boolean flag3 = !Block.p[this.h.a(i, j + 1, k)];
-            boolean flag4 = !Block.p[this.h.a(i, j, k - 1)];
-            boolean flag5 = !Block.p[this.h.a(i, j, k + 1)];
+        if (Block.p[this.l.a(i, j, k)]) {
+            boolean flag = !Block.p[this.l.a(i - 1, j, k)];
+            boolean flag1 = !Block.p[this.l.a(i + 1, j, k)];
+            boolean flag2 = !Block.p[this.l.a(i, j - 1, k)];
+            boolean flag3 = !Block.p[this.l.a(i, j + 1, k)];
+            boolean flag4 = !Block.p[this.l.a(i, j, k - 1)];
+            boolean flag5 = !Block.p[this.l.a(i, j, k + 1)];
             byte b1 = -1;
             double d7 = 9999.0D;
 
@@ -125,30 +125,30 @@ public class EntityItem extends Entity {
                 b1 = 5;
             }
 
-            float f1 = this.R.nextFloat() * 0.2F + 0.1F;
+            float f1 = this.V.nextFloat() * 0.2F + 0.1F;
 
             if (b1 == 0) {
-                this.o = (double) (-f1);
+                this.s = (double) (-f1);
             }
 
             if (b1 == 1) {
-                this.o = (double) f1;
+                this.s = (double) f1;
             }
 
             if (b1 == 2) {
-                this.p = (double) (-f1);
+                this.t = (double) (-f1);
             }
 
             if (b1 == 3) {
-                this.p = (double) f1;
+                this.t = (double) f1;
             }
 
             if (b1 == 4) {
-                this.q = (double) (-f1);
+                this.u = (double) (-f1);
             }
 
             if (b1 == 5) {
-                this.q = (double) f1;
+                this.u = (double) f1;
             }
         }
 
@@ -160,22 +160,22 @@ public class EntityItem extends Entity {
     }
 
     public boolean a(Entity entity, int i) {
-        this.ag -= i;
-        if (this.ag <= 0) {
-            this.j();
+        this.f -= i;
+        if (this.f <= 0) {
+            this.l();
         }
 
         return false;
     }
 
     public void a(NBTTagCompound nbttagcompound) {
-        nbttagcompound.a("Health", (short) ((byte) this.ag));
+        nbttagcompound.a("Health", (short) ((byte) this.f));
         nbttagcompound.a("Age", (short) this.b);
         nbttagcompound.a("Item", this.a.a(new NBTTagCompound()));
     }
 
     public void b(NBTTagCompound nbttagcompound) {
-        this.ag = nbttagcompound.c("Health") & 255;
+        this.f = nbttagcompound.c("Health") & 255;
         this.b = nbttagcompound.c("Age");
         NBTTagCompound nbttagcompound1 = nbttagcompound.j("Item");
 
@@ -183,13 +183,13 @@ public class EntityItem extends Entity {
     }
 
     public void a(EntityPlayer entityplayer) {
-        if (!this.h.x) {
+        if (!this.l.z) {
             int i = this.a.a;
 
-            if (this.ad == 0 && entityplayer.aj.a(this.a)) {
-                this.h.a(this, "random.pop", 0.2F, ((this.R.nextFloat() - this.R.nextFloat()) * 0.7F + 1.0F) * 2.0F);
+            if (this.c == 0 && entityplayer.ak.a(this.a)) {
+                this.l.a(this, "random.pop", 0.2F, ((this.V.nextFloat() - this.V.nextFloat()) * 0.7F + 1.0F) * 2.0F);
                 entityplayer.c(this, i);
-                this.j();
+                this.l();
             }
         }
     }

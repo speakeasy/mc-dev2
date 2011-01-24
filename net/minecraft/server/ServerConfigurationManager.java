@@ -43,7 +43,7 @@ public class ServerConfigurationManager {
     }
 
     public void a(WorldServer worldserver) {
-        this.l = new PlayerNBTManager(new File(worldserver.s, "players"));
+        this.l = new PlayerNBTManager(new File(worldserver.t, "players"));
     }
 
     public int a() {
@@ -53,10 +53,10 @@ public class ServerConfigurationManager {
     public void a(EntityPlayerMP entityplayermp) {
         this.b.add(entityplayermp);
         this.l.b(entityplayermp);
-        this.c.e.y.d((int) entityplayermp.l >> 4, (int) entityplayermp.n >> 4);
+        this.c.e.A.d((int) entityplayermp.p >> 4, (int) entityplayermp.r >> 4);
 
-        while (this.c.e.a(entityplayermp, entityplayermp.v).size() != 0) {
-            entityplayermp.a(entityplayermp.l, entityplayermp.m + 1.0D, entityplayermp.n);
+        while (this.c.e.a(entityplayermp, entityplayermp.z).size() != 0) {
+            entityplayermp.a(entityplayermp.p, entityplayermp.q + 1.0D, entityplayermp.r);
         }
 
         this.c.e.a(entityplayermp);
@@ -93,7 +93,7 @@ public class ServerConfigurationManager {
                 for (int i = 0; i < this.b.size(); ++i) {
                     EntityPlayerMP entityplayermp = (EntityPlayerMP) this.b.get(i);
 
-                    if (entityplayermp.aq.equalsIgnoreCase(s)) {
+                    if (entityplayermp.ar.equalsIgnoreCase(s)) {
                         entityplayermp.a.c("You logged in from another location");
                     }
                 }
@@ -127,7 +127,7 @@ public class ServerConfigurationManager {
                 s = s + ", ";
             }
 
-            s = s + ((EntityPlayerMP) this.b.get(i)).aq;
+            s = s + ((EntityPlayerMP) this.b.get(i)).ar;
         }
 
         return s;
@@ -270,7 +270,7 @@ public class ServerConfigurationManager {
         for (int i = 0; i < this.b.size(); ++i) {
             EntityPlayerMP entityplayermp = (EntityPlayerMP) this.b.get(i);
 
-            if (entityplayermp.aq.equalsIgnoreCase(s)) {
+            if (entityplayermp.ar.equalsIgnoreCase(s)) {
                 return entityplayermp;
             }
         }
@@ -292,7 +292,7 @@ public class ServerConfigurationManager {
         for (int i = 0; i < this.b.size(); ++i) {
             EntityPlayerMP entityplayermp = (EntityPlayerMP) this.b.get(i);
 
-            if (this.g(entityplayermp.aq)) {
+            if (this.g(entityplayermp.ar)) {
                 entityplayermp.a.b((Packet) packet3chat);
             }
         }

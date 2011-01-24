@@ -45,7 +45,7 @@ public class Item {
     public static Item N = (new ItemHoe(36, 2)).a(130);
     public static Item O = (new ItemHoe(37, 3)).a(131);
     public static Item P = (new ItemHoe(38, 1)).a(132);
-    public static Item Q = (new ItemSeeds(39, Block.aA.bc)).a(9);
+    public static Item Q = (new ItemSeeds(39, Block.aA.bi)).a(9);
     public static Item R = (new Item(40)).a(25);
     public static Item S = (new ItemFood(41, 5)).a(41);
     public static Item T = (new ItemArmor(42, 0, 0, 0)).a(0);
@@ -76,8 +76,8 @@ public class Item {
     public static Item as = (new ItemSign(67)).a(42);
     public static Item at = (new ItemDoor(68, Material.c)).a(43);
     public static Item au = (new ItemBucket(69, 0)).a(74);
-    public static Item av = (new ItemBucket(70, Block.B.bc)).a(75);
-    public static Item aw = (new ItemBucket(71, Block.D.bc)).a(76);
+    public static Item av = (new ItemBucket(70, Block.B.bi)).a(75);
+    public static Item aw = (new ItemBucket(71, Block.D.bi)).a(76);
     public static Item ax = (new ItemMinecart(72, 0)).a(135);
     public static Item ay = (new ItemSaddle(73)).a(104);
     public static Item az = (new ItemDoor(74, Material.e)).a(44);
@@ -96,17 +96,21 @@ public class Item {
     public static Item aM = (new ItemMinecart(87, 2)).a(167);
     public static Item aN = (new Item(88)).a(12);
     public static Item aO = (new Item(89)).a(54);
-    public static Item aP = (new Item(90)).a(69);
-    public static Item aQ = (new ItemRecord(2000, "13")).a(240);
-    public static Item aR = (new ItemRecord(2001, "cat")).a(241);
-    public final int aS;
-    protected int aT = 64;
-    protected int aU = 32;
-    protected int aV;
-    protected boolean aW = false;
+    public static Item aP = (new ItemFishingRod(90)).a(69);
+    public static Item aQ = (new Item(91)).a(70);
+    public static Item aR = (new Item(92)).a(73);
+    public static Item aS = (new ItemFood(93, 2)).a(89);
+    public static Item aT = (new ItemFood(94, 5)).a(90);
+    public static Item aU = (new ItemRecord(2000, "13")).a(240);
+    public static Item aV = (new ItemRecord(2001, "cat")).a(241);
+    public final int aW;
+    protected int aX = 64;
+    protected int aY = 32;
+    protected int aZ;
+    protected boolean ba = false;
 
     protected Item(int i) {
-        this.aS = 256 + i;
+        this.aW = 256 + i;
         if (c[256 + i] != null) {
             System.out.println("CONFLICT @ " + i);
         }
@@ -115,7 +119,7 @@ public class Item {
     }
 
     public Item a(int i) {
-        this.aV = i;
+        this.aZ = i;
         return this;
     }
 
@@ -128,11 +132,11 @@ public class Item {
     }
 
     public int a() {
-        return this.aT;
+        return this.aX;
     }
 
     public int b() {
-        return this.aU;
+        return this.aY;
     }
 
     public void a(ItemStack itemstack, int i, int j, int k, int l) {}
@@ -142,7 +146,7 @@ public class Item {
     }
 
     public Item c() {
-        this.aW = true;
+        this.ba = true;
         return this;
     }
 }

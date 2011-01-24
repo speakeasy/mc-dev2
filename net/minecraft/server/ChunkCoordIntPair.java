@@ -23,8 +23,8 @@ public class ChunkCoordIntPair {
     public double a(Entity entity) {
         double d1 = (double) (this.a * 16 + 8);
         double d2 = (double) (this.b * 16 + 8);
-        double d3 = d1 - entity.l;
-        double d4 = d2 - entity.n;
+        double d3 = d1 - entity.p;
+        double d4 = d2 - entity.r;
 
         return d3 * d3 + d4 * d4;
     }

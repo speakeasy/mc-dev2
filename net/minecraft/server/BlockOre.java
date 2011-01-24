@@ -9,7 +9,7 @@ public class BlockOre extends Block {
     }
 
     public int a(int i, Random random) {
-        return this.bc == Block.J.bc ? Item.k.aS : (this.bc == Block.ax.bc ? Item.l.aS : this.bc);
+        return this.bi == Block.J.bi ? Item.k.aW : (this.bi == Block.ax.bi ? Item.l.aW : this.bi);
     }
 
     public int a(Random random) {
