@@ -27,7 +27,7 @@ public class EntityTracker {
                 EntityTrackerEntry entitytrackerentry = (EntityTrackerEntry) iterator.next();
 
                 if (entitytrackerentry.a != entityplayermp) {
-                    entitytrackerentry.a(entityplayermp);
+                    entitytrackerentry.b(entityplayermp);
                 }
             }
         } else if (entity instanceof EntityFish) {
@@ -70,11 +70,22 @@ public class EntityTracker {
     }
 
     public void b(Entity entity) {
-        EntityTrackerEntry entitytrackerentry = (EntityTrackerEntry) this.b.d(entity.g);
+        if (entity instanceof EntityPlayerMP) {
+            EntityPlayerMP entityplayermp = (EntityPlayerMP) entity;
+            Iterator iterator = this.a.iterator();
 
-        if (entitytrackerentry != null) {
-            this.a.remove(entitytrackerentry);
-            entitytrackerentry.a();
+            while (iterator.hasNext()) {
+                EntityTrackerEntry entitytrackerentry = (EntityTrackerEntry) iterator.next();
+
+                entitytrackerentry.a(entityplayermp);
+            }
+        }
+
+        EntityTrackerEntry entitytrackerentry1 = (EntityTrackerEntry) this.b.d(entity.g);
+
+        if (entitytrackerentry1 != null) {
+            this.a.remove(entitytrackerentry1);
+            entitytrackerentry1.a();
         }
     }
 
@@ -99,7 +110,7 @@ public class EntityTracker {
                 EntityTrackerEntry entitytrackerentry1 = (EntityTrackerEntry) iterator1.next();
 
                 if (entitytrackerentry1.a != entityplayermp) {
-                    entitytrackerentry1.a(entityplayermp);
+                    entitytrackerentry1.b(entityplayermp);
                 }
             }
         }
@@ -127,7 +138,7 @@ public class EntityTracker {
         while (iterator.hasNext()) {
             EntityTrackerEntry entitytrackerentry = (EntityTrackerEntry) iterator.next();
 
-            entitytrackerentry.b(entityplayermp);
+            entitytrackerentry.c(entityplayermp);
         }
     }
 }

@@ -76,17 +76,18 @@ public class BlockCrops extends BlockFlower {
 
     public void a(World world, int i, int j, int k, int l) {
         super.a(world, i, j, k, l);
+        if (!world.z) {
+            for (int i1 = 0; i1 < 3; ++i1) {
+                if (world.l.nextInt(15) <= l) {
+                    float f1 = 0.7F;
+                    float f2 = world.l.nextFloat() * f1 + (1.0F - f1) * 0.5F;
+                    float f3 = world.l.nextFloat() * f1 + (1.0F - f1) * 0.5F;
+                    float f4 = world.l.nextFloat() * f1 + (1.0F - f1) * 0.5F;
+                    EntityItem entityitem = new EntityItem(world, (double) ((float) i + f2), (double) ((float) j + f3), (double) ((float) k + f4), new ItemStack(Item.Q));
 
-        for (int i1 = 0; i1 < 3; ++i1) {
-            if (world.l.nextInt(15) <= l) {
-                float f1 = 0.7F;
-                float f2 = world.l.nextFloat() * f1 + (1.0F - f1) * 0.5F;
-                float f3 = world.l.nextFloat() * f1 + (1.0F - f1) * 0.5F;
-                float f4 = world.l.nextFloat() * f1 + (1.0F - f1) * 0.5F;
-                EntityItem entityitem = new EntityItem(world, (double) ((float) i + f2), (double) ((float) j + f3), (double) ((float) k + f4), new ItemStack(Item.Q));
-
-                entityitem.c = 10;
-                world.a((Entity) entityitem);
+                    entityitem.c = 10;
+                    world.a((Entity) entityitem);
+                }
             }
         }
     }
