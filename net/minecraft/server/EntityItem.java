@@ -55,7 +55,7 @@ public class EntityItem extends Entity {
             int i = this.l.a(MathHelper.b(this.p), MathHelper.b(this.z.b) - 1, MathHelper.b(this.r));
 
             if (i > 0) {
-                f1 = Block.n[i].bu * 0.98F;
+                f1 = Block.m[i].bt * 0.98F;
             }
         }
 
@@ -85,13 +85,13 @@ public class EntityItem extends Entity {
         double d5 = d2 - (double) j;
         double d6 = d3 - (double) k;
 
-        if (Block.p[this.l.a(i, j, k)]) {
-            boolean flag = !Block.p[this.l.a(i - 1, j, k)];
-            boolean flag1 = !Block.p[this.l.a(i + 1, j, k)];
-            boolean flag2 = !Block.p[this.l.a(i, j - 1, k)];
-            boolean flag3 = !Block.p[this.l.a(i, j + 1, k)];
-            boolean flag4 = !Block.p[this.l.a(i, j, k - 1)];
-            boolean flag5 = !Block.p[this.l.a(i, j, k + 1)];
+        if (Block.o[this.l.a(i, j, k)]) {
+            boolean flag = !Block.o[this.l.a(i - 1, j, k)];
+            boolean flag1 = !Block.o[this.l.a(i + 1, j, k)];
+            boolean flag2 = !Block.o[this.l.a(i, j - 1, k)];
+            boolean flag3 = !Block.o[this.l.a(i, j + 1, k)];
+            boolean flag4 = !Block.o[this.l.a(i, j, k - 1)];
+            boolean flag5 = !Block.o[this.l.a(i, j, k + 1)];
             byte b1 = -1;
             double d7 = 9999.0D;
 
@@ -182,7 +182,7 @@ public class EntityItem extends Entity {
         this.a = new ItemStack(nbttagcompound1);
     }
 
-    public void a(EntityPlayer entityplayer) {
+    public void b(EntityPlayer entityplayer) {
         if (!this.l.z) {
             int i = this.a.a;
 

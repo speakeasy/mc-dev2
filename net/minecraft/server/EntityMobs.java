@@ -13,7 +13,7 @@ public class EntityMobs extends EntityCreature implements IMobs {
         float f1 = this.b(1.0F);
 
         if (f1 > 0.5F) {
-            this.bf += 2;
+            this.bl += 2;
         }
 
         super.D();

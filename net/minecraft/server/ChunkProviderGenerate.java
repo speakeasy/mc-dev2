@@ -83,14 +83,14 @@ public class ChunkProviderGenerate implements IChunkProvider {
 
                                 if (k1 * 8 + l1 < b2) {
                                     if (d18 < 0.5D && k1 * 8 + l1 >= b2 - 1) {
-                                        l2 = Block.aU.bi;
+                                        l2 = Block.aT.bh;
                                     } else {
-                                        l2 = Block.C.bi;
+                                        l2 = Block.B.bh;
                                     }
                                 }
 
                                 if (d16 > 0.0D) {
-                                    l2 = Block.u.bi;
+                                    l2 = Block.t.bh;
                                 }
 
                                 abyte[j2] = (byte) l2;
@@ -134,17 +134,17 @@ public class ChunkProviderGenerate implements IChunkProvider {
                     int l1 = (k * 16 + l) * 128 + k1;
 
                     if (k1 <= 0 + this.j.nextInt(5)) {
-                        abyte[l1] = (byte) Block.A.bi;
+                        abyte[l1] = (byte) Block.z.bh;
                     } else {
                         byte b4 = abyte[l1];
 
                         if (b4 == 0) {
                             j1 = -1;
-                        } else if (b4 == Block.u.bi) {
+                        } else if (b4 == Block.t.bh) {
                             if (j1 == -1) {
                                 if (i1 <= 0) {
                                     b2 = 0;
-                                    b3 = (byte) Block.u.bi;
+                                    b3 = (byte) Block.t.bh;
                                 } else if (k1 >= b1 - 4 && k1 <= b1 + 1) {
                                     b2 = mobspawnerbase.o;
                                     b3 = mobspawnerbase.p;
@@ -153,20 +153,20 @@ public class ChunkProviderGenerate implements IChunkProvider {
                                     }
 
                                     if (flag1) {
-                                        b3 = (byte) Block.G.bi;
+                                        b3 = (byte) Block.F.bh;
                                     }
 
                                     if (flag) {
-                                        b2 = (byte) Block.F.bi;
+                                        b2 = (byte) Block.E.bh;
                                     }
 
                                     if (flag) {
-                                        b3 = (byte) Block.F.bi;
+                                        b3 = (byte) Block.E.bh;
                                     }
                                 }
 
                                 if (k1 < b1 && b2 == 0) {
-                                    b2 = (byte) Block.C.bi;
+                                    b2 = (byte) Block.B.bh;
                                 }
 
                                 j1 = i1;
@@ -349,49 +349,49 @@ public class ChunkProviderGenerate implements IChunkProvider {
             l1 = k + this.j.nextInt(16);
             i2 = this.j.nextInt(128);
             j2 = l + this.j.nextInt(16);
-            (new WorldGenMinable(Block.w.bi, 32)).a(this.p, this.j, l1, i2, j2);
+            (new WorldGenMinable(Block.v.bh, 32)).a(this.p, this.j, l1, i2, j2);
         }
 
         for (k1 = 0; k1 < 10; ++k1) {
             l1 = k + this.j.nextInt(16);
             i2 = this.j.nextInt(128);
             j2 = l + this.j.nextInt(16);
-            (new WorldGenMinable(Block.G.bi, 32)).a(this.p, this.j, l1, i2, j2);
+            (new WorldGenMinable(Block.F.bh, 32)).a(this.p, this.j, l1, i2, j2);
         }
 
         for (k1 = 0; k1 < 20; ++k1) {
             l1 = k + this.j.nextInt(16);
             i2 = this.j.nextInt(128);
             j2 = l + this.j.nextInt(16);
-            (new WorldGenMinable(Block.J.bi, 16)).a(this.p, this.j, l1, i2, j2);
+            (new WorldGenMinable(Block.I.bh, 16)).a(this.p, this.j, l1, i2, j2);
         }
 
         for (k1 = 0; k1 < 20; ++k1) {
             l1 = k + this.j.nextInt(16);
             i2 = this.j.nextInt(64);
             j2 = l + this.j.nextInt(16);
-            (new WorldGenMinable(Block.I.bi, 8)).a(this.p, this.j, l1, i2, j2);
+            (new WorldGenMinable(Block.H.bh, 8)).a(this.p, this.j, l1, i2, j2);
         }
 
         for (k1 = 0; k1 < 2; ++k1) {
             l1 = k + this.j.nextInt(16);
             i2 = this.j.nextInt(32);
             j2 = l + this.j.nextInt(16);
-            (new WorldGenMinable(Block.H.bi, 8)).a(this.p, this.j, l1, i2, j2);
+            (new WorldGenMinable(Block.G.bh, 8)).a(this.p, this.j, l1, i2, j2);
         }
 
         for (k1 = 0; k1 < 8; ++k1) {
             l1 = k + this.j.nextInt(16);
             i2 = this.j.nextInt(16);
             j2 = l + this.j.nextInt(16);
-            (new WorldGenMinable(Block.aO.bi, 7)).a(this.p, this.j, l1, i2, j2);
+            (new WorldGenMinable(Block.aN.bh, 7)).a(this.p, this.j, l1, i2, j2);
         }
 
         for (k1 = 0; k1 < 1; ++k1) {
             l1 = k + this.j.nextInt(16);
             i2 = this.j.nextInt(16);
             j2 = l + this.j.nextInt(16);
-            (new WorldGenMinable(Block.ax.bi, 7)).a(this.p, this.j, l1, i2, j2);
+            (new WorldGenMinable(Block.aw.bh, 7)).a(this.p, this.j, l1, i2, j2);
         }
 
         d1 = 0.5D;
@@ -455,28 +455,28 @@ public class ChunkProviderGenerate implements IChunkProvider {
             k2 = k + this.j.nextInt(16) + 8;
             l2 = this.j.nextInt(128);
             i3 = l + this.j.nextInt(16) + 8;
-            (new WorldGenFlowers(Block.ae.bi)).a(this.p, this.j, k2, l2, i3);
+            (new WorldGenFlowers(Block.ad.bh)).a(this.p, this.j, k2, l2, i3);
         }
 
         if (this.j.nextInt(2) == 0) {
             j2 = k + this.j.nextInt(16) + 8;
             k2 = this.j.nextInt(128);
             l2 = l + this.j.nextInt(16) + 8;
-            (new WorldGenFlowers(Block.af.bi)).a(this.p, this.j, j2, k2, l2);
+            (new WorldGenFlowers(Block.ae.bh)).a(this.p, this.j, j2, k2, l2);
         }
 
         if (this.j.nextInt(4) == 0) {
             j2 = k + this.j.nextInt(16) + 8;
             k2 = this.j.nextInt(128);
             l2 = l + this.j.nextInt(16) + 8;
-            (new WorldGenFlowers(Block.ag.bi)).a(this.p, this.j, j2, k2, l2);
+            (new WorldGenFlowers(Block.af.bh)).a(this.p, this.j, j2, k2, l2);
         }
 
         if (this.j.nextInt(8) == 0) {
             j2 = k + this.j.nextInt(16) + 8;
             k2 = this.j.nextInt(128);
             l2 = l + this.j.nextInt(16) + 8;
-            (new WorldGenFlowers(Block.ah.bi)).a(this.p, this.j, j2, k2, l2);
+            (new WorldGenFlowers(Block.ag.bh)).a(this.p, this.j, j2, k2, l2);
         }
 
         for (j2 = 0; j2 < 10; ++j2) {
@@ -511,14 +511,14 @@ public class ChunkProviderGenerate implements IChunkProvider {
             l2 = k + this.j.nextInt(16) + 8;
             i3 = this.j.nextInt(this.j.nextInt(120) + 8);
             j3 = l + this.j.nextInt(16) + 8;
-            (new WorldGenLiquids(Block.B.bi)).a(this.p, this.j, l2, i3, j3);
+            (new WorldGenLiquids(Block.A.bh)).a(this.p, this.j, l2, i3, j3);
         }
 
         for (k2 = 0; k2 < 20; ++k2) {
             l2 = k + this.j.nextInt(16) + 8;
             i3 = this.j.nextInt(this.j.nextInt(this.j.nextInt(112) + 8) + 8);
             j3 = l + this.j.nextInt(16) + 8;
-            (new WorldGenLiquids(Block.D.bi)).a(this.p, this.j, l2, i3, j3);
+            (new WorldGenLiquids(Block.C.bh)).a(this.p, this.j, l2, i3, j3);
         }
 
         this.w = this.p.a().a(this.w, k + 8, l + 8, 16, 16);
@@ -531,7 +531,7 @@ public class ChunkProviderGenerate implements IChunkProvider {
                 double d2 = this.w[i3 * 16 + j3] - (double) (k3 - 64) / 64.0D * 0.3D;
 
                 if (d2 < 0.5D && k3 > 0 && k3 < 128 && this.p.a(k2, k3, l2) == 0 && this.p.c(k2, k3 - 1, l2).c() && this.p.c(k2, k3 - 1, l2) != Material.r) {
-                    this.p.d(k2, k3, l2, Block.aT.bi);
+                    this.p.d(k2, k3, l2, Block.aS.bh);
                 }
             }
         }

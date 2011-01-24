@@ -25,33 +25,33 @@ public class BlockStep extends Block {
     }
 
     public void b(World world, int i, int j, int k, int l) {
-        if (this == Block.al) {
+        if (this == Block.ak) {
             ;
         }
     }
 
     public void e(World world, int i, int j, int k) {
-        if (this != Block.al) {
+        if (this != Block.ak) {
             super.e(world, i, j, k);
         }
 
         int l = world.a(i, j - 1, k);
 
-        if (l == al.bi) {
+        if (l == ak.bh) {
             world.d(i, j, k, 0);
-            world.d(i, j - 1, k, Block.ak.bi);
+            world.d(i, j - 1, k, Block.aj.bh);
         }
     }
 
     public int a(int i, Random random) {
-        return Block.al.bi;
+        return Block.ak.bh;
     }
 
     public boolean a(IBlockAccess iblockaccess, int i, int j, int k, int l) {
-        if (this != Block.al) {
+        if (this != Block.ak) {
             super.a(iblockaccess, i, j, k, l);
         }
 
-        return l == 1 ? true : (!super.a(iblockaccess, i, j, k, l) ? false : (l == 0 ? true : iblockaccess.a(i, j, k) != this.bi));
+        return l == 1 ? true : (!super.a(iblockaccess, i, j, k, l) ? false : (l == 0 ? true : iblockaccess.a(i, j, k) != this.bh));
     }
 }

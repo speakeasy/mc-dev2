@@ -45,7 +45,7 @@ public class Item {
     public static Item N = (new ItemHoe(36, 2)).a(130);
     public static Item O = (new ItemHoe(37, 3)).a(131);
     public static Item P = (new ItemHoe(38, 1)).a(132);
-    public static Item Q = (new ItemSeeds(39, Block.aA.bi)).a(9);
+    public static Item Q = (new ItemSeeds(39, Block.az.bh)).a(9);
     public static Item R = (new Item(40)).a(25);
     public static Item S = (new ItemFood(41, 5)).a(41);
     public static Item T = (new ItemArmor(42, 0, 0, 0)).a(0);
@@ -76,8 +76,8 @@ public class Item {
     public static Item as = (new ItemSign(67)).a(42);
     public static Item at = (new ItemDoor(68, Material.c)).a(43);
     public static Item au = (new ItemBucket(69, 0)).a(74);
-    public static Item av = (new ItemBucket(70, Block.B.bi)).a(75);
-    public static Item aw = (new ItemBucket(71, Block.D.bi)).a(76);
+    public static Item av = (new ItemBucket(70, Block.A.bh)).a(75);
+    public static Item aw = (new ItemBucket(71, Block.C.bh)).a(76);
     public static Item ax = (new ItemMinecart(72, 0)).a(135);
     public static Item ay = (new ItemSaddle(73)).a(104);
     public static Item az = (new ItemDoor(74, Material.e)).a(44);
@@ -88,7 +88,7 @@ public class Item {
     public static Item aE = (new ItemBucket(79, -1)).a(77);
     public static Item aF = (new Item(80)).a(22);
     public static Item aG = (new Item(81)).a(57);
-    public static Item aH = (new ItemReed(82, Block.aY)).a(27);
+    public static Item aH = (new ItemReed(82, Block.aX)).a(27);
     public static Item aI = (new Item(83)).a(58);
     public static Item aJ = (new Item(84)).a(59);
     public static Item aK = (new Item(85)).a(30);
@@ -129,6 +129,10 @@ public class Item {
 
     public float a(ItemStack itemstack, Block block) {
         return 1.0F;
+    }
+
+    public ItemStack a(ItemStack itemstack, World world, EntityPlayer entityplayer) {
+        return itemstack;
     }
 
     public int a() {

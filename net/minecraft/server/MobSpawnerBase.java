@@ -24,8 +24,8 @@ public class MobSpawnerBase {
     private static MobSpawnerBase[] t = new MobSpawnerBase[4096];
 
     public MobSpawnerBase() {
-        this.o = (byte) Block.v.bi;
-        this.p = (byte) Block.w.bi;
+        this.o = (byte) Block.u.bh;
+        this.p = (byte) Block.v.bh;
         this.q = 5169201;
         this.r = new Class[] { EntitySpider.class, EntityZombie.class, EntitySkeleton.class, EntityCreeper.class};
         this.s = new Class[] { EntitySheep.class, EntityPig.class, EntityChicken.class, EntityCow.class};
@@ -38,8 +38,8 @@ public class MobSpawnerBase {
             }
         }
 
-        h.o = h.p = (byte) Block.F.bi;
-        j.o = j.p = (byte) Block.F.bi;
+        h.o = h.p = (byte) Block.E.bh;
+        j.o = j.p = (byte) Block.E.bh;
     }
 
     protected MobSpawnerBase b() {

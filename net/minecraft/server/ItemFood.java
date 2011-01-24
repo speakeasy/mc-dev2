@@ -9,4 +9,10 @@ public class ItemFood extends Item {
         this.a = j;
         this.aX = 1;
     }
+
+    public ItemStack a(ItemStack itemstack, World world, EntityPlayer entityplayer) {
+        --itemstack.a;
+        entityplayer.a(this.a);
+        return itemstack;
+    }
 }

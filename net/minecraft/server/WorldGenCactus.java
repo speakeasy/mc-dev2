@@ -16,8 +16,8 @@ public class WorldGenCactus extends WorldGenerator {
                 int l1 = 1 + random.nextInt(random.nextInt(3) + 1);
 
                 for (int i2 = 0; i2 < l1; ++i2) {
-                    if (Block.aW.f(world, i1, j1 + i2, k1)) {
-                        world.a(i1, j1 + i2, k1, Block.aW.bi);
+                    if (Block.aV.f(world, i1, j1 + i2, k1)) {
+                        world.a(i1, j1 + i2, k1, Block.aV.bh);
                     }
                 }
             }

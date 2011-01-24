@@ -16,8 +16,8 @@ public class WorldGenReed extends WorldGenerator {
                 int l1 = 2 + random.nextInt(random.nextInt(3) + 1);
 
                 for (int i2 = 0; i2 < l1; ++i2) {
-                    if (Block.aY.f(world, i1, j1 + i2, k1)) {
-                        world.a(i1, j1 + i2, k1, Block.aY.bi);
+                    if (Block.aX.f(world, i1, j1 + i2, k1)) {
+                        world.a(i1, j1 + i2, k1, Block.aX.bh);
                     }
                 }
             }

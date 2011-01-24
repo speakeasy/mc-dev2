@@ -111,7 +111,7 @@ public class MapGenCaves extends MapGenBase {
                             for (int l3 = j2 + 1; !flag2 && l3 >= i2 - 1; --l3) {
                                 i3 = (j3 * 16 + k3) * 128 + l3;
                                 if (l3 >= 0 && l3 < 128) {
-                                    if (abyte[i3] == Block.B.bi || abyte[i3] == Block.C.bi) {
+                                    if (abyte[i3] == Block.A.bh || abyte[i3] == Block.B.bh) {
                                         flag2 = true;
                                     }
 
@@ -138,17 +138,17 @@ public class MapGenCaves extends MapGenBase {
                                     if (d15 > -0.7D && d13 * d13 + d15 * d15 + d14 * d14 < 1.0D) {
                                         byte b1 = abyte[i4];
 
-                                        if (b1 == Block.v.bi) {
+                                        if (b1 == Block.u.bh) {
                                             flag3 = true;
                                         }
 
-                                        if (b1 == Block.u.bi || b1 == Block.w.bi || b1 == Block.v.bi) {
+                                        if (b1 == Block.t.bh || b1 == Block.v.bh || b1 == Block.u.bh) {
                                             if (j4 < 10) {
-                                                abyte[i4] = (byte) Block.D.bi;
+                                                abyte[i4] = (byte) Block.C.bh;
                                             } else {
                                                 abyte[i4] = 0;
-                                                if (flag3 && abyte[i4 - 1] == Block.w.bi) {
-                                                    abyte[i4 - 1] = (byte) Block.v.bi;
+                                                if (flag3 && abyte[i4 - 1] == Block.v.bh) {
+                                                    abyte[i4 - 1] = (byte) Block.u.bh;
                                                 }
                                             }
                                         }

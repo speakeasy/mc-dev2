@@ -9,12 +9,12 @@ public class BlockFire extends Block {
 
     protected BlockFire(int i, int j) {
         super(i, j, Material.l);
-        this.a(Block.y.bi, 5, 20);
-        this.a(Block.K.bi, 5, 5);
-        this.a(Block.L.bi, 30, 60);
-        this.a(Block.ao.bi, 30, 20);
-        this.a(Block.an.bi, 15, 100);
-        this.a(Block.ac.bi, 30, 60);
+        this.a(Block.x.bh, 5, 20);
+        this.a(Block.J.bh, 5, 5);
+        this.a(Block.K.bh, 30, 60);
+        this.a(Block.an.bh, 30, 20);
+        this.a(Block.am.bh, 15, 100);
+        this.a(Block.ab.bh, 30, 60);
         this.a(true);
     }
 
@@ -40,12 +40,12 @@ public class BlockFire extends Block {
     }
 
     public void a(World world, int i, int j, int k, Random random) {
-        boolean flag = world.a(i, j - 1, k) == Block.bc.bi;
+        boolean flag = world.a(i, j - 1, k) == Block.bb.bh;
         int l = world.b(i, j, k);
 
         if (l < 15) {
             world.b(i, j, k, l + 1);
-            world.h(i, j, k, this.bi);
+            world.h(i, j, k, this.bh);
         }
 
         if (!flag && !this.g(world, i, j, k)) {
@@ -76,7 +76,7 @@ public class BlockFire extends Block {
                                 int i2 = this.h(world, i1, k1, j1);
 
                                 if (i2 > 0 && random.nextInt(l1) <= i2) {
-                                    world.d(i1, k1, j1, this.bi);
+                                    world.d(i1, k1, j1, this.bh);
                                 }
                             }
                         }
@@ -90,16 +90,16 @@ public class BlockFire extends Block {
         int i1 = this.b[world.a(i, j, k)];
 
         if (random.nextInt(l) < i1) {
-            boolean flag = world.a(i, j, k) == Block.an.bi;
+            boolean flag = world.a(i, j, k) == Block.am.bh;
 
             if (random.nextInt(2) == 0) {
-                world.d(i, j, k, this.bi);
+                world.d(i, j, k, this.bh);
             } else {
                 world.d(i, j, k, 0);
             }
 
             if (flag) {
-                Block.an.a(world, i, j, k, 0);
+                Block.am.a(world, i, j, k, 0);
             }
         }
     }
@@ -150,11 +150,11 @@ public class BlockFire extends Block {
     }
 
     public void e(World world, int i, int j, int k) {
-        if (world.a(i, j - 1, k) != Block.aq.bi || !Block.bf.a_(world, i, j, k)) {
+        if (world.a(i, j - 1, k) != Block.ap.bh || !Block.be.a_(world, i, j, k)) {
             if (!world.d(i, j - 1, k) && !this.g(world, i, j, k)) {
                 world.d(i, j, k, 0);
             } else {
-                world.h(i, j, k, this.bi);
+                world.h(i, j, k, this.bh);
             }
         }
     }

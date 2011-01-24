@@ -12,15 +12,15 @@ public class ItemHoe extends Item {
         int i1 = world.a(i, j, k);
         Material material = world.c(i, j + 1, k);
 
-        if ((material.a() || i1 != Block.v.bi) && i1 != Block.w.bi) {
+        if ((material.a() || i1 != Block.u.bh) && i1 != Block.v.bh) {
             return false;
         } else {
-            Block block = Block.aB;
+            Block block = Block.aA;
 
-            world.a((double) ((float) i + 0.5F), (double) ((float) j + 0.5F), (double) ((float) k + 0.5F), block.br.c(), (block.br.a() + 1.0F) / 2.0F, block.br.b() * 0.8F);
-            world.d(i, j, k, block.bi);
+            world.a((double) ((float) i + 0.5F), (double) ((float) j + 0.5F), (double) ((float) k + 0.5F), block.bq.c(), (block.bq.a() + 1.0F) / 2.0F, block.bq.b() * 0.8F);
+            world.d(i, j, k, block.bh);
             itemstack.a(1);
-            if (world.l.nextInt(8) == 0 && i1 == Block.v.bi) {
+            if (world.l.nextInt(8) == 0 && i1 == Block.u.bh) {
                 byte b1 = 1;
 
                 for (int j1 = 0; j1 < b1; ++j1) {

@@ -37,4 +37,15 @@ public class EntityCow extends EntityAnimals {
     protected int g() {
         return Item.aD.aW;
     }
+
+    public boolean a(EntityPlayer entityplayer) {
+        ItemStack itemstack = entityplayer.ak.b();
+
+        if (itemstack != null && itemstack.c == Item.au.aW) {
+            entityplayer.ak.a(entityplayer.ak.d, new ItemStack(Item.aE));
+            return true;
+        } else {
+            return false;
+        }
+    }
 }
