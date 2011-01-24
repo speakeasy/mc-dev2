@@ -1362,7 +1362,7 @@ public class World implements IBlockAccess {
                     int j2;
 
                     if (flag) {
-                        j2 = 10;
+                        j2 = 5;
                         if (j2 > i2) {
                             j2 = i2;
                         }

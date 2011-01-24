@@ -72,13 +72,29 @@ public class Chunk {
             for (k = 0; k < 16; ++k) {
                 int l = 127;
 
-                for (int i1 = j << 11 | k << 7; l > 0 && Block.q[this.b[i1 + l - 1]] == 0; --l) {
+                int i1;
+
+                for (i1 = j << 11 | k << 7; l > 0 && Block.q[this.b[i1 + l - 1]] == 0; --l) {
                     ;
                 }
 
                 this.h[k << 4 | j] = (byte) l;
                 if (l < i) {
                     i = l;
+                }
+
+                if (!this.d.q.e) {
+                    int j1 = 15;
+                    int k1 = 127;
+
+                    do {
+                        j1 -= Block.q[this.b[i1 + k1]];
+                        if (j1 > 0) {
+                            this.f.a(j, k1, k, j1);
+                        }
+
+                        --k1;
+                    } while (k1 > 0 && j1 > 0);
                 }
             }
         }
@@ -276,11 +292,11 @@ public class Chunk {
 
             this.d.a(EnumSkyBlock.b, l1, j, i2, l1, j, i2);
             this.c(i, k);
+            this.e.a(i, j, k, i1);
             if (l != 0) {
                 Block.m[l].e(this.d, l1, j, i2);
             }
 
-            this.e.a(i, j, k, i1);
             this.o = true;
             return true;
         }

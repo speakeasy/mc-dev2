@@ -20,7 +20,7 @@ public class Packet25 extends Packet {
         this.c = entitypainting.c;
         this.d = entitypainting.d;
         this.e = entitypainting.a;
-        this.f = entitypainting.e.y;
+        this.f = entitypainting.e.z;
     }
 
     public void a(DataInputStream datainputstream) {

@@ -407,7 +407,6 @@ public class NetServerHandler extends NetHandler implements ICommandListener {
     }
 
     public void a(Packet19 packet19) {
-        System.out.println("handlePlayerCommand " + packet19.a + " " + packet19.b);
         if (packet19.b == 1) {
             this.e.b(true);
         } else if (packet19.b == 2) {
