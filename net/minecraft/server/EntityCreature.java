@@ -3,34 +3,34 @@ package net.minecraft.server;
 public class EntityCreature extends EntityLiving {
 
     private PathEntity a;
-    protected Entity f;
-    protected boolean aj = false;
+    protected Entity aj;
+    protected boolean ak = false;
 
     public EntityCreature(World world) {
         super(world);
     }
 
     protected void c() {
-        this.aj = false;
+        this.ak = false;
         float f1 = 16.0F;
 
-        if (this.f == null) {
-            this.f = this.k();
-            if (this.f != null) {
-                this.a = this.l.a(this, this.f, f1);
+        if (this.aj == null) {
+            this.aj = this.k();
+            if (this.aj != null) {
+                this.a = this.l.a(this, this.aj, f1);
             }
-        } else if (!this.f.x()) {
-            this.f = null;
+        } else if (!this.aj.x()) {
+            this.aj = null;
         } else {
-            float f2 = this.f.a((Entity) this);
+            float f2 = this.aj.a((Entity) this);
 
-            if (this.i(this.f)) {
-                this.a(this.f, f2);
+            if (this.i(this.aj)) {
+                this.a(this.aj, f2);
             }
         }
 
-        if (!this.aj && this.f != null && (this.a == null || this.W.nextInt(20) == 0)) {
-            this.a = this.l.a(this, this.f, f1);
+        if (!this.ak && this.aj != null && (this.a == null || this.W.nextInt(20) == 0)) {
+            this.a = this.l.a(this, this.aj, f1);
         } else if (this.a == null && this.W.nextInt(80) == 0 || this.W.nextInt(80) == 0) {
             boolean flag = false;
             int i = -1;
@@ -77,7 +77,7 @@ public class EntityCreature extends EntityLiving {
                 }
             }
 
-            this.br = false;
+            this.bs = false;
             if (vec3d != null) {
                 double d2 = vec3d.a - this.p;
                 double d3 = vec3d.c - this.r;
@@ -85,7 +85,7 @@ public class EntityCreature extends EntityLiving {
                 float f5 = (float) (Math.atan2(d3, d2) * 180.0D / 3.1415927410125732D) - 90.0F;
                 float f6 = f5 - this.v;
 
-                for (this.bp = this.bt; f6 < -180.0F; f6 += 360.0F) {
+                for (this.bq = this.bu; f6 < -180.0F; f6 += 360.0F) {
                     ;
                 }
 
@@ -102,32 +102,32 @@ public class EntityCreature extends EntityLiving {
                 }
 
                 this.v += f6;
-                if (this.aj && this.f != null) {
-                    double d5 = this.f.p - this.p;
-                    double d6 = this.f.r - this.r;
+                if (this.ak && this.aj != null) {
+                    double d5 = this.aj.p - this.p;
+                    double d6 = this.aj.r - this.r;
                     float f7 = this.v;
 
                     this.v = (float) (Math.atan2(d6, d5) * 180.0D / 3.1415927410125732D) - 90.0F;
                     f6 = (f7 - this.v + 90.0F) * 3.1415927F / 180.0F;
-                    this.bo = -MathHelper.a(f6) * this.bp * 1.0F;
-                    this.bp = MathHelper.b(f6) * this.bp * 1.0F;
+                    this.bp = -MathHelper.a(f6) * this.bq * 1.0F;
+                    this.bq = MathHelper.b(f6) * this.bq * 1.0F;
                 }
 
                 if (d4 > 0.0D) {
-                    this.br = true;
+                    this.bs = true;
                 }
             }
 
-            if (this.f != null) {
-                this.b(this.f, 30.0F);
+            if (this.aj != null) {
+                this.b(this.aj, 30.0F);
             }
 
             if (this.B) {
-                this.br = true;
+                this.bs = true;
             }
 
             if (this.W.nextFloat() < 0.8F && (flag1 || flag2)) {
-                this.br = true;
+                this.bs = true;
             }
         } else {
             super.c();

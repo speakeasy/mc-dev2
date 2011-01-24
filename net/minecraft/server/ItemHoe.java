@@ -18,24 +18,28 @@ public class ItemHoe extends Item {
             Block block = Block.aA;
 
             world.a((double) ((float) i + 0.5F), (double) ((float) j + 0.5F), (double) ((float) k + 0.5F), block.bq.c(), (block.bq.a() + 1.0F) / 2.0F, block.bq.b() * 0.8F);
-            world.d(i, j, k, block.bh);
-            itemstack.a(1);
-            if (world.l.nextInt(8) == 0 && i1 == Block.u.bh) {
-                byte b1 = 1;
+            if (world.z) {
+                return true;
+            } else {
+                world.d(i, j, k, block.bh);
+                itemstack.a(1);
+                if (world.l.nextInt(8) == 0 && i1 == Block.u.bh) {
+                    byte b1 = 1;
 
-                for (int j1 = 0; j1 < b1; ++j1) {
-                    float f1 = 0.7F;
-                    float f2 = world.l.nextFloat() * f1 + (1.0F - f1) * 0.5F;
-                    float f3 = 1.2F;
-                    float f4 = world.l.nextFloat() * f1 + (1.0F - f1) * 0.5F;
-                    EntityItem entityitem = new EntityItem(world, (double) ((float) i + f2), (double) ((float) j + f3), (double) ((float) k + f4), new ItemStack(Item.Q));
+                    for (int j1 = 0; j1 < b1; ++j1) {
+                        float f1 = 0.7F;
+                        float f2 = world.l.nextFloat() * f1 + (1.0F - f1) * 0.5F;
+                        float f3 = 1.2F;
+                        float f4 = world.l.nextFloat() * f1 + (1.0F - f1) * 0.5F;
+                        EntityItem entityitem = new EntityItem(world, (double) ((float) i + f2), (double) ((float) j + f3), (double) ((float) k + f4), new ItemStack(Item.Q));
 
-                    entityitem.c = 10;
-                    world.a((Entity) entityitem);
+                        entityitem.c = 10;
+                        world.a((Entity) entityitem);
+                    }
                 }
-            }
 
-            return true;
+                return true;
+            }
         }
     }
 }

@@ -8,8 +8,8 @@ public class ItemFishingRod extends Item {
     }
 
     public ItemStack a(ItemStack itemstack, World world, EntityPlayer entityplayer) {
-        if (entityplayer.au != null) {
-            int i = entityplayer.au.c();
+        if (entityplayer.av != null) {
+            int i = entityplayer.av.c();
 
             itemstack.a(i);
             entityplayer.F();
