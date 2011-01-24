@@ -108,4 +108,14 @@ public class EntityTracker {
             entitytrackerentry.a(packet);
         }
     }
+
+    public void a(EntityPlayerMP entityplayermp) {
+        Iterator iterator = this.a.iterator();
+
+        while (iterator.hasNext()) {
+            EntityTrackerEntry entitytrackerentry = (EntityTrackerEntry) iterator.next();
+
+            entitytrackerentry.b(entityplayermp);
+        }
+    }
 }

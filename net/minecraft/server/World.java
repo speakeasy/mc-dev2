@@ -786,8 +786,24 @@ public class World implements IBlockAccess {
         entity.l();
         if (entity instanceof EntityPlayer) {
             this.d.remove((EntityPlayer) entity);
-            System.out.println("Player count: " + this.d.size());
         }
+    }
+
+    public void e(Entity entity) {
+        entity.l();
+        if (entity instanceof EntityPlayer) {
+            this.d.remove((EntityPlayer) entity);
+        }
+
+        int i = entity.ag;
+        int j = entity.ai;
+
+        if (entity.af && this.f(i, j)) {
+            this.c(i, j).b(entity);
+        }
+
+        this.b.remove(entity);
+        this.c(entity);
     }
 
     public void a(IWorldAccess iworldaccess) {
@@ -938,7 +954,7 @@ public class World implements IBlockAccess {
             }
 
             if (!entity.G) {
-                this.e(entity);
+                this.f(entity);
             }
 
             if (entity.G) {
@@ -960,7 +976,7 @@ public class World implements IBlockAccess {
         }
     }
 
-    public void e(Entity entity) {
+    public void f(Entity entity) {
         this.a(entity, true);
     }
 
@@ -1002,7 +1018,7 @@ public class World implements IBlockAccess {
 
             if (flag && entity.af && entity.j != null) {
                 if (!entity.j.G && entity.j.k == entity) {
-                    this.e(entity.j);
+                    this.f(entity.j);
                 } else {
                     entity.j.k = null;
                     entity.j = null;

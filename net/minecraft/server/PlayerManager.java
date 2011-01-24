@@ -55,7 +55,6 @@ public class PlayerManager {
     }
 
     public void a(EntityPlayerMP entityplayermp) {
-        this.d.f.a((Packet) (new Packet3Chat("§e" + entityplayermp.as + " joined the game.")));
         int i = (int) entityplayermp.p >> 4;
         int j = (int) entityplayermp.r >> 4;
 
@@ -72,9 +71,8 @@ public class PlayerManager {
     }
 
     public void b(EntityPlayerMP entityplayermp) {
-        this.d.f.a((Packet) (new Packet3Chat("§e" + entityplayermp.as + " left the game.")));
-        int i = (int) entityplayermp.p >> 4;
-        int j = (int) entityplayermp.r >> 4;
+        int i = (int) entityplayermp.d >> 4;
+        int j = (int) entityplayermp.e >> 4;
 
         for (int k = i - 10; k <= i + 10; ++k) {
             for (int l = j - 10; l <= j + 10; ++l) {

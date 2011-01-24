@@ -68,10 +68,16 @@ public class ServerConfigurationManager {
     }
 
     public void c(EntityPlayerMP entityplayermp) {
-        this.d.b(entityplayermp);
         this.l.a(entityplayermp);
         this.c.e.d(entityplayermp);
         this.b.remove(entityplayermp);
+        this.d.b(entityplayermp);
+    }
+
+    public void d(EntityPlayerMP entityplayermp) {
+        this.d.b(entityplayermp);
+        this.b.remove(entityplayermp);
+        this.c.e.e(entityplayermp);
     }
 
     public EntityPlayerMP a(NetLoginHandler netloginhandler, String s, String s1) {
@@ -101,6 +107,28 @@ public class ServerConfigurationManager {
                 return new EntityPlayerMP(this.c, this.c.e, s, new ItemInWorldManager(this.c.e));
             }
         }
+    }
+
+    public EntityPlayerMP e(EntityPlayerMP entityplayermp) {
+        this.d(entityplayermp);
+        this.c.k.a(entityplayermp);
+        EntityPlayerMP entityplayermp1 = new EntityPlayerMP(this.c, this.c.e, entityplayermp.as, new ItemInWorldManager(this.c.e));
+
+        entityplayermp1.g = entityplayermp.g;
+        entityplayermp1.a = entityplayermp.a;
+        this.c.e.A.d((int) entityplayermp1.p >> 4, (int) entityplayermp1.r >> 4);
+
+        while (this.c.e.a(entityplayermp1, entityplayermp1.z).size() != 0) {
+            entityplayermp1.a(entityplayermp1.p, entityplayermp1.q + 1.0D, entityplayermp1.r);
+        }
+
+        entityplayermp1.a.b((Packet) (new Packet9()));
+        entityplayermp1.a.d();
+        entityplayermp1.a.a(entityplayermp1.p, entityplayermp1.q, entityplayermp1.r, entityplayermp1.v, entityplayermp1.w);
+        this.d.a(entityplayermp1);
+        this.c.e.a(entityplayermp1);
+        this.b.add(entityplayermp1);
+        return entityplayermp1;
     }
 
     public void b() {
