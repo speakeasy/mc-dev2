@@ -34,13 +34,13 @@ public class ItemSign extends Item {
                 ++i;
             }
 
-            if (!Block.aD.a(world, i, j, k)) {
+            if (!Block.SIGN_POST.a(world, i, j, k)) {
                 return false;
             } else {
                 if (l == 1) {
-                    world.b(i, j, k, Block.aD.bi, MathHelper.b((double) ((entityplayer.v + 180.0F) * 16.0F / 360.0F) + 0.5D) & 15);
+                    world.b(i, j, k, Block.SIGN_POST.bi, MathHelper.b((double) ((entityplayer.v + 180.0F) * 16.0F / 360.0F) + 0.5D) & 15);
                 } else {
-                    world.b(i, j, k, Block.aI.bi, l);
+                    world.b(i, j, k, Block.WALL_SIGN.bi, l);
                 }
 
                 --itemstack.a;

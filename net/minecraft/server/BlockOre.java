@@ -9,7 +9,7 @@ public class BlockOre extends Block {
     }
 
     public int a(int i, Random random) {
-        return this.bi == Block.I.bi ? Item.k.ba : (this.bi == Block.aw.bi ? Item.l.ba : (this.bi == Block.N.bi ? Item.aU.ba : this.bi));
+        return this.bi == Block.COAL_ORE.bi ? Item.k.ba : (this.bi == Block.DIAMOND_ORE.bi ? Item.l.ba : (this.bi == Block.LAPIS_ORE.bi ? Item.aU.ba : this.bi));
     }
 
     public int a(Random random) {
@@ -17,6 +17,6 @@ public class BlockOre extends Block {
     }
 
     protected int b(int i) {
-        return this.bi == Block.N.bi ? 4 : 0;
+        return this.bi == Block.LAPIS_ORE.bi ? 4 : 0;
     }
 }

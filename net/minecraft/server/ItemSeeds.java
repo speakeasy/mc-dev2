@@ -15,7 +15,7 @@ public class ItemSeeds extends Item {
         } else {
             int i1 = world.a(i, j, k);
 
-            if (i1 == Block.aA.bi && world.e(i, j + 1, k)) {
+            if (i1 == Block.SOIL.bi && world.e(i, j + 1, k)) {
                 world.e(i, j + 1, k, this.a);
                 --itemstack.a;
                 return true;

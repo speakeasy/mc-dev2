@@ -34,9 +34,9 @@ public class ItemRedstone extends Item {
         if (!world.e(i, j, k)) {
             return false;
         } else {
-            if (Block.av.a(world, i, j, k)) {
+            if (Block.REDSTONE_WIRE.a(world, i, j, k)) {
                 --itemstack.a;
-                world.e(i, j, k, Block.av.bi);
+                world.e(i, j, k, Block.REDSTONE_WIRE.bi);
             }
 
             return true;

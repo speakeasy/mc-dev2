@@ -12,10 +12,10 @@ public class ItemHoe extends Item {
         int i1 = world.a(i, j, k);
         Material material = world.c(i, j + 1, k);
 
-        if ((material.a() || i1 != Block.u.bi) && i1 != Block.v.bi) {
+        if ((material.a() || i1 != Block.GRASS.bi) && i1 != Block.DIRT.bi) {
             return false;
         } else {
-            Block block = Block.aA;
+            Block block = Block.SOIL;
 
             world.a((double) ((float) i + 0.5F), (double) ((float) j + 0.5F), (double) ((float) k + 0.5F), block.br.c(), (block.br.a() + 1.0F) / 2.0F, block.br.b() * 0.8F);
             if (world.z) {
@@ -23,7 +23,7 @@ public class ItemHoe extends Item {
             } else {
                 world.e(i, j, k, block.bi);
                 itemstack.b(1);
-                if (world.l.nextInt(8) == 0 && i1 == Block.u.bi) {
+                if (world.l.nextInt(8) == 0 && i1 == Block.GRASS.bi) {
                     byte b1 = 1;
 
                     for (int j1 = 0; j1 < b1; ++j1) {

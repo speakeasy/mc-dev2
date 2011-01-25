@@ -46,9 +46,9 @@ public class WorldGenDungeons extends WorldGenerator {
                             world.e(k1, l1, i2, 0);
                         } else if (world.c(k1, l1, i2).a()) {
                             if (l1 == j - 1 && random.nextInt(4) != 0) {
-                                world.e(k1, l1, i2, Block.ao.bi);
+                                world.e(k1, l1, i2, Block.MOSSY_COBBLESTONE.bi);
                             } else {
-                                world.e(k1, l1, i2, Block.w.bi);
+                                world.e(k1, l1, i2, Block.COBBLESTONE.bi);
                             }
                         }
                     }
@@ -86,7 +86,7 @@ public class WorldGenDungeons extends WorldGenerator {
                                 }
 
                                 if (k2 == 1) {
-                                    world.e(i2, j, j2, Block.au.bi);
+                                    world.e(i2, j, j2, Block.CHEST.bi);
                                     TileEntityChest tileentitychest = (TileEntityChest) world.m(i2, j, j2);
 
                                     for (int l2 = 0; l2 < 8; ++l2) {
@@ -110,7 +110,7 @@ public class WorldGenDungeons extends WorldGenerator {
                 }
             }
 
-            world.e(i, j, k, Block.as.bi);
+            world.e(i, j, k, Block.MOB_SPAWNER.bi);
             TileEntityMobSpawner tileentitymobspawner = (TileEntityMobSpawner) world.m(i, j, k);
 
             tileentitymobspawner.a(this.b(random));

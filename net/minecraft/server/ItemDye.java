@@ -14,14 +14,14 @@ public class ItemDye extends Item {
         if (itemstack.h() == 15) {
             int i1 = world.a(i, j, k);
 
-            if (i1 == Block.y.bi) {
-                ((BlockSapling) Block.y).b(world, i, j, k, world.l);
+            if (i1 == Block.SAPLING.bi) {
+                ((BlockSapling) Block.SAPLING).b(world, i, j, k, world.l);
                 --itemstack.a;
                 return true;
             }
 
-            if (i1 == Block.az.bi) {
-                ((BlockCrops) Block.az).c(world, i, j, k);
+            if (i1 == Block.CROPS.bi) {
+                ((BlockCrops) Block.CROPS).c(world, i, j, k);
                 --itemstack.a;
                 return true;
             }

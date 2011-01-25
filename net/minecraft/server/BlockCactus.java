@@ -67,7 +67,7 @@ public class BlockCactus extends Block {
         } else {
             int l = world.a(i, j - 1, k);
 
-            return l == Block.aV.bi || l == Block.E.bi;
+            return l == Block.CACTUS.bi || l == Block.SAND.bi;
         }
     }
 

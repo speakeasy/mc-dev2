@@ -35,11 +35,11 @@ public class BlockPortal extends BlockBreakable {
         byte b1 = 0;
         byte b2 = 0;
 
-        if (world.a(i - 1, j, k) == Block.ap.bi || world.a(i + 1, j, k) == Block.ap.bi) {
+        if (world.a(i - 1, j, k) == Block.OBSIDIAN.bi || world.a(i + 1, j, k) == Block.OBSIDIAN.bi) {
             b1 = 1;
         }
 
-        if (world.a(i, j, k - 1) == Block.ap.bi || world.a(i, j, k + 1) == Block.ap.bi) {
+        if (world.a(i, j, k - 1) == Block.OBSIDIAN.bi || world.a(i, j, k + 1) == Block.OBSIDIAN.bi) {
             b2 = 1;
         }
 
@@ -63,10 +63,10 @@ public class BlockPortal extends BlockBreakable {
                         int j1 = world.a(i + b1 * l, j + i1, k + b2 * l);
 
                         if (flag) {
-                            if (j1 != Block.ap.bi) {
+                            if (j1 != Block.OBSIDIAN.bi) {
                                 return false;
                             }
-                        } else if (j1 != 0 && j1 != Block.ar.bi) {
+                        } else if (j1 != 0 && j1 != Block.FIRE.bi) {
                             return false;
                         }
                     }
@@ -77,7 +77,7 @@ public class BlockPortal extends BlockBreakable {
 
             for (l = 0; l < 2; ++l) {
                 for (i1 = 0; i1 < 3; ++i1) {
-                    world.e(i + b1 * l, j + i1, k + b2 * l, Block.be.bi);
+                    world.e(i + b1 * l, j + i1, k + b2 * l, Block.PORTAL.bi);
                 }
             }
 
@@ -101,7 +101,7 @@ public class BlockPortal extends BlockBreakable {
             ;
         }
 
-        if (world.a(i, i1 - 1, k) != Block.ap.bi) {
+        if (world.a(i, i1 - 1, k) != Block.OBSIDIAN.bi) {
             world.e(i, j, k, 0);
         } else {
             int j1;
@@ -110,13 +110,13 @@ public class BlockPortal extends BlockBreakable {
                 ;
             }
 
-            if (j1 == 3 && world.a(i, i1 + j1, k) == Block.ap.bi) {
+            if (j1 == 3 && world.a(i, i1 + j1, k) == Block.OBSIDIAN.bi) {
                 boolean flag = world.a(i - 1, j, k) == this.bi || world.a(i + 1, j, k) == this.bi;
                 boolean flag1 = world.a(i, j, k - 1) == this.bi || world.a(i, j, k + 1) == this.bi;
 
                 if (flag && flag1) {
                     world.e(i, j, k, 0);
-                } else if ((world.a(i + b1, j, k + b2) != Block.ap.bi || world.a(i - b1, j, k - b2) != this.bi) && (world.a(i - b1, j, k - b2) != Block.ap.bi || world.a(i + b1, j, k + b2) != this.bi)) {
+                } else if ((world.a(i + b1, j, k + b2) != Block.OBSIDIAN.bi || world.a(i - b1, j, k - b2) != this.bi) && (world.a(i - b1, j, k - b2) != Block.OBSIDIAN.bi || world.a(i + b1, j, k + b2) != this.bi)) {
                     world.e(i, j, k, 0);
                 }
             } else {

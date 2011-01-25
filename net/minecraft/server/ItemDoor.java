@@ -19,9 +19,9 @@ public class ItemDoor extends Item {
             Block block;
 
             if (this.a == Material.c) {
-                block = Block.aE;
+                block = Block.WOODEN_DOOR;
             } else {
-                block = Block.aL;
+                block = Block.IRON_DOOR_BLOCK;
             }
 
             if (!block.a(world, i, j, k)) {

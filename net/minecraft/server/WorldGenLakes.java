@@ -83,8 +83,8 @@ public class WorldGenLakes extends WorldGenerator {
         for (i1 = 0; i1 < 16; ++i1) {
             for (i2 = 0; i2 < 16; ++i2) {
                 for (j2 = 4; j2 < 8; ++j2) {
-                    if (aboolean[(i1 * 16 + i2) * 8 + j2] && world.a(i + i1, j + j2 - 1, k + i2) == Block.v.bi && world.a(EnumSkyBlock.a, i + i1, j + j2, k + i2) > 0) {
-                        world.b(i + i1, j + j2 - 1, k + i2, Block.u.bi);
+                    if (aboolean[(i1 * 16 + i2) * 8 + j2] && world.a(i + i1, j + j2 - 1, k + i2) == Block.DIRT.bi && world.a(EnumSkyBlock.a, i + i1, j + j2, k + i2) > 0) {
+                        world.b(i + i1, j + j2 - 1, k + i2, Block.GRASS.bi);
                     }
                 }
             }
@@ -96,7 +96,7 @@ public class WorldGenLakes extends WorldGenerator {
                     for (j2 = 0; j2 < 8; ++j2) {
                         flag = !aboolean[(i1 * 16 + i2) * 8 + j2] && (i1 < 15 && aboolean[((i1 + 1) * 16 + i2) * 8 + j2] || i1 > 0 && aboolean[((i1 - 1) * 16 + i2) * 8 + j2] || i2 < 15 && aboolean[(i1 * 16 + i2 + 1) * 8 + j2] || i2 > 0 && aboolean[(i1 * 16 + (i2 - 1)) * 8 + j2] || j2 < 7 && aboolean[(i1 * 16 + i2) * 8 + j2 + 1] || j2 > 0 && aboolean[(i1 * 16 + i2) * 8 + (j2 - 1)]);
                         if (flag && (j2 < 4 || random.nextInt(2) != 0) && world.c(i + i1, j + j2, k + i2).a()) {
-                            world.b(i + i1, j + j2, k + i2, Block.t.bi);
+                            world.b(i + i1, j + j2, k + i2, Block.STONE.bi);
                         }
                     }
                 }

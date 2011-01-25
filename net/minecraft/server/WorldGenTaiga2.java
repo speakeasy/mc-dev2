@@ -32,7 +32,7 @@ public class WorldGenTaiga2 extends WorldGenerator {
                     for (int l2 = k - k2; l2 <= k + k2 && flag; ++l2) {
                         if (l1 >= 0 && l1 < 128) {
                             j2 = world.a(i2, l1, l2);
-                            if (j2 != 0 && j2 != Block.K.bi) {
+                            if (j2 != 0 && j2 != Block.LEAVES.bi) {
                                 flag = false;
                             }
                         } else {
@@ -46,8 +46,8 @@ public class WorldGenTaiga2 extends WorldGenerator {
                 return false;
             } else {
                 l1 = world.a(i, j - 1, k);
-                if ((l1 == Block.u.bi || l1 == Block.v.bi) && j < 128 - l - 1) {
-                    world.b(i, j - 1, k, Block.v.bi);
+                if ((l1 == Block.GRASS.bi || l1 == Block.DIRT.bi) && j < 128 - l - 1) {
+                    world.b(i, j - 1, k, Block.DIRT.bi);
                     k2 = random.nextInt(2);
                     i2 = 1;
                     byte b1 = 0;
@@ -65,7 +65,7 @@ public class WorldGenTaiga2 extends WorldGenerator {
                                 int i4 = l3 - k;
 
                                 if ((Math.abs(k3) != k2 || Math.abs(i4) != k2 || k2 <= 0) && !Block.o[world.a(i3, j3, l3)]) {
-                                    world.a(i3, j3, l3, Block.K.bi, 1);
+                                    world.a(i3, j3, l3, Block.LEAVES.bi, 1);
                                 }
                             }
                         }
@@ -86,8 +86,8 @@ public class WorldGenTaiga2 extends WorldGenerator {
 
                     for (j3 = 0; j3 < l - j2; ++j3) {
                         i3 = world.a(i, j + j3, k);
-                        if (i3 == 0 || i3 == Block.K.bi) {
-                            world.a(i, j + j3, k, Block.J.bi, 1);
+                        if (i3 == 0 || i3 == Block.LEAVES.bi) {
+                            world.a(i, j + j3, k, Block.LOG.bi, 1);
                         }
                     }
 

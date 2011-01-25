@@ -422,8 +422,8 @@ public abstract class Entity {
                     ++this.b;
                     StepSound stepsound = Block.m[k].br;
 
-                    if (this.l.a(l, i1 + 1, j1) == Block.aS.bi) {
-                        stepsound = Block.aS.br;
+                    if (this.l.a(l, i1 + 1, j1) == Block.SNOW.bi) {
+                        stepsound = Block.SNOW.br;
                         this.l.a(this, stepsound.c(), stepsound.a() * 0.15F, stepsound.b());
                     } else if (!Block.m[k].bt.d()) {
                         this.l.a(this, stepsound.c(), stepsound.a() * 0.15F, stepsound.b());

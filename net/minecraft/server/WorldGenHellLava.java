@@ -11,30 +11,30 @@ public class WorldGenHellLava extends WorldGenerator {
     }
 
     public boolean a(World world, Random random, int i, int j, int k) {
-        if (world.a(i, j + 1, k) != Block.bb.bi) {
+        if (world.a(i, j + 1, k) != Block.NETHERRACK.bi) {
             return false;
-        } else if (world.a(i, j, k) != 0 && world.a(i, j, k) != Block.bb.bi) {
+        } else if (world.a(i, j, k) != 0 && world.a(i, j, k) != Block.NETHERRACK.bi) {
             return false;
         } else {
             int l = 0;
 
-            if (world.a(i - 1, j, k) == Block.bb.bi) {
+            if (world.a(i - 1, j, k) == Block.NETHERRACK.bi) {
                 ++l;
             }
 
-            if (world.a(i + 1, j, k) == Block.bb.bi) {
+            if (world.a(i + 1, j, k) == Block.NETHERRACK.bi) {
                 ++l;
             }
 
-            if (world.a(i, j, k - 1) == Block.bb.bi) {
+            if (world.a(i, j, k - 1) == Block.NETHERRACK.bi) {
                 ++l;
             }
 
-            if (world.a(i, j, k + 1) == Block.bb.bi) {
+            if (world.a(i, j, k + 1) == Block.NETHERRACK.bi) {
                 ++l;
             }
 
-            if (world.a(i, j - 1, k) == Block.bb.bi) {
+            if (world.a(i, j - 1, k) == Block.NETHERRACK.bi) {
                 ++l;
             }
 

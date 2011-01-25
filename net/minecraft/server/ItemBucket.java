@@ -81,7 +81,7 @@ public class ItemBucket extends Item {
                     }
 
                     if (world.e(i, j, k) || !world.c(i, j, k).a()) {
-                        if (world.q.d && this.a == Block.A.bi) {
+                        if (world.q.d && this.a == Block.WATER.bi) {
                             world.a(d1 + 0.5D, d2 + 0.5D, d3 + 0.5D, "random.fizz", 0.5F, 2.6F + (world.l.nextFloat() - world.l.nextFloat()) * 0.8F);
 
                             for (int l = 0; l < 8; ++l) {

@@ -6,7 +6,7 @@ public class RecipesTools {
     private Object[][] b;
 
     public RecipesTools() {
-        this.b = new Object[][] { { Block.x, Block.w, Item.m, Item.l, Item.n}, { Item.r, Item.v, Item.e, Item.z, Item.G}, { Item.q, Item.u, Item.d, Item.y, Item.F}, { Item.s, Item.w, Item.f, Item.A, Item.H}, { Item.L, Item.M, Item.N, Item.O, Item.P}};
+        this.b = new Object[][] { { Block.WOOD, Block.COBBLESTONE, Item.m, Item.l, Item.n}, { Item.r, Item.v, Item.e, Item.z, Item.G}, { Item.q, Item.u, Item.d, Item.y, Item.F}, { Item.s, Item.w, Item.f, Item.A, Item.H}, { Item.L, Item.M, Item.N, Item.O, Item.P}};
     }
 
     public void a(CraftingManager craftingmanager) {

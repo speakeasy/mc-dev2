@@ -14,7 +14,7 @@ public class BlockCrops extends BlockFlower {
     }
 
     protected boolean c(int i) {
-        return i == Block.aA.bi;
+        return i == Block.SOIL.bi;
     }
 
     public void a(World world, int i, int j, int k, Random random) {
@@ -56,7 +56,7 @@ public class BlockCrops extends BlockFlower {
                 int j3 = world.a(l2, j - 1, i3);
                 float f2 = 0.0F;
 
-                if (j3 == Block.aA.bi) {
+                if (j3 == Block.SOIL.bi) {
                     f2 = 1.0F;
                     if (world.b(l2, j - 1, i3) > 0) {
                         f2 = 3.0F;

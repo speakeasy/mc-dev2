@@ -45,7 +45,7 @@ public class Item {
     public static Item N = (new ItemHoe(36, EnumToolMaterial.c)).a(2, 8).a("hoeIron");
     public static Item O = (new ItemHoe(37, EnumToolMaterial.d)).a(3, 8).a("hoeDiamond");
     public static Item P = (new ItemHoe(38, EnumToolMaterial.e)).a(4, 8).a("hoeGold");
-    public static Item Q = (new ItemSeeds(39, Block.az.bi)).a(9, 0).a("seeds");
+    public static Item Q = (new ItemSeeds(39, Block.CROPS.bi)).a(9, 0).a("seeds");
     public static Item R = (new Item(40)).a(9, 1).a("wheat");
     public static Item S = (new ItemFood(41, 5)).a(9, 2).a("bread");
     public static Item T = (new ItemArmor(42, 0, 0, 0)).a(0, 0).a("helmetCloth");
@@ -76,8 +76,8 @@ public class Item {
     public static Item as = (new ItemSign(67)).a(10, 2).a("sign");
     public static Item at = (new ItemDoor(68, Material.c)).a(11, 2).a("doorWood");
     public static Item au = (new ItemBucket(69, 0)).a(10, 4).a("bucket");
-    public static Item av = (new ItemBucket(70, Block.A.bi)).a(11, 4).a("bucketWater").a(au);
-    public static Item aw = (new ItemBucket(71, Block.C.bi)).a(12, 4).a("bucketLava").a(au);
+    public static Item av = (new ItemBucket(70, Block.WATER.bi)).a(11, 4).a("bucketWater").a(au);
+    public static Item aw = (new ItemBucket(71, Block.LAVA.bi)).a(12, 4).a("bucketLava").a(au);
     public static Item ax = (new ItemMinecart(72, 0)).a(7, 8).a("minecart");
     public static Item ay = (new ItemSaddle(73)).a(8, 6).a("saddle");
     public static Item az = (new ItemDoor(74, Material.e)).a(12, 2).a("doorIron");
@@ -88,7 +88,7 @@ public class Item {
     public static Item aE = (new ItemBucket(79, -1)).a(13, 4).a("milk").a(au);
     public static Item aF = (new Item(80)).a(6, 1).a("brick");
     public static Item aG = (new Item(81)).a(9, 3).a("clay");
-    public static Item aH = (new ItemReed(82, Block.aX)).a(11, 1).a("reeds");
+    public static Item aH = (new ItemReed(82, Block.SUGAR_CANE_BLOCK)).a(11, 1).a("reeds");
     public static Item aI = (new Item(83)).a(10, 3).a("paper");
     public static Item aJ = (new Item(84)).a(11, 3).a("book");
     public static Item aK = (new Item(85)).a(14, 1).a("slimeball");
@@ -104,7 +104,7 @@ public class Item {
     public static Item aU = (new ItemDye(95)).a(14, 4).a("dyePowder");
     public static Item aV = (new Item(96)).a(12, 1).a("bone").e();
     public static Item aW = (new Item(97)).a(13, 0).a("sugar").e();
-    public static Item aX = (new ItemReed(98, Block.bg)).c(1).a(13, 1).a("cake");
+    public static Item aX = (new ItemReed(98, Block.CAKE_BLOCK)).c(1).a(13, 1).a("cake");
     public static Item aY = (new ItemRecord(2000, "13")).a(0, 15).a("record");
     public static Item aZ = (new ItemRecord(2001, "cat")).a(1, 15).a("record");
     public final int ba;

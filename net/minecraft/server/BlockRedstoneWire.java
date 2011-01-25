@@ -320,6 +320,6 @@ public class BlockRedstoneWire extends Block {
     public static boolean b(IBlockAccess iblockaccess, int i, int j, int k) {
         int l = iblockaccess.a(i, j, k);
 
-        return l == Block.av.bi ? true : (l == 0 ? false : Block.m[l].c());
+        return l == Block.REDSTONE_WIRE.bi ? true : (l == 0 ? false : Block.m[l].c());
     }
 }

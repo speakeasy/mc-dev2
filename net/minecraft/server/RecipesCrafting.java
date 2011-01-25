@@ -5,9 +5,9 @@ public class RecipesCrafting {
     public RecipesCrafting() {}
 
     public void a(CraftingManager craftingmanager) {
-        craftingmanager.a(new ItemStack(Block.au), new Object[] { "###", "# #", "###", Character.valueOf('#'), Block.x});
-        craftingmanager.a(new ItemStack(Block.aB), new Object[] { "###", "# #", "###", Character.valueOf('#'), Block.w});
-        craftingmanager.a(new ItemStack(Block.ay), new Object[] { "##", "##", Character.valueOf('#'), Block.x});
-        craftingmanager.a(new ItemStack(Block.Q), new Object[] { "##", "##", Character.valueOf('#'), Block.E});
+        craftingmanager.a(new ItemStack(Block.CHEST), new Object[] { "###", "# #", "###", Character.valueOf('#'), Block.WOOD});
+        craftingmanager.a(new ItemStack(Block.FURNACE), new Object[] { "###", "# #", "###", Character.valueOf('#'), Block.COBBLESTONE});
+        craftingmanager.a(new ItemStack(Block.WORKBENCH), new Object[] { "##", "##", Character.valueOf('#'), Block.WOOD});
+        craftingmanager.a(new ItemStack(Block.SANDSTONE), new Object[] { "##", "##", Character.valueOf('#'), Block.SAND});
     }
 }

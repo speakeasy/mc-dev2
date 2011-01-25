@@ -523,7 +523,7 @@ public abstract class EntityLiving extends Entity {
         int j = MathHelper.b(this.z.b);
         int k = MathHelper.b(this.r);
 
-        return this.l.a(i, j, k) == Block.aF.bi || this.l.a(i, j + 1, k) == Block.aF.bi;
+        return this.l.a(i, j, k) == Block.LADDER.bi || this.l.a(i, j + 1, k) == Block.LADDER.bi;
     }
 
     public void a(NBTTagCompound nbttagcompound) {

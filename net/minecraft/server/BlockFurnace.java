@@ -13,7 +13,7 @@ public class BlockFurnace extends BlockContainer {
     }
 
     public int a(int i, Random random) {
-        return Block.aB.bi;
+        return Block.FURNACE.bi;
     }
 
     public void e(World world, int i, int j, int k) {
@@ -67,9 +67,9 @@ public class BlockFurnace extends BlockContainer {
         TileEntity tileentity = world.m(i, j, k);
 
         if (flag) {
-            world.e(i, j, k, Block.aC.bi);
+            world.e(i, j, k, Block.BURNING_FURNACE.bi);
         } else {
-            world.e(i, j, k, Block.aB.bi);
+            world.e(i, j, k, Block.FURNACE.bi);
         }
 
         world.c(i, j, k, l);

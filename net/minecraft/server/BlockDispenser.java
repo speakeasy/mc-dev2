@@ -14,7 +14,7 @@ public class BlockDispenser extends BlockContainer {
     }
 
     public int a(int i, Random random) {
-        return Block.P.bi;
+        return Block.DISPENSER.bi;
     }
 
     public void e(World world, int i, int j, int k) {

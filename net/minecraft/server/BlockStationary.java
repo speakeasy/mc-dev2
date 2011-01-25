@@ -41,7 +41,7 @@ public class BlockStationary extends BlockFluids {
 
                 if (j1 == 0) {
                     if (this.j(world, i - 1, j, k) || this.j(world, i + 1, j, k) || this.j(world, i, j, k - 1) || this.j(world, i, j, k + 1) || this.j(world, i, j - 1, k) || this.j(world, i, j + 1, k)) {
-                        world.e(i, j, k, Block.ar.bi);
+                        world.e(i, j, k, Block.FIRE.bi);
                         return;
                     }
                 } else if (Block.m[j1].bt.c()) {

@@ -231,7 +231,7 @@ public class BlockFlowing extends BlockFluids {
     private boolean k(World world, int i, int j, int k) {
         int l = world.a(i, j, k);
 
-        if (l != Block.aE.bi && l != Block.aL.bi && l != Block.aD.bi && l != Block.aF.bi && l != Block.aX.bi) {
+        if (l != Block.WOODEN_DOOR.bi && l != Block.IRON_DOOR_BLOCK.bi && l != Block.SIGN_POST.bi && l != Block.LADDER.bi && l != Block.SUGAR_CANE_BLOCK.bi) {
             if (l == 0) {
                 return false;
             } else {

@@ -25,30 +25,30 @@ public class BlockStep extends Block {
     }
 
     public void b(World world, int i, int j, int k, int l) {
-        if (this == Block.ak) {
+        if (this == Block.STEP) {
             ;
         }
     }
 
     public void e(World world, int i, int j, int k) {
-        if (this != Block.ak) {
+        if (this != Block.STEP) {
             super.e(world, i, j, k);
         }
 
         int l = world.a(i, j - 1, k);
 
-        if (l == ak.bi) {
+        if (l == STEP.bi) {
             world.e(i, j, k, 0);
-            world.e(i, j - 1, k, Block.aj.bi);
+            world.e(i, j - 1, k, Block.DOUBLE_STEP.bi);
         }
     }
 
     public int a(int i, Random random) {
-        return Block.ak.bi;
+        return Block.STEP.bi;
     }
 
     public boolean a(IBlockAccess iblockaccess, int i, int j, int k, int l) {
-        if (this != Block.ak) {
+        if (this != Block.STEP) {
             super.a(iblockaccess, i, j, k, l);
         }
 

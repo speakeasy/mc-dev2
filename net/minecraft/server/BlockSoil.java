@@ -30,7 +30,7 @@ public class BlockSoil extends Block {
                 if (l > 0) {
                     world.c(i, j, k, l - 1);
                 } else if (!this.g(world, i, j, k)) {
-                    world.e(i, j, k, Block.v.bi);
+                    world.e(i, j, k, Block.DIRT.bi);
                 }
             }
         }
@@ -38,7 +38,7 @@ public class BlockSoil extends Block {
 
     public void b(World world, int i, int j, int k, Entity entity) {
         if (world.l.nextInt(4) == 0) {
-            world.e(i, j, k, Block.v.bi);
+            world.e(i, j, k, Block.DIRT.bi);
         }
     }
 
@@ -47,7 +47,7 @@ public class BlockSoil extends Block {
 
         for (int l = i - b1; l <= i + b1; ++l) {
             for (int i1 = k - b1; i1 <= k + b1; ++i1) {
-                if (world.a(l, j + 1, i1) == Block.az.bi) {
+                if (world.a(l, j + 1, i1) == Block.CROPS.bi) {
                     return true;
                 }
             }
@@ -75,11 +75,11 @@ public class BlockSoil extends Block {
         Material material = world.c(i, j + 1, k);
 
         if (material.a()) {
-            world.e(i, j, k, Block.v.bi);
+            world.e(i, j, k, Block.DIRT.bi);
         }
     }
 
     public int a(int i, Random random) {
-        return Block.v.a(0, random);
+        return Block.DIRT.a(0, random);
     }
 }

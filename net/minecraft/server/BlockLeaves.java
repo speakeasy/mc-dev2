@@ -23,7 +23,7 @@ public class BlockLeaves extends BlockLeavesBase {
                     for (int k1 = -b1; k1 <= b1; ++k1) {
                         int l1 = world.a(i + i1, j + j1, k + k1);
 
-                        if (l1 == Block.K.bi) {
+                        if (l1 == Block.LEAVES.bi) {
                             int i2 = world.b(i + i1, j + j1, k + k1);
 
                             world.d(i + i1, j + j1, k + k1, i2 | 4);
@@ -60,9 +60,9 @@ public class BlockLeaves extends BlockLeavesBase {
                         for (i2 = -b1; i2 <= b1; ++i2) {
                             for (j2 = -b1; j2 <= b1; ++j2) {
                                 k2 = world.a(i + l1, j + i2, k + j2);
-                                if (k2 == Block.J.bi) {
+                                if (k2 == Block.LOG.bi) {
                                     this.b[(l1 + k1) * j1 + (i2 + k1) * b2 + j2 + k1] = 0;
-                                } else if (k2 == Block.K.bi) {
+                                } else if (k2 == Block.LEAVES.bi) {
                                     this.b[(l1 + k1) * j1 + (i2 + k1) * b2 + j2 + k1] = -2;
                                 } else {
                                     this.b[(l1 + k1) * j1 + (i2 + k1) * b2 + j2 + k1] = -1;
@@ -126,7 +126,7 @@ public class BlockLeaves extends BlockLeavesBase {
     }
 
     public int a(int i, Random random) {
-        return Block.y.bi;
+        return Block.SAPLING.bi;
     }
 
     public boolean a() {

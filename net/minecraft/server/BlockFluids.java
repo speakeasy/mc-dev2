@@ -209,9 +209,9 @@ public abstract class BlockFluids extends Block {
                     int l = world.b(i, j, k);
 
                     if (l == 0) {
-                        world.e(i, j, k, Block.ap.bi);
+                        world.e(i, j, k, Block.OBSIDIAN.bi);
                     } else if (l <= 4) {
-                        world.e(i, j, k, Block.w.bi);
+                        world.e(i, j, k, Block.COBBLESTONE.bi);
                     }
 
                     this.h(world, i, j, k);

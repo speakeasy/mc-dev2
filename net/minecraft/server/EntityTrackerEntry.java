@@ -230,11 +230,11 @@ public class EntityTrackerEntry {
                 if (this.a instanceof EntityFallingSand) {
                     EntityFallingSand entityfallingsand = (EntityFallingSand) this.a;
 
-                    if (entityfallingsand.a == Block.E.bi) {
+                    if (entityfallingsand.a == Block.SAND.bi) {
                         return new Packet23VehicleSpawn(this.a, 70);
                     }
 
-                    if (entityfallingsand.a == Block.F.bi) {
+                    if (entityfallingsand.a == Block.GRAVEL.bi) {
                         return new Packet23VehicleSpawn(this.a, 71);
                     }
                 }

@@ -18,7 +18,7 @@ public class BlockFlower extends Block {
     }
 
     protected boolean c(int i) {
-        return i == Block.u.bi || i == Block.v.bi || i == Block.aA.bi;
+        return i == Block.GRASS.bi || i == Block.DIRT.bi || i == Block.SOIL.bi;
     }
 
     public void b(World world, int i, int j, int k, int l) {

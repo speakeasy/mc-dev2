@@ -37,7 +37,7 @@ public class BlockReed extends Block {
     public boolean a(World world, int i, int j, int k) {
         int l = world.a(i, j - 1, k);
 
-        return l == this.bi ? true : (l != Block.u.bi && l != Block.v.bi ? false : (world.c(i - 1, j - 1, k) == Material.f ? true : (world.c(i + 1, j - 1, k) == Material.f ? true : (world.c(i, j - 1, k - 1) == Material.f ? true : world.c(i, j - 1, k + 1) == Material.f))));
+        return l == this.bi ? true : (l != Block.GRASS.bi && l != Block.DIRT.bi ? false : (world.c(i - 1, j - 1, k) == Material.f ? true : (world.c(i + 1, j - 1, k) == Material.f ? true : (world.c(i, j - 1, k - 1) == Material.f ? true : world.c(i, j - 1, k + 1) == Material.f))));
     }
 
     public void b(World world, int i, int j, int k, int l) {

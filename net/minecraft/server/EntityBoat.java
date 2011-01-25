@@ -64,7 +64,7 @@ public class EntityBoat extends Entity {
                 int j;
 
                 for (j = 0; j < 3; ++j) {
-                    this.a(Block.x.bi, 1, 0.0F);
+                    this.a(Block.WOOD.bi, 1, 0.0F);
                 }
 
                 for (j = 0; j < 2; ++j) {
@@ -213,7 +213,7 @@ public class EntityBoat extends Entity {
                     int k;
 
                     for (k = 0; k < 3; ++k) {
-                        this.a(Block.x.bi, 1, 0.0F);
+                        this.a(Block.WOOD.bi, 1, 0.0F);
                     }
 
                     for (k = 0; k < 2; ++k) {

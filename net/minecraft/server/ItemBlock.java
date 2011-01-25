@@ -11,7 +11,7 @@ public class ItemBlock extends Item {
     }
 
     public boolean a(ItemStack itemstack, EntityPlayer entityplayer, World world, int i, int j, int k, int l) {
-        if (world.a(i, j, k) == Block.aS.bi) {
+        if (world.a(i, j, k) == Block.SNOW.bi) {
             l = 0;
         } else {
             if (l == 0) {

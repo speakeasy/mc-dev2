@@ -91,7 +91,7 @@ public class BlockRedstoneTorch extends BlockTorch {
 
         if (this.a) {
             if (flag) {
-                world.b(i, j, k, Block.aP.bi, world.b(i, j, k));
+                world.b(i, j, k, Block.REDSTONE_TORCH_OFF.bi, world.b(i, j, k));
                 if (this.a(world, i, j, k, true)) {
                     world.a((double) ((float) i + 0.5F), (double) ((float) j + 0.5F), (double) ((float) k + 0.5F), "random.fizz", 0.5F, 2.6F + (world.l.nextFloat() - world.l.nextFloat()) * 0.8F);
 
@@ -105,7 +105,7 @@ public class BlockRedstoneTorch extends BlockTorch {
                 }
             }
         } else if (!flag && !this.a(world, i, j, k, false)) {
-            world.b(i, j, k, Block.aQ.bi, world.b(i, j, k));
+            world.b(i, j, k, Block.REDSTONE_TORCH_ON.bi, world.b(i, j, k));
         }
     }
 
@@ -119,7 +119,7 @@ public class BlockRedstoneTorch extends BlockTorch {
     }
 
     public int a(int i, Random random) {
-        return Block.aQ.bi;
+        return Block.REDSTONE_TORCH_ON.bi;
     }
 
     public boolean c() {

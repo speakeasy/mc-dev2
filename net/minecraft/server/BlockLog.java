@@ -14,7 +14,7 @@ public class BlockLog extends Block {
     }
 
     public int a(int i, Random random) {
-        return Block.J.bi;
+        return Block.LOG.bi;
     }
 
     public void b(World world, int i, int j, int k) {
@@ -27,7 +27,7 @@ public class BlockLog extends Block {
                     for (int k1 = -b1; k1 <= b1; ++k1) {
                         int l1 = world.a(i + i1, j + j1, k + k1);
 
-                        if (l1 == Block.K.bi) {
+                        if (l1 == Block.LEAVES.bi) {
                             int i2 = world.b(i + i1, j + j1, k + k1);
 
                             if ((i2 & 4) == 0) {

@@ -73,9 +73,9 @@ public class EntityMinecart extends Entity implements IInventory {
             if (this.a > 40) {
                 this.a(Item.ax.ba, 1, 0.0F);
                 if (this.d == 1) {
-                    this.a(Block.au.bi, 1, 0.0F);
+                    this.a(Block.CHEST.bi, 1, 0.0F);
                 } else if (this.d == 2) {
-                    this.a(Block.aB.bi, 1, 0.0F);
+                    this.a(Block.FURNACE.bi, 1, 0.0F);
                 }
 
                 this.q();
@@ -165,7 +165,7 @@ public class EntityMinecart extends Entity implements IInventory {
             int j = MathHelper.b(this.q);
             int k = MathHelper.b(this.r);
 
-            if (this.l.a(i, j - 1, k) == Block.aG.bi) {
+            if (this.l.a(i, j - 1, k) == Block.RAILS.bi) {
                 --j;
             }
 
@@ -173,7 +173,7 @@ public class EntityMinecart extends Entity implements IInventory {
             boolean flag = false;
 
             d1 = 0.0078125D;
-            if (this.l.a(i, j, k) == Block.aG.bi) {
+            if (this.l.a(i, j, k) == Block.RAILS.bi) {
                 Vec3D vec3d = this.g(this.p, this.q, this.r);
                 int l = this.l.b(i, j, k);
 
@@ -429,11 +429,11 @@ public class EntityMinecart extends Entity implements IInventory {
         int j = MathHelper.b(d2);
         int k = MathHelper.b(d3);
 
-        if (this.l.a(i, j - 1, k) == Block.aG.bi) {
+        if (this.l.a(i, j - 1, k) == Block.RAILS.bi) {
             --j;
         }
 
-        if (this.l.a(i, j, k) == Block.aG.bi) {
+        if (this.l.a(i, j, k) == Block.RAILS.bi) {
             int l = this.l.b(i, j, k);
 
             d2 = (double) j;

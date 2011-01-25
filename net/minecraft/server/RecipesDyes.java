@@ -6,11 +6,11 @@ public class RecipesDyes {
 
     public void a(CraftingManager craftingmanager) {
         for (int i = 0; i < 16; ++i) {
-            craftingmanager.b(new ItemStack(Block.ab, 1, BlockCloth.d(i)), new Object[] { new ItemStack(Item.aU, 1, i), new ItemStack(Item.c[Block.ab.bi], 1, 0)});
+            craftingmanager.b(new ItemStack(Block.WOOL, 1, BlockCloth.d(i)), new Object[] { new ItemStack(Item.aU, 1, i), new ItemStack(Item.c[Block.WOOL.bi], 1, 0)});
         }
 
-        craftingmanager.b(new ItemStack(Item.aU, 2, 11), new Object[] { Block.ad});
-        craftingmanager.b(new ItemStack(Item.aU, 2, 1), new Object[] { Block.ae});
+        craftingmanager.b(new ItemStack(Item.aU, 2, 11), new Object[] { Block.YELLOW_FLOWER});
+        craftingmanager.b(new ItemStack(Item.aU, 2, 1), new Object[] { Block.RED_ROSE});
         craftingmanager.b(new ItemStack(Item.aU, 3, 15), new Object[] { Item.aV});
         craftingmanager.b(new ItemStack(Item.aU, 2, 9), new Object[] { new ItemStack(Item.aU, 1, 1), new ItemStack(Item.aU, 1, 15)});
         craftingmanager.b(new ItemStack(Item.aU, 2, 14), new Object[] { new ItemStack(Item.aU, 1, 1), new ItemStack(Item.aU, 1, 11)});

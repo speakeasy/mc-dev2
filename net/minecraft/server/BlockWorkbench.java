@@ -8,7 +8,7 @@ public class BlockWorkbench extends Block {
     }
 
     public int a(int i) {
-        return i == 1 ? this.bh - 16 : (i == 0 ? Block.x.a(0) : (i != 2 && i != 4 ? this.bh : this.bh + 1));
+        return i == 1 ? this.bh - 16 : (i == 0 ? Block.WOOD.a(0) : (i != 2 && i != 4 ? this.bh : this.bh + 1));
     }
 
     public boolean a(World world, int i, int j, int k, EntityPlayer entityplayer) {

@@ -443,7 +443,7 @@ public class World implements IBlockAccess {
 
             if (flag) {
                 l = this.a(i, j, k);
-                if (l == Block.ak.bi || l == Block.aA.bi) {
+                if (l == Block.STEP.bi || l == Block.SOIL.bi) {
                     int i1 = this.a(i, j + 1, k, false);
                     int j1 = this.a(i + 1, j, k, false);
                     int k1 = this.a(i - 1, j, k, false);
@@ -1136,7 +1136,7 @@ public class World implements IBlockAccess {
                     for (int i2 = i1; i2 < j1; ++i2) {
                         int j2 = this.a(k1, l1, i2);
 
-                        if (j2 == Block.ar.bi || j2 == Block.C.bi || j2 == Block.D.bi) {
+                        if (j2 == Block.FIRE.bi || j2 == Block.LAVA.bi || j2 == Block.STATIONARY_LAVA.bi) {
                             return true;
                         }
                     }
@@ -1319,10 +1319,10 @@ public class World implements IBlockAccess {
         } else {
             ++this.J;
 
+            boolean flag;
+
             try {
                 int i = 500;
-
-                boolean flag;
 
                 while (this.A.size() > 0) {
                     --i;
@@ -1335,10 +1335,11 @@ public class World implements IBlockAccess {
                 }
 
                 flag = false;
-                return flag;
             } finally {
                 --this.J;
             }
+
+            return flag;
         }
     }
 
@@ -1613,7 +1614,7 @@ public class World implements IBlockAccess {
             axisalignedbb = null;
         }
 
-        return axisalignedbb != null && !this.a(axisalignedbb) ? false : (block != Block.A && block != Block.B && block != Block.C && block != Block.D && block != Block.ar && block != Block.aS ? i > 0 && block == null && block1.a(this, j, k, l) : true);
+        return axisalignedbb != null && !this.a(axisalignedbb) ? false : (block != Block.WATER && block != Block.STATIONARY_WATER && block != Block.LAVA && block != Block.STATIONARY_LAVA && block != Block.FIRE && block != Block.SNOW ? i > 0 && block == null && block1.a(this, j, k, l) : true);
     }
 
     public PathEntity a(Entity entity, Entity entity1, float f1) {

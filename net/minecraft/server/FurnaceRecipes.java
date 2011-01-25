@@ -13,16 +13,16 @@ public class FurnaceRecipes {
     }
 
     private FurnaceRecipes() {
-        this.a(Block.H.bi, new ItemStack(Item.m));
-        this.a(Block.G.bi, new ItemStack(Item.n));
-        this.a(Block.aw.bi, new ItemStack(Item.l));
-        this.a(Block.E.bi, new ItemStack(Block.M));
+        this.a(Block.IRON_ORE.bi, new ItemStack(Item.m));
+        this.a(Block.GOLD_ORE.bi, new ItemStack(Item.n));
+        this.a(Block.DIAMOND_ORE.bi, new ItemStack(Item.l));
+        this.a(Block.SAND.bi, new ItemStack(Block.GLASS));
         this.a(Item.ao.ba, new ItemStack(Item.ap));
         this.a(Item.aS.ba, new ItemStack(Item.aT));
-        this.a(Block.w.bi, new ItemStack(Block.t));
+        this.a(Block.COBBLESTONE.bi, new ItemStack(Block.STONE));
         this.a(Item.aG.ba, new ItemStack(Item.aF));
-        this.a(Block.aV.bi, new ItemStack(Item.aU, 1, 2));
-        this.a(Block.J.bi, new ItemStack(Item.k, 1, 1));
+        this.a(Block.CACTUS.bi, new ItemStack(Item.aU, 1, 2));
+        this.a(Block.LOG.bi, new ItemStack(Item.k, 1, 1));
     }
 
     public void a(int i, ItemStack itemstack) {

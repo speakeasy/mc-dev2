@@ -6,7 +6,7 @@ public class RecipesArmor {
     private Object[][] b;
 
     public RecipesArmor() {
-        this.b = new Object[][] { { Item.aD, Block.ar, Item.m, Item.l, Item.n}, { Item.T, Item.X, Item.ab, Item.af, Item.aj}, { Item.U, Item.Y, Item.ac, Item.ag, Item.ak}, { Item.V, Item.Z, Item.ad, Item.ah, Item.al}, { Item.W, Item.aa, Item.ae, Item.ai, Item.am}};
+        this.b = new Object[][] { { Item.aD, Block.FIRE, Item.m, Item.l, Item.n}, { Item.T, Item.X, Item.ab, Item.af, Item.aj}, { Item.U, Item.Y, Item.ac, Item.ag, Item.ak}, { Item.V, Item.Z, Item.ad, Item.ah, Item.al}, { Item.W, Item.aa, Item.ae, Item.ai, Item.am}};
     }
 
     public void a(CraftingManager craftingmanager) {

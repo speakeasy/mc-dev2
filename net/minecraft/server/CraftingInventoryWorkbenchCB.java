@@ -55,6 +55,6 @@ public class CraftingInventoryWorkbenchCB extends CraftingInventoryCB {
     }
 
     public boolean b(EntityPlayer entityplayer) {
-        return this.c.a(this.h, this.i, this.j) != Block.ay.bi ? false : entityplayer.d((double) this.h + 0.5D, (double) this.i + 0.5D, (double) this.j + 0.5D) <= 64.0D;
+        return this.c.a(this.h, this.i, this.j) != Block.WORKBENCH.bi ? false : entityplayer.d((double) this.h + 0.5D, (double) this.i + 0.5D, (double) this.j + 0.5D) <= 64.0D;
     }
 }

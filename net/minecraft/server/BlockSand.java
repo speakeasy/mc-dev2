@@ -53,7 +53,7 @@ public class BlockSand extends Block {
 
         if (l == 0) {
             return true;
-        } else if (l == Block.ar.bi) {
+        } else if (l == Block.FIRE.bi) {
             return true;
         } else {
             Material material = Block.m[l].bt;
