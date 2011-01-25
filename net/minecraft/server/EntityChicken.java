@@ -43,7 +43,7 @@ public class EntityChicken extends EntityAnimals {
         this.b += this.al * 2.0F;
         if (!this.l.z && --this.am <= 0) {
             this.l.a(this, "mob.chickenplop", 1.0F, (this.W.nextFloat() - this.W.nextFloat()) * 0.2F + 1.0F);
-            this.a(Item.aN.ba, 1);
+            this.a(Item.EGG.ba, 1);
             this.am = this.W.nextInt(6000) + 6000;
         }
     }
@@ -71,6 +71,6 @@ public class EntityChicken extends EntityAnimals {
     }
 
     protected int h() {
-        return Item.J.ba;
+        return Item.FEATHER.ba;
     }
 }

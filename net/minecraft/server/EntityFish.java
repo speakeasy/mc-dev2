@@ -96,7 +96,7 @@ public class EntityFish extends Entity {
             if (!this.l.z) {
                 ItemStack itemstack = this.b.P();
 
-                if (this.b.G || !this.b.B() || itemstack == null || itemstack.a() != Item.aP || this.b(this.b) > 1024.0D) {
+                if (this.b.G || !this.b.B() || itemstack == null || itemstack.a() != Item.FISHING_ROD || this.b(this.b) > 1024.0D) {
                     this.q();
                     this.b.aE = null;
                     return;
@@ -310,7 +310,7 @@ public class EntityFish extends Entity {
             this.c.u += d3 * d5;
             b1 = 3;
         } else if (this.ao > 0) {
-            EntityItem entityitem = new EntityItem(this.l, this.p, this.q, this.r, new ItemStack(Item.aS));
+            EntityItem entityitem = new EntityItem(this.l, this.p, this.q, this.r, new ItemStack(Item.RAW_FISH));
             double d6 = this.b.p - this.p;
             double d7 = this.b.q - this.q;
             double d8 = this.b.r - this.r;

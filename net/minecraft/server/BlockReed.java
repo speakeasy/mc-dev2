@@ -60,7 +60,7 @@ public class BlockReed extends Block {
     }
 
     public int a(int i, Random random) {
-        return Item.aH.ba;
+        return Item.SUGAR_CANE.ba;
     }
 
     public boolean a() {

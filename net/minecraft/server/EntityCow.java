@@ -33,14 +33,14 @@ public class EntityCow extends EntityAnimals {
     }
 
     protected int h() {
-        return Item.aD.ba;
+        return Item.LEATHER.ba;
     }
 
     public boolean a(EntityPlayer entityplayer) {
         ItemStack itemstack = entityplayer.an.e();
 
-        if (itemstack != null && itemstack.c == Item.au.ba) {
-            entityplayer.an.a(entityplayer.an.c, new ItemStack(Item.aE));
+        if (itemstack != null && itemstack.c == Item.BUCKET.ba) {
+            entityplayer.an.a(entityplayer.an.c, new ItemStack(Item.MILK_BUCKET));
             return true;
         } else {
             return false;

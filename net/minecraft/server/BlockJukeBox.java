@@ -24,7 +24,7 @@ public class BlockJukeBox extends Block {
     public void f(World world, int i, int j, int k, int l) {
         world.a((String) null, i, j, k);
         world.c(i, j, k, 0);
-        int i1 = Item.aY.ba + l - 1;
+        int i1 = Item.GOLD_RECORD.ba + l - 1;
         float f1 = 0.7F;
         double d1 = (double) (world.l.nextFloat() * f1) + (double) (1.0F - f1) * 0.5D;
         double d2 = (double) (world.l.nextFloat() * f1) + (double) (1.0F - f1) * 0.2D + 0.6D;

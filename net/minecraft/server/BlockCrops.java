@@ -87,7 +87,7 @@ public class BlockCrops extends BlockFlower {
                     float f2 = world.l.nextFloat() * f1 + (1.0F - f1) * 0.5F;
                     float f3 = world.l.nextFloat() * f1 + (1.0F - f1) * 0.5F;
                     float f4 = world.l.nextFloat() * f1 + (1.0F - f1) * 0.5F;
-                    EntityItem entityitem = new EntityItem(world, (double) ((float) i + f2), (double) ((float) j + f3), (double) ((float) k + f4), new ItemStack(Item.Q));
+                    EntityItem entityitem = new EntityItem(world, (double) ((float) i + f2), (double) ((float) j + f3), (double) ((float) k + f4), new ItemStack(Item.SEEDS));
 
                     entityitem.c = 10;
                     world.a((Entity) entityitem);
@@ -97,7 +97,7 @@ public class BlockCrops extends BlockFlower {
     }
 
     public int a(int i, Random random) {
-        return i == 7 ? Item.R.ba : -1;
+        return i == 7 ? Item.WHEAT.ba : -1;
     }
 
     public int a(Random random) {

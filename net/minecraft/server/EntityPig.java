@@ -44,7 +44,7 @@ public class EntityPig extends EntityAnimals {
     }
 
     protected int h() {
-        return Item.ao.ba;
+        return Item.PORK.ba;
     }
 
     public boolean K() {

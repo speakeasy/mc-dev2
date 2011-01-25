@@ -68,7 +68,7 @@ public class EntityBoat extends Entity {
                 }
 
                 for (j = 0; j < 2; ++j) {
-                    this.a(Item.B.ba, 1, 0.0F);
+                    this.a(Item.STICK.ba, 1, 0.0F);
                 }
 
                 this.q();
@@ -217,7 +217,7 @@ public class EntityBoat extends Entity {
                     }
 
                     for (k = 0; k < 2; ++k) {
-                        this.a(Item.B.ba, 1, 0.0F);
+                        this.a(Item.STICK.ba, 1, 0.0F);
                     }
                 }
             } else {

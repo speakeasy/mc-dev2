@@ -271,7 +271,7 @@ public class BlockRedstoneWire extends Block {
     }
 
     public int a(int i, Random random) {
-        return Item.aA.ba;
+        return Item.REDSTONE.ba;
     }
 
     public boolean d(World world, int i, int j, int k, int l) {

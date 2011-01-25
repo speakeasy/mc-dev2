@@ -48,7 +48,7 @@ public class BlockRedstoneOre extends Block {
     }
 
     public int a(int i, Random random) {
-        return Item.aA.ba;
+        return Item.REDSTONE.ba;
     }
 
     public int a(Random random) {

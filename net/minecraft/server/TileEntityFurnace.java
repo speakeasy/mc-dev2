@@ -173,7 +173,7 @@ public class TileEntityFurnace extends TileEntity implements IInventory {
         } else {
             int i = itemstack.a().ba;
 
-            return i < 256 && Block.m[i].bt == Material.c ? 300 : (i == Item.B.ba ? 100 : (i == Item.k.ba ? 1600 : (i == Item.aw.ba ? 20000 : 0)));
+            return i < 256 && Block.m[i].bt == Material.c ? 300 : (i == Item.STICK.ba ? 100 : (i == Item.COAL.ba ? 1600 : (i == Item.LAVA_BUCKET.ba ? 20000 : 0)));
         }
     }
 

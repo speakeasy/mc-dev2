@@ -118,7 +118,7 @@ public class EntitySlime extends EntityLiving implements IMobs {
     }
 
     protected int h() {
-        return this.c == 1 ? Item.aK.ba : 0;
+        return this.c == 1 ? Item.SLIME_BALL.ba : 0;
     }
 
     public boolean b() {

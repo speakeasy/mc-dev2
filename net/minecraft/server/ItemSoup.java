@@ -8,6 +8,6 @@ public class ItemSoup extends ItemFood {
 
     public ItemStack a(ItemStack itemstack, World world, EntityPlayer entityplayer) {
         super.a(itemstack, world, entityplayer);
-        return new ItemStack(Item.C);
+        return new ItemStack(Item.BOWL);
     }
 }

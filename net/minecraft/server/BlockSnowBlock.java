@@ -10,7 +10,7 @@ public class BlockSnowBlock extends Block {
     }
 
     public int a(int i, Random random) {
-        return Item.aB.ba;
+        return Item.SNOW_BALL.ba;
     }
 
     public int a(Random random) {

@@ -63,7 +63,7 @@ public class BlockSign extends BlockContainer {
     }
 
     public int a(int i, Random random) {
-        return Item.as.ba;
+        return Item.SIGN.ba;
     }
 
     public void b(World world, int i, int j, int k, int l) {

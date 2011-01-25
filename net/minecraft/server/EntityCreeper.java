@@ -56,7 +56,7 @@ public class EntityCreeper extends EntityMobs {
     public void f(Entity entity) {
         super.f(entity);
         if (entity instanceof EntitySkeleton) {
-            this.a(Item.aY.ba + this.W.nextInt(2), 1);
+            this.a(Item.GOLD_RECORD.ba + this.W.nextInt(2), 1);
         }
     }
 
@@ -86,7 +86,7 @@ public class EntityCreeper extends EntityMobs {
     }
 
     protected int h() {
-        return Item.K.ba;
+        return Item.SULPHUR.ba;
     }
 
     private int K() {

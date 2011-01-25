@@ -34,6 +34,6 @@ public class EntityZombie extends EntityMobs {
     }
 
     protected int h() {
-        return Item.J.ba;
+        return Item.FEATHER.ba;
     }
 }

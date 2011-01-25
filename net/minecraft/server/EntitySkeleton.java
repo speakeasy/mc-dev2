@@ -2,7 +2,7 @@ package net.minecraft.server;
 
 public class EntitySkeleton extends EntityMobs {
 
-    private static final ItemStack a = new ItemStack(Item.i, 1);
+    private static final ItemStack a = new ItemStack(Item.BOW, 1);
 
     public EntitySkeleton(World world) {
         super(world);
@@ -65,7 +65,7 @@ public class EntitySkeleton extends EntityMobs {
     }
 
     protected int h() {
-        return Item.j.ba;
+        return Item.ARROW.ba;
     }
 
     protected void g_() {
@@ -74,13 +74,13 @@ public class EntitySkeleton extends EntityMobs {
         int j;
 
         for (j = 0; j < i; ++j) {
-            this.a(Item.j.ba, 1);
+            this.a(Item.ARROW.ba, 1);
         }
 
         i = this.W.nextInt(3);
 
         for (j = 0; j < i; ++j) {
-            this.a(Item.aV.ba, 1);
+            this.a(Item.BONE.ba, 1);
         }
     }
 }

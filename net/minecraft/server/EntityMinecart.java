@@ -71,7 +71,7 @@ public class EntityMinecart extends Entity implements IInventory {
             this.y();
             this.a += i * 10;
             if (this.a > 40) {
-                this.a(Item.ax.ba, 1, 0.0F);
+                this.a(Item.MINECART.ba, 1, 0.0F);
                 if (this.d == 1) {
                     this.a(Block.CHEST.bi, 1, 0.0F);
                 } else if (this.d == 2) {
@@ -655,7 +655,7 @@ public class EntityMinecart extends Entity implements IInventory {
         } else if (this.d == 2) {
             ItemStack itemstack = entityplayer.an.e();
 
-            if (itemstack != null && itemstack.c == Item.k.ba) {
+            if (itemstack != null && itemstack.c == Item.COAL.ba) {
                 if (--itemstack.a == 0) {
                     entityplayer.an.a(entityplayer.an.c, (ItemStack) null);
                 }

@@ -39,7 +39,7 @@ public class BlockSnow extends Block {
     }
 
     public void g(World world, int i, int j, int k, int l) {
-        int i1 = Item.aB.ba;
+        int i1 = Item.SNOW_BALL.ba;
         float f1 = 0.7F;
         double d1 = (double) (world.l.nextFloat() * f1) + (double) (1.0F - f1) * 0.5D;
         double d2 = (double) (world.l.nextFloat() * f1) + (double) (1.0F - f1) * 0.5D;
@@ -52,7 +52,7 @@ public class BlockSnow extends Block {
     }
 
     public int a(int i, Random random) {
-        return Item.aB.ba;
+        return Item.SNOW_BALL.ba;
     }
 
     public int a(Random random) {

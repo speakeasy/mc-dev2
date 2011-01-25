@@ -89,19 +89,19 @@ public class BlockDispenser extends BlockContainer {
         } else {
             double d4;
 
-            if (itemstack.c == Item.j.ba) {
+            if (itemstack.c == Item.ARROW.ba) {
                 EntityArrow entityarrow = new EntityArrow(world, d1, d2, d3);
 
                 entityarrow.a((double) f1, 0.10000000149011612D, (double) f2, 1.1F, 6.0F);
                 world.a((Entity) entityarrow);
                 world.a((double) i, (double) j, (double) k, "random.bow", 1.0F, 1.2F);
-            } else if (itemstack.c == Item.aN.ba) {
+            } else if (itemstack.c == Item.EGG.ba) {
                 EntityEgg entityegg = new EntityEgg(world, d1, d2, d3);
 
                 entityegg.a((double) f1, 0.10000000149011612D, (double) f2, 1.1F, 6.0F);
                 world.a((Entity) entityegg);
                 world.a((double) i, (double) j, (double) k, "random.bow", 1.0F, 1.2F);
-            } else if (itemstack.c == Item.aB.ba) {
+            } else if (itemstack.c == Item.SNOW_BALL.ba) {
                 EntitySnowball entitysnowball = new EntitySnowball(world, d1, d2, d3);
 
                 entitysnowball.a((double) f1, 0.10000000149011612D, (double) f2, 1.1F, 6.0F);

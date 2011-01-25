@@ -44,16 +44,16 @@ public class ItemBucket extends Item {
                 if (this.a == 0) {
                     if (world.c(i, j, k) == Material.f && world.b(i, j, k) == 0) {
                         world.e(i, j, k, 0);
-                        return new ItemStack(Item.av);
+                        return new ItemStack(Item.WATER_BUCKET);
                     }
 
                     if (world.c(i, j, k) == Material.g && world.b(i, j, k) == 0) {
                         world.e(i, j, k, 0);
-                        return new ItemStack(Item.aw);
+                        return new ItemStack(Item.LAVA_BUCKET);
                     }
                 } else {
                     if (this.a < 0) {
-                        return new ItemStack(Item.au);
+                        return new ItemStack(Item.BUCKET);
                     }
 
                     if (movingobjectposition.e == 0) {
@@ -91,11 +91,11 @@ public class ItemBucket extends Item {
                             world.b(i, j, k, this.a, 0);
                         }
 
-                        return new ItemStack(Item.au);
+                        return new ItemStack(Item.BUCKET);
                     }
                 }
             } else if (this.a == 0 && movingobjectposition.g instanceof EntityCow) {
-                return new ItemStack(Item.aE);
+                return new ItemStack(Item.MILK_BUCKET);
             }
 
             return itemstack;

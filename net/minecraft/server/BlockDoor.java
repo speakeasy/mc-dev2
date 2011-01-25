@@ -149,7 +149,7 @@ public class BlockDoor extends Block {
     }
 
     public int a(int i, Random random) {
-        return (i & 8) != 0 ? 0 : (this.bt == Material.e ? Item.az.ba : Item.at.ba);
+        return (i & 8) != 0 ? 0 : (this.bt == Material.e ? Item.IRON_DOOR.ba : Item.WOOD_DOOR.ba);
     }
 
     public MovingObjectPosition a(World world, int i, int j, int k, Vec3D vec3d, Vec3D vec3d1) {

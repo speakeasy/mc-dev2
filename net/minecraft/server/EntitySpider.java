@@ -68,7 +68,7 @@ public class EntitySpider extends EntityMobs {
     }
 
     protected int h() {
-        return Item.I.ba;
+        return Item.STRING.ba;
     }
 
     public boolean m() {

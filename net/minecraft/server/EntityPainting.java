@@ -117,7 +117,7 @@ public class EntityPainting extends Entity {
             this.f = 0;
             if (!this.d()) {
                 this.q();
-                this.l.a((Entity) (new EntityItem(this.l, this.p, this.q, this.r, new ItemStack(Item.aq))));
+                this.l.a((Entity) (new EntityItem(this.l, this.p, this.q, this.r, new ItemStack(Item.PAINTING))));
             }
         }
     }
@@ -188,7 +188,7 @@ public class EntityPainting extends Entity {
         if (!this.G && !this.l.z) {
             this.q();
             this.y();
-            this.l.a((Entity) (new EntityItem(this.l, this.p, this.q, this.r, new ItemStack(Item.aq))));
+            this.l.a((Entity) (new EntityItem(this.l, this.p, this.q, this.r, new ItemStack(Item.PAINTING))));
         }
 
         return true;

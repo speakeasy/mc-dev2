@@ -123,7 +123,7 @@ public class WorldGenDungeons extends WorldGenerator {
     private ItemStack a(Random random) {
         int i = random.nextInt(11);
 
-        return i == 0 ? new ItemStack(Item.ay) : (i == 1 ? new ItemStack(Item.m, random.nextInt(4) + 1) : (i == 2 ? new ItemStack(Item.S) : (i == 3 ? new ItemStack(Item.R, random.nextInt(4) + 1) : (i == 4 ? new ItemStack(Item.K, random.nextInt(4) + 1) : (i == 5 ? new ItemStack(Item.I, random.nextInt(4) + 1) : (i == 6 ? new ItemStack(Item.au) : (i == 7 && random.nextInt(100) == 0 ? new ItemStack(Item.ar) : (i == 8 && random.nextInt(2) == 0 ? new ItemStack(Item.aA, random.nextInt(4) + 1) : (i == 9 && random.nextInt(10) == 0 ? new ItemStack(Item.c[Item.aY.ba + random.nextInt(2)]) : null)))))))));
+        return i == 0 ? new ItemStack(Item.SADDLE) : (i == 1 ? new ItemStack(Item.IRON_INGOT, random.nextInt(4) + 1) : (i == 2 ? new ItemStack(Item.BREAD) : (i == 3 ? new ItemStack(Item.WHEAT, random.nextInt(4) + 1) : (i == 4 ? new ItemStack(Item.SULPHUR, random.nextInt(4) + 1) : (i == 5 ? new ItemStack(Item.STRING, random.nextInt(4) + 1) : (i == 6 ? new ItemStack(Item.BUCKET) : (i == 7 && random.nextInt(100) == 0 ? new ItemStack(Item.GOLDEN_APPLE) : (i == 8 && random.nextInt(2) == 0 ? new ItemStack(Item.REDSTONE, random.nextInt(4) + 1) : (i == 9 && random.nextInt(10) == 0 ? new ItemStack(Item.c[Item.GOLD_RECORD.ba + random.nextInt(2)]) : null)))))))));
     }
 
     private String b(Random random) {

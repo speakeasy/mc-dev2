@@ -56,15 +56,15 @@ public class EntitySquid extends EntityWaterMob {
         int i = this.W.nextInt(3) + 1;
 
         for (int j = 0; j < i; ++j) {
-            this.a(new ItemStack(Item.aU, 1, 0), 0.0F);
+            this.a(new ItemStack(Item.INK_SACK, 1, 0), 0.0F);
         }
     }
 
     public boolean a(EntityPlayer entityplayer) {
         ItemStack itemstack = entityplayer.an.e();
 
-        if (itemstack != null && itemstack.c == Item.au.ba) {
-            entityplayer.an.a(entityplayer.an.c, new ItemStack(Item.aE));
+        if (itemstack != null && itemstack.c == Item.BUCKET.ba) {
+            entityplayer.an.a(entityplayer.an.c, new ItemStack(Item.MILK_BUCKET));
             return true;
         } else {
             return false;

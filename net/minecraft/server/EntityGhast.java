@@ -127,7 +127,7 @@ public class EntityGhast extends EntityFlying implements IMobs {
     }
 
     protected int h() {
-        return Item.K.ba;
+        return Item.SULPHUR.ba;
     }
 
     protected float i() {

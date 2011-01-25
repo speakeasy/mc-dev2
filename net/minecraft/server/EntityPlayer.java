@@ -155,7 +155,7 @@ public abstract class EntityPlayer extends EntityLiving {
         this.a(this.p, this.q, this.r);
         this.t = 0.10000000149011612D;
         if (this.aw.equals("Notch")) {
-            this.a(new ItemStack(Item.h, 1), true);
+            this.a(new ItemStack(Item.APPLE, 1), true);
         }
 
         this.an.h();

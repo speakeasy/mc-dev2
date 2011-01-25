@@ -31,7 +31,7 @@ public class ItemHoe extends Item {
                         float f2 = world.l.nextFloat() * f1 + (1.0F - f1) * 0.5F;
                         float f3 = 1.2F;
                         float f4 = world.l.nextFloat() * f1 + (1.0F - f1) * 0.5F;
-                        EntityItem entityitem = new EntityItem(world, (double) ((float) i + f2), (double) ((float) j + f3), (double) ((float) k + f4), new ItemStack(Item.Q));
+                        EntityItem entityitem = new EntityItem(world, (double) ((float) i + f2), (double) ((float) j + f3), (double) ((float) k + f4), new ItemStack(Item.SEEDS));
 
                         entityitem.c = 10;
                         world.a((Entity) entityitem);

@@ -6,7 +6,7 @@ public class RecipesTools {
     private Object[][] b;
 
     public RecipesTools() {
-        this.b = new Object[][] { { Block.WOOD, Block.COBBLESTONE, Item.m, Item.l, Item.n}, { Item.r, Item.v, Item.e, Item.z, Item.G}, { Item.q, Item.u, Item.d, Item.y, Item.F}, { Item.s, Item.w, Item.f, Item.A, Item.H}, { Item.L, Item.M, Item.N, Item.O, Item.P}};
+        this.b = new Object[][] { { Block.WOOD, Block.COBBLESTONE, Item.IRON_INGOT, Item.DIAMOND, Item.GOLD_INGOT}, { Item.WOOD_PICKAXE, Item.STONE_PICKAXE, Item.IRON_PICKAXE, Item.DIAMOND_PICKAXE, Item.GOLD_PICKAXE}, { Item.WOOD_SPADE, Item.STONE_SPADE, Item.IRON_SPADE, Item.DIAMOND_SPADE, Item.GOLD_SPADE}, { Item.WOOD_AXE, Item.STONE_AXE, Item.IRON_AXE, Item.DIAMOND_AXE, Item.GOLD_AXE}, { Item.WOOD_HOE, Item.STONE_HOE, Item.IRON_HOE, Item.DIAMOND_HOE, Item.GOLD_HOE}};
     }
 
     public void a(CraftingManager craftingmanager) {
@@ -16,7 +16,7 @@ public class RecipesTools {
             for (int j = 0; j < this.b.length - 1; ++j) {
                 Item item = (Item) this.b[j + 1][i];
 
-                craftingmanager.a(new ItemStack(item), new Object[] { this.a[j], Character.valueOf('#'), Item.B, Character.valueOf('X'), object});
+                craftingmanager.a(new ItemStack(item), new Object[] { this.a[j], Character.valueOf('#'), Item.STICK, Character.valueOf('X'), object});
             }
         }
     }

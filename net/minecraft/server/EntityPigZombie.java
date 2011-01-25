@@ -6,7 +6,7 @@ public class EntityPigZombie extends EntityZombie {
 
     private int a = 0;
     private int b = 0;
-    private static final ItemStack f = new ItemStack(Item.E, 1);
+    private static final ItemStack f = new ItemStack(Item.GOLD_SWORD, 1);
 
     public EntityPigZombie(World world) {
         super(world);
@@ -86,6 +86,6 @@ public class EntityPigZombie extends EntityZombie {
     }
 
     protected int h() {
-        return Item.ap.ba;
+        return Item.GRILLED_PORK.ba;
     }
 }
