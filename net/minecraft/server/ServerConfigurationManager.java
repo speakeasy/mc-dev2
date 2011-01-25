@@ -119,7 +119,7 @@ public class ServerConfigurationManager {
             entityplayermp1.a(entityplayermp1.p, entityplayermp1.q + 1.0D, entityplayermp1.r);
         }
 
-        entityplayermp1.a.b((Packet) (new Packet9()));
+        entityplayermp1.a.b((Packet) (new Packet9Respawn()));
         entityplayermp1.a.a(entityplayermp1.p, entityplayermp1.q, entityplayermp1.r, entityplayermp1.v, entityplayermp1.w);
         this.d.a(entityplayermp1);
         this.c.e.a(entityplayermp1);

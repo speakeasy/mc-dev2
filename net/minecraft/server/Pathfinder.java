@@ -4,7 +4,7 @@ public class Pathfinder {
 
     private IBlockAccess a;
     private Path b = new Path();
-    private MCHashTable c = new MCHashTable();
+    private EntityList c = new EntityList();
     private PathPoint[] d = new PathPoint[32];
 
     public Pathfinder(IBlockAccess iblockaccess) {

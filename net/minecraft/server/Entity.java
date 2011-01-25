@@ -719,7 +719,7 @@ public abstract class Entity {
     }
 
     protected final String A() {
-        return EntityList.b(this);
+        return EntityTypes.b(this);
     }
 
     protected abstract void b(NBTTagCompound nbttagcompound);

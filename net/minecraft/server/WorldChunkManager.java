@@ -10,7 +10,7 @@ public class WorldChunkManager {
     public double[] a;
     public double[] b;
     public double[] c;
-    public MobSpawnerBase[] d;
+    public BiomeBase[] d;
 
     protected WorldChunkManager() {}
 
@@ -20,15 +20,15 @@ public class WorldChunkManager {
         this.g = new NoiseGeneratorOctaves2(new Random(world.u * 543321L), 2);
     }
 
-    public MobSpawnerBase a(ChunkCoordIntPair chunkcoordintpair) {
+    public BiomeBase a(ChunkCoordIntPair chunkcoordintpair) {
         return this.a(chunkcoordintpair.a, chunkcoordintpair.b);
     }
 
-    public MobSpawnerBase a(int i, int j) {
+    public BiomeBase a(int i, int j) {
         return this.a(i, j, 1, 1)[0];
     }
 
-    public MobSpawnerBase[] a(int i, int j, int k, int l) {
+    public BiomeBase[] a(int i, int j, int k, int l) {
         this.d = this.a(this.d, i, j, k, l);
         return this.d;
     }
@@ -66,9 +66,9 @@ public class WorldChunkManager {
         return adouble;
     }
 
-    public MobSpawnerBase[] a(MobSpawnerBase[] amobspawnerbase, int i, int j, int k, int l) {
-        if (amobspawnerbase == null || amobspawnerbase.length < k * l) {
-            amobspawnerbase = new MobSpawnerBase[k * l];
+    public BiomeBase[] a(BiomeBase[] abiomebase, int i, int j, int k, int l) {
+        if (abiomebase == null || abiomebase.length < k * l) {
+            abiomebase = new BiomeBase[k * l];
         }
 
         this.a = this.e.a(this.a, (double) i, (double) j, k, k, 0.02500000037252903D, 0.02500000037252903D, 0.25D);
@@ -106,10 +106,10 @@ public class WorldChunkManager {
 
                 this.a[i1] = d4;
                 this.b[i1] = d5;
-                amobspawnerbase[i1++] = MobSpawnerBase.a(d4, d5);
+                abiomebase[i1++] = BiomeBase.a(d4, d5);
             }
         }
 
-        return amobspawnerbase;
+        return abiomebase;
     }
 }

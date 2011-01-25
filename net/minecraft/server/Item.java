@@ -26,10 +26,10 @@ public class Item {
     public static Item STONE_SPADE = (new ItemSpade(17, EnumToolMaterial.STONE)).a(1, 5).a("shovelStone");
     public static Item STONE_PICKAXE = (new ItemPickaxe(18, EnumToolMaterial.STONE)).a(1, 6).a("pickaxeStone");
     public static Item STONE_AXE = (new ItemAxe(19, EnumToolMaterial.STONE)).a(1, 7).a("hatchetStone");
-    public static Item DIAMOND_SWORD = (new ItemSword(20, EnumToolMaterial.EMERALD)).a(3, 4).a("swordDiamond");
-    public static Item DIAMOND_SPADE = (new ItemSpade(21, EnumToolMaterial.EMERALD)).a(3, 5).a("shovelDiamond");
-    public static Item DIAMOND_PICKAXE = (new ItemPickaxe(22, EnumToolMaterial.EMERALD)).a(3, 6).a("pickaxeDiamond");
-    public static Item DIAMOND_AXE = (new ItemAxe(23, EnumToolMaterial.EMERALD)).a(3, 7).a("hatchetDiamond");
+    public static Item DIAMOND_SWORD = (new ItemSword(20, EnumToolMaterial.DIAMOND)).a(3, 4).a("swordDiamond");
+    public static Item DIAMOND_SPADE = (new ItemSpade(21, EnumToolMaterial.DIAMOND)).a(3, 5).a("shovelDiamond");
+    public static Item DIAMOND_PICKAXE = (new ItemPickaxe(22, EnumToolMaterial.DIAMOND)).a(3, 6).a("pickaxeDiamond");
+    public static Item DIAMOND_AXE = (new ItemAxe(23, EnumToolMaterial.DIAMOND)).a(3, 7).a("hatchetDiamond");
     public static Item STICK = (new Item(24)).a(5, 3).e().a("stick");
     public static Item BOWL = (new Item(25)).a(7, 4).a("bowl");
     public static Item MUSHROOM_SOUP = (new ItemSoup(26, 10)).a(8, 4).a("mushroomStew");
@@ -43,7 +43,7 @@ public class Item {
     public static Item WOOD_HOE = (new ItemHoe(34, EnumToolMaterial.WOOD)).a(0, 8).a("hoeWood");
     public static Item STONE_HOE = (new ItemHoe(35, EnumToolMaterial.STONE)).a(1, 8).a("hoeStone");
     public static Item IRON_HOE = (new ItemHoe(36, EnumToolMaterial.IRON)).a(2, 8).a("hoeIron");
-    public static Item DIAMOND_HOE = (new ItemHoe(37, EnumToolMaterial.EMERALD)).a(3, 8).a("hoeDiamond");
+    public static Item DIAMOND_HOE = (new ItemHoe(37, EnumToolMaterial.DIAMOND)).a(3, 8).a("hoeDiamond");
     public static Item GOLD_HOE = (new ItemHoe(38, EnumToolMaterial.GOLD)).a(4, 8).a("hoeGold");
     public static Item SEEDS = (new ItemSeeds(39, Block.CROPS.bi)).a(9, 0).a("seeds");
     public static Item WHEAT = (new Item(40)).a(9, 1).a("wheat");

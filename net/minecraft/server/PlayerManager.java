@@ -6,7 +6,7 @@ import java.util.List;
 public class PlayerManager {
 
     private List a = new ArrayList();
-    private MCHashTable2 b = new MCHashTable2();
+    private PlayerList b = new PlayerList();
     private List c = new ArrayList();
     private MinecraftServer d;
 
@@ -128,7 +128,7 @@ public class PlayerManager {
         return playermanager.d;
     }
 
-    static MCHashTable2 b(PlayerManager playermanager) {
+    static PlayerList b(PlayerManager playermanager) {
         return playermanager.b;
     }
 

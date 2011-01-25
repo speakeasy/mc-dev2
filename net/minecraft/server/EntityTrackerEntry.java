@@ -96,7 +96,7 @@ public class EntityTrackerEntry {
                     this.i = this.a.s;
                     this.j = this.a.t;
                     this.k = this.a.u;
-                    this.a((Packet) (new Packet28(this.a.g, this.i, this.j, this.k)));
+                    this.a((Packet) (new Packet28EntityVelocity(this.a.g, this.i, this.j, this.k)));
                 }
             }
 
@@ -107,7 +107,7 @@ public class EntityTrackerEntry {
             DataWatcher datawatcher = this.a.p();
 
             if (datawatcher.a()) {
-                this.b((Packet) (new Packet40(this.a.g, datawatcher)));
+                this.b((Packet) (new Packet40EntityMetadata(this.a.g, datawatcher)));
             }
 
             this.d = i;
@@ -118,7 +118,7 @@ public class EntityTrackerEntry {
         }
 
         if (this.a.E) {
-            this.b((Packet) (new Packet28(this.a)));
+            this.b((Packet) (new Packet28EntityVelocity(this.a)));
             this.a.E = false;
         }
     }
@@ -160,14 +160,14 @@ public class EntityTrackerEntry {
                     this.n.add(entityplayermp);
                     entityplayermp.a.b(this.b());
                     if (this.s) {
-                        entityplayermp.a.b((Packet) (new Packet28(this.a.g, this.a.s, this.a.t, this.a.u)));
+                        entityplayermp.a.b((Packet) (new Packet28EntityVelocity(this.a.g, this.a.s, this.a.t, this.a.u)));
                     }
 
                     ItemStack[] aitemstack = this.a.I();
 
                     if (aitemstack != null) {
                         for (int i = 0; i < aitemstack.length; ++i) {
-                            entityplayermp.a.b((Packet) (new Packet5PlayerInventory(this.a.g, i, aitemstack[i])));
+                            entityplayermp.a.b((Packet) (new Packet5EntityEquipment(this.a.g, i, aitemstack[i])));
                         }
                     }
                 }
@@ -240,7 +240,7 @@ public class EntityTrackerEntry {
                 }
 
                 if (this.a instanceof EntityPainting) {
-                    return new Packet25((EntityPainting) this.a);
+                    return new Packet25EntityPainting((EntityPainting) this.a);
                 } else {
                     throw new IllegalArgumentException("Don\'t know how to add " + this.a.getClass() + "!");
                 }

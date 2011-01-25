@@ -4,13 +4,13 @@ public class InventoryCrafting implements IInventory {
 
     private ItemStack[] a;
     private int b;
-    private CraftingInventoryCB c;
+    private Container c;
 
-    public InventoryCrafting(CraftingInventoryCB craftinginventorycb, int i, int j) {
+    public InventoryCrafting(Container container, int i, int j) {
         int k = i * j;
 
         this.a = new ItemStack[k];
-        this.c = craftinginventorycb;
+        this.c = container;
         this.b = i;
     }
 

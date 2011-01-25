@@ -43,7 +43,7 @@ public class TileEntityMobSpawner extends TileEntity {
                 byte b1 = 4;
 
                 for (int i = 0; i < b1; ++i) {
-                    EntityLiving entityliving = (EntityLiving) ((EntityLiving) EntityList.a(this.h, this.a));
+                    EntityLiving entityliving = (EntityLiving) ((EntityLiving) EntityTypes.a(this.h, this.a));
 
                     if (entityliving == null) {
                         return;

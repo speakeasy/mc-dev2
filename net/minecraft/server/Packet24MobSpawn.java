@@ -20,7 +20,7 @@ public class Packet24MobSpawn extends Packet {
 
     public Packet24MobSpawn(EntityLiving entityliving) {
         this.a = entityliving.g;
-        this.b = (byte) EntityList.a(entityliving);
+        this.b = (byte) EntityTypes.a(entityliving);
         this.c = MathHelper.b(entityliving.p * 32.0D);
         this.d = MathHelper.b(entityliving.q * 32.0D);
         this.e = MathHelper.b(entityliving.r * 32.0D);

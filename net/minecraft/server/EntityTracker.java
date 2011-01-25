@@ -8,7 +8,7 @@ import java.util.Set;
 public class EntityTracker {
 
     private Set a = new HashSet();
-    private MCHashTable b = new MCHashTable();
+    private EntityList b = new EntityList();
     private MinecraftServer c;
     private int d;
 

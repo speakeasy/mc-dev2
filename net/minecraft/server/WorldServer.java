@@ -11,7 +11,7 @@ public class WorldServer extends World {
     public boolean B = false;
     public boolean C;
     private MinecraftServer D;
-    private MCHashTable E = new MCHashTable();
+    private EntityList E = new EntityList();
 
     public WorldServer(MinecraftServer minecraftserver, File file1, String s, int i) {
         super(file1, s, (new Random()).nextLong(), WorldProvider.a(i));
@@ -81,20 +81,20 @@ public class WorldServer extends World {
     }
 
     public void a(Entity entity, byte b1) {
-        Packet38 packet38 = new Packet38(entity.g, b1);
+        Packet38EntityStatus packet38entitystatus = new Packet38EntityStatus(entity.g, b1);
 
-        this.D.k.b(entity, packet38);
+        this.D.k.b(entity, packet38entitystatus);
     }
 
     public Explosion a(Entity entity, double d1, double d2, double d3, float f1, boolean flag) {
         Explosion explosion = super.a(entity, d1, d2, d3, f1, flag);
 
-        this.D.f.a(d1, d2, d3, 64.0D, new Packet60(d1, d2, d3, f1, explosion.g));
+        this.D.f.a(d1, d2, d3, 64.0D, new Packet60Explosion(d1, d2, d3, f1, explosion.g));
         return explosion;
     }
 
     public void c(int i, int j, int k, int l, int i1) {
         super.c(i, j, k, l, i1);
-        this.D.f.a((double) i, (double) j, (double) k, 64.0D, new Packet54(i, j, k, l, i1));
+        this.D.f.a((double) i, (double) j, (double) k, 64.0D, new Packet54PlayNoteBlock(i, j, k, l, i1));
     }
 }

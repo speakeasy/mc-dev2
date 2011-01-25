@@ -5,8 +5,8 @@ import java.util.List;
 public abstract class EntityPlayer extends EntityLiving {
 
     public InventoryPlayer an = new InventoryPlayer(this);
-    public CraftingInventoryCB ao;
-    public CraftingInventoryCB ap;
+    public Container ao;
+    public Container ap;
     public byte aq = 0;
     public int ar = 0;
     public float as;
@@ -26,7 +26,7 @@ public abstract class EntityPlayer extends EntityLiving {
 
     public EntityPlayer(World world) {
         super(world);
-        this.ao = new CraftingInventoryPlayerCB(this.an, !world.z);
+        this.ao = new ContainerPlayer(this.an, !world.z);
         this.ap = this.ao;
         this.H = 1.62F;
         this.c((double) world.m + 0.5D, (double) (world.n + 1), (double) world.o + 0.5D, 0.0F, 0.0F);

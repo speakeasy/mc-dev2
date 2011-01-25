@@ -58,7 +58,7 @@ public class EntityPlayerMP extends EntityPlayer implements ICrafting {
             ItemStack itemstack = this.a(i);
 
             if (itemstack != this.bF[i]) {
-                this.b.k.a(this, new Packet5PlayerInventory(this.g, i, itemstack));
+                this.b.k.a(this, new Packet5EntityEquipment(this.g, i, itemstack));
                 this.bF[i] = itemstack;
             }
         }
@@ -136,7 +136,7 @@ public class EntityPlayerMP extends EntityPlayer implements ICrafting {
         }
 
         if (this.aZ != this.bD) {
-            this.a.b((Packet) (new Packet8(this.aZ)));
+            this.a.b((Packet) (new Packet8UpdateHealth(this.aZ)));
             this.bD = this.aZ;
         }
     }
@@ -186,7 +186,7 @@ public class EntityPlayerMP extends EntityPlayer implements ICrafting {
 
     public void e(Entity entity) {
         super.e(entity);
-        this.a.b((Packet) (new Packet39(this, this.k)));
+        this.a.b((Packet) (new Packet39AttachEntity(this, this.k)));
         this.a.a(this.p, this.q, this.r, this.v, this.w);
     }
 
@@ -202,63 +202,63 @@ public class EntityPlayerMP extends EntityPlayer implements ICrafting {
 
     public void a(int i, int j, int k) {
         this.U();
-        this.a.b((Packet) (new Packet100(this.bG, 1, "Crafting", 9)));
-        this.ap = new CraftingInventoryWorkbenchCB(this.an, this.l, i, j, k);
+        this.a.b((Packet) (new Packet100OpenWindow(this.bG, 1, "Crafting", 9)));
+        this.ap = new ContainerWorkbench(this.an, this.l, i, j, k);
         this.ap.f = this.bG;
         this.ap.a((ICrafting) this);
     }
 
     public void a(IInventory iinventory) {
         this.U();
-        this.a.b((Packet) (new Packet100(this.bG, 0, iinventory.b(), iinventory.h_())));
-        this.ap = new CraftingInventoryChestCB(this.an, iinventory);
+        this.a.b((Packet) (new Packet100OpenWindow(this.bG, 0, iinventory.b(), iinventory.h_())));
+        this.ap = new ContainerChest(this.an, iinventory);
         this.ap.f = this.bG;
         this.ap.a((ICrafting) this);
     }
 
     public void a(TileEntityFurnace tileentityfurnace) {
         this.U();
-        this.a.b((Packet) (new Packet100(this.bG, 2, tileentityfurnace.b(), tileentityfurnace.h_())));
-        this.ap = new CraftingInventoryFurnaceCB(this.an, tileentityfurnace);
+        this.a.b((Packet) (new Packet100OpenWindow(this.bG, 2, tileentityfurnace.b(), tileentityfurnace.h_())));
+        this.ap = new ContainerFurnace(this.an, tileentityfurnace);
         this.ap.f = this.bG;
         this.ap.a((ICrafting) this);
     }
 
     public void a(TileEntityDispenser tileentitydispenser) {
         this.U();
-        this.a.b((Packet) (new Packet100(this.bG, 3, tileentitydispenser.b(), tileentitydispenser.h_())));
-        this.ap = new CraftingInventoryDispenserCB(this.an, tileentitydispenser);
+        this.a.b((Packet) (new Packet100OpenWindow(this.bG, 3, tileentitydispenser.b(), tileentitydispenser.h_())));
+        this.ap = new ContainerDispenser(this.an, tileentitydispenser);
         this.ap.f = this.bG;
         this.ap.a((ICrafting) this);
     }
 
-    public void a(CraftingInventoryCB craftinginventorycb, int i, ItemStack itemstack) {
-        if (!(craftinginventorycb.a(i) instanceof SlotCrafting)) {
+    public void a(Container container, int i, ItemStack itemstack) {
+        if (!(container.a(i) instanceof SlotResult)) {
             if (!this.am) {
-                this.a.b((Packet) (new Packet103(craftinginventorycb.f, i, itemstack)));
+                this.a.b((Packet) (new Packet103SetSlot(container.f, i, itemstack)));
             }
         }
     }
 
-    public void a(CraftingInventoryCB craftinginventorycb, List list) {
-        this.a.b((Packet) (new Packet104(craftinginventorycb.f, list)));
-        this.a.b((Packet) (new Packet103(-1, -1, this.an.i())));
+    public void a(Container container, List list) {
+        this.a.b((Packet) (new Packet104WindowItems(container.f, list)));
+        this.a.b((Packet) (new Packet103SetSlot(-1, -1, this.an.i())));
     }
 
-    public void a(CraftingInventoryCB craftinginventorycb, int i, int j) {
-        this.a.b((Packet) (new Packet105(craftinginventorycb.f, i, j)));
+    public void a(Container container, int i, int j) {
+        this.a.b((Packet) (new Packet105CraftProgressBar(container.f, i, j)));
     }
 
     public void a(ItemStack itemstack) {}
 
     public void L() {
-        this.a.b((Packet) (new Packet101(this.ap.f)));
+        this.a.b((Packet) (new Packet101CloseWindow(this.ap.f)));
         this.N();
     }
 
     public void M() {
         if (!this.am) {
-            this.a.b((Packet) (new Packet103(-1, -1, this.an.i())));
+            this.a.b((Packet) (new Packet103SetSlot(-1, -1, this.an.i())));
         }
     }
 

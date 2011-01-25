@@ -1,93 +1,160 @@
 package net.minecraft.server;
 
-import java.util.HashMap;
-import java.util.Map;
-
 public class EntityList {
 
-    private static Map a = new HashMap();
-    private static Map b = new HashMap();
-    private static Map c = new HashMap();
-    private static Map d = new HashMap();
+    private transient EntityListEntry[] a = new EntityListEntry[16];
+    private transient int b;
+    private int c = 12;
+    private final float d = 0.75F;
+    private transient volatile int e;
 
     public EntityList() {}
 
-    private static void a(Class oclass, String s, int i) {
-        a.put(s, oclass);
-        b.put(oclass, s);
-        c.put(Integer.valueOf(i), oclass);
-        d.put(oclass, Integer.valueOf(i));
+    private static int g(int i) {
+        i ^= i >>> 20 ^ i >>> 12;
+        return i ^ i >>> 7 ^ i >>> 4;
     }
 
-    public static Entity a(String s, World world) {
-        Entity entity = null;
-
-        try {
-            Class oclass = (Class) a.get(s);
-
-            if (oclass != null) {
-                entity = (Entity) oclass.getConstructor(new Class[] { World.class}).newInstance(new Object[] { world});
-            }
-        } catch (Exception exception) {
-            exception.printStackTrace();
-        }
-
-        return entity;
+    private static int a(int i, int j) {
+        return i & j - 1;
     }
 
-    public static Entity a(NBTTagCompound nbttagcompound, World world) {
-        Entity entity = null;
+    public Object a(int i) {
+        int j = g(i);
 
-        try {
-            Class oclass = (Class) a.get(nbttagcompound.h("id"));
-
-            if (oclass != null) {
-                entity = (Entity) oclass.getConstructor(new Class[] { World.class}).newInstance(new Object[] { world});
+        for (EntityListEntry entitylistentry = this.a[a(j, this.a.length)]; entitylistentry != null; entitylistentry = entitylistentry.c) {
+            if (entitylistentry.a == i) {
+                return entitylistentry.b;
             }
-        } catch (Exception exception) {
-            exception.printStackTrace();
         }
 
-        if (entity != null) {
-            entity.e(nbttagcompound);
+        return null;
+    }
+
+    public boolean b(int i) {
+        return this.c(i) != null;
+    }
+
+    final EntityListEntry c(int i) {
+        int j = g(i);
+
+        for (EntityListEntry entitylistentry = this.a[a(j, this.a.length)]; entitylistentry != null; entitylistentry = entitylistentry.c) {
+            if (entitylistentry.a == i) {
+                return entitylistentry;
+            }
+        }
+
+        return null;
+    }
+
+    public void a(int i, Object object) {
+        int j = g(i);
+        int k = a(j, this.a.length);
+
+        for (EntityListEntry entitylistentry = this.a[k]; entitylistentry != null; entitylistentry = entitylistentry.c) {
+            if (entitylistentry.a == i) {
+                entitylistentry.b = object;
+            }
+        }
+
+        ++this.e;
+        this.a(j, i, object, k);
+    }
+
+    private void h(int i) {
+        EntityListEntry[] aentitylistentry = this.a;
+        int j = aentitylistentry.length;
+
+        if (j == 1073741824) {
+            this.c = Integer.MAX_VALUE;
         } else {
-            System.out.println("Skipping Entity with id " + nbttagcompound.h("id"));
+            EntityListEntry[] aentitylistentry1 = new EntityListEntry[i];
+
+            this.a(aentitylistentry1);
+            this.a = aentitylistentry1;
+            this.c = (int) ((float) i * this.d);
+        }
+    }
+
+    private void a(EntityListEntry[] aentitylistentry) {
+        EntityListEntry[] aentitylistentry1 = this.a;
+        int i = aentitylistentry.length;
+
+        for (int j = 0; j < aentitylistentry1.length; ++j) {
+            EntityListEntry entitylistentry = aentitylistentry1[j];
+
+            if (entitylistentry != null) {
+                aentitylistentry1[j] = null;
+
+                EntityListEntry entitylistentry1;
+
+                do {
+                    entitylistentry1 = entitylistentry.c;
+                    int k = a(entitylistentry.d, i);
+
+                    entitylistentry.c = aentitylistentry[k];
+                    aentitylistentry[k] = entitylistentry;
+                    entitylistentry = entitylistentry1;
+                } while (entitylistentry1 != null);
+            }
+        }
+    }
+
+    public Object d(int i) {
+        EntityListEntry entitylistentry = this.e(i);
+
+        return entitylistentry == null ? null : entitylistentry.b;
+    }
+
+    final EntityListEntry e(int i) {
+        int j = g(i);
+        int k = a(j, this.a.length);
+        EntityListEntry entitylistentry = this.a[k];
+
+        EntityListEntry entitylistentry1;
+        EntityListEntry entitylistentry2;
+
+        for (entitylistentry1 = entitylistentry; entitylistentry1 != null; entitylistentry1 = entitylistentry2) {
+            entitylistentry2 = entitylistentry1.c;
+            if (entitylistentry1.a == i) {
+                ++this.e;
+                --this.b;
+                if (entitylistentry == entitylistentry1) {
+                    this.a[k] = entitylistentry2;
+                } else {
+                    entitylistentry.c = entitylistentry2;
+                }
+
+                return entitylistentry1;
+            }
+
+            entitylistentry = entitylistentry1;
         }
 
-        return entity;
+        return entitylistentry1;
     }
 
-    public static int a(Entity entity) {
-        return ((Integer) d.get(entity.getClass())).intValue();
+    public void a() {
+        ++this.e;
+        EntityListEntry[] aentitylistentry = this.a;
+
+        for (int i = 0; i < aentitylistentry.length; ++i) {
+            aentitylistentry[i] = null;
+        }
+
+        this.b = 0;
     }
 
-    public static String b(Entity entity) {
-        return (String) b.get(entity.getClass());
+    private void a(int i, int j, Object object, int k) {
+        EntityListEntry entitylistentry = this.a[k];
+
+        this.a[k] = new EntityListEntry(i, j, object, entitylistentry);
+        if (this.b++ >= this.c) {
+            this.h(2 * this.a.length);
+        }
     }
 
-    static {
-        a(EntityArrow.class, "Arrow", 10);
-        a(EntitySnowball.class, "Snowball", 11);
-        a(EntityItem.class, "Item", 1);
-        a(EntityPainting.class, "Painting", 9);
-        a(EntityLiving.class, "Mob", 48);
-        a(EntityMobs.class, "Monster", 49);
-        a(EntityCreeper.class, "Creeper", 50);
-        a(EntitySkeleton.class, "Skeleton", 51);
-        a(EntitySpider.class, "Spider", 52);
-        a(EntityZombieSimple.class, "Giant", 53);
-        a(EntityZombie.class, "Zombie", 54);
-        a(EntitySlime.class, "Slime", 55);
-        a(EntityGhast.class, "Ghast", 56);
-        a(EntityPigZombie.class, "PigZombie", 57);
-        a(EntityPig.class, "Pig", 90);
-        a(EntitySheep.class, "Sheep", 91);
-        a(EntityCow.class, "Cow", 92);
-        a(EntityChicken.class, "Chicken", 93);
-        a(EntitySquid.class, "Squid", 94);
-        a(EntityTNTPrimed.class, "PrimedTnt", 20);
-        a(EntityFallingSand.class, "FallingSand", 21);
-        a(EntityMinecart.class, "Minecart", 40);
-        a(EntityBoat.class, "Boat", 41);
+    static int f(int i) {
+        return g(i);
     }
 }

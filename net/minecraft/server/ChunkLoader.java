@@ -187,7 +187,7 @@ public class ChunkLoader implements IChunkLoader {
         if (nbttaglist != null) {
             for (int k = 0; k < nbttaglist.b(); ++k) {
                 NBTTagCompound nbttagcompound1 = (NBTTagCompound) nbttaglist.a(k);
-                Entity entity = EntityList.a(nbttagcompound1, world);
+                Entity entity = EntityTypes.a(nbttagcompound1, world);
 
                 chunk.q = true;
                 if (entity != null) {

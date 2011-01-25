@@ -4,11 +4,11 @@ class SlotArmor extends Slot {
 
     final int a;
 
-    final CraftingInventoryPlayerCB b;
+    final ContainerPlayer b;
 
-    SlotArmor(CraftingInventoryPlayerCB craftinginventoryplayercb, IInventory iinventory, int i, int j, int k, int l) {
+    SlotArmor(ContainerPlayer containerplayer, IInventory iinventory, int i, int j, int k, int l) {
         super(iinventory, i, j, k);
-        this.b = craftinginventoryplayercb;
+        this.b = containerplayer;
         this.a = l;
     }
 

@@ -19,7 +19,7 @@ public class ChunkProviderGenerate implements IChunkProvider {
     private double[] s = new double[256];
     private double[] t = new double[256];
     private MapGenBase u = new MapGenCaves();
-    private MobSpawnerBase[] v;
+    private BiomeBase[] v;
     double[] d;
     double[] e;
     double[] f;
@@ -41,7 +41,7 @@ public class ChunkProviderGenerate implements IChunkProvider {
         this.c = new NoiseGeneratorOctaves(this.j, 8);
     }
 
-    public void a(int i, int j, byte[] abyte, MobSpawnerBase[] amobspawnerbase, double[] adouble) {
+    public void a(int i, int j, byte[] abyte, BiomeBase[] abiomebase, double[] adouble) {
         byte b1 = 4;
         byte b2 = 64;
         int k = b1 + 1;
@@ -112,7 +112,7 @@ public class ChunkProviderGenerate implements IChunkProvider {
         }
     }
 
-    public void a(int i, int j, byte[] abyte, MobSpawnerBase[] amobspawnerbase) {
+    public void a(int i, int j, byte[] abyte, BiomeBase[] abiomebase) {
         byte b1 = 64;
         double d1 = 0.03125D;
 
@@ -122,13 +122,13 @@ public class ChunkProviderGenerate implements IChunkProvider {
 
         for (int k = 0; k < 16; ++k) {
             for (int l = 0; l < 16; ++l) {
-                MobSpawnerBase mobspawnerbase = amobspawnerbase[k + l * 16];
+                BiomeBase biomebase = abiomebase[k + l * 16];
                 boolean flag = this.r[k + l * 16] + this.j.nextDouble() * 0.2D > 0.0D;
                 boolean flag1 = this.s[k + l * 16] + this.j.nextDouble() * 0.2D > 3.0D;
                 int i1 = (int) (this.t[k + l * 16] / 3.0D + 3.0D + this.j.nextDouble() * 0.25D);
                 int j1 = -1;
-                byte b2 = mobspawnerbase.o;
-                byte b3 = mobspawnerbase.p;
+                byte b2 = biomebase.o;
+                byte b3 = biomebase.p;
 
                 for (int k1 = 127; k1 >= 0; --k1) {
                     int l1 = (k * 16 + l) * 128 + k1;
@@ -146,8 +146,8 @@ public class ChunkProviderGenerate implements IChunkProvider {
                                     b2 = 0;
                                     b3 = (byte) Block.STONE.bi;
                                 } else if (k1 >= b1 - 4 && k1 <= b1 + 1) {
-                                    b2 = mobspawnerbase.o;
-                                    b3 = mobspawnerbase.p;
+                                    b2 = biomebase.o;
+                                    b3 = biomebase.p;
                                     if (flag1) {
                                         b2 = 0;
                                     }
@@ -317,7 +317,7 @@ public class ChunkProviderGenerate implements IChunkProvider {
         BlockSand.a = true;
         int k = i * 16;
         int l = j * 16;
-        MobSpawnerBase mobspawnerbase = this.p.a().a(k + 16, l + 16);
+        BiomeBase biomebase = this.p.a().a(k + 16, l + 16);
 
         this.j.setSeed(this.p.u);
         long i1 = this.j.nextLong() / 2L * 2L + 1L;
@@ -424,31 +424,31 @@ public class ChunkProviderGenerate implements IChunkProvider {
             ++l1;
         }
 
-        if (mobspawnerbase == MobSpawnerBase.FOREST) {
+        if (biomebase == BiomeBase.d) {
             l1 += k1 + 5;
         }
 
-        if (mobspawnerbase == MobSpawnerBase.RAINFOREST) {
+        if (biomebase == BiomeBase.a) {
             l1 += k1 + 5;
         }
 
-        if (mobspawnerbase == MobSpawnerBase.SEASONAL_FOREST) {
+        if (biomebase == BiomeBase.c) {
             l1 += k1 + 2;
         }
 
-        if (mobspawnerbase == MobSpawnerBase.TAIGA) {
+        if (biomebase == BiomeBase.g) {
             l1 += k1 + 5;
         }
 
-        if (mobspawnerbase == MobSpawnerBase.DESERT) {
+        if (biomebase == BiomeBase.h) {
             l1 -= 20;
         }
 
-        if (mobspawnerbase == MobSpawnerBase.TUNDRA) {
+        if (biomebase == BiomeBase.k) {
             l1 -= 20;
         }
 
-        if (mobspawnerbase == MobSpawnerBase.PLAINS) {
+        if (biomebase == BiomeBase.i) {
             l1 -= 20;
         }
 
@@ -457,7 +457,7 @@ public class ChunkProviderGenerate implements IChunkProvider {
         for (i2 = 0; i2 < l1; ++i2) {
             j2 = k + this.j.nextInt(16) + 8;
             k2 = l + this.j.nextInt(16) + 8;
-            WorldGenerator worldgenerator = mobspawnerbase.a(this.j);
+            WorldGenerator worldgenerator = biomebase.a(this.j);
 
             worldgenerator.a(1.0D, 1.0D, 1.0D);
             worldgenerator.a(this.p, this.j, j2, this.p.d(j2, k2), k2);
@@ -508,7 +508,7 @@ public class ChunkProviderGenerate implements IChunkProvider {
         }
 
         i2 = 0;
-        if (mobspawnerbase == MobSpawnerBase.DESERT) {
+        if (biomebase == BiomeBase.h) {
             i2 += 10;
         }
 

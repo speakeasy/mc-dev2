@@ -33,6 +33,6 @@ public class TileEntitySign extends TileEntity {
             astring[i] = this.e[i];
         }
 
-        return new Packet130(this.b, this.c, this.d, astring);
+        return new Packet130UpdateSign(this.b, this.c, this.d, astring);
     }
 }

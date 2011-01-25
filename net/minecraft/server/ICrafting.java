@@ -4,9 +4,9 @@ import java.util.List;
 
 public interface ICrafting {
 
-    void a(CraftingInventoryCB craftinginventorycb, List list);
+    void a(Container container, List list);
 
-    void a(CraftingInventoryCB craftinginventorycb, int i, ItemStack itemstack);
+    void a(Container container, int i, ItemStack itemstack);
 
-    void a(CraftingInventoryCB craftinginventorycb, int i, int j);
+    void a(Container container, int i, int j);
 }

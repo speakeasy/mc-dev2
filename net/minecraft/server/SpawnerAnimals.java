@@ -56,8 +56,8 @@ public final class SpawnerAnimals {
                     label91:
                     while (iterator.hasNext()) {
                         ChunkCoordIntPair chunkcoordintpair = (ChunkCoordIntPair) iterator.next();
-                        MobSpawnerBase mobspawnerbase = world.a().a(chunkcoordintpair);
-                        Class[] aclass = mobspawnerbase.a(enumcreaturetype);
+                        BiomeBase biomebase = world.a().a(chunkcoordintpair);
+                        Class[] aclass = biomebase.a(enumcreaturetype);
 
                         if (aclass != null && aclass.length != 0) {
                             int j1 = world.l.nextInt(aclass.length);
