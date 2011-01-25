@@ -424,31 +424,31 @@ public class ChunkProviderGenerate implements IChunkProvider {
             ++l1;
         }
 
-        if (biomebase == BiomeBase.d) {
+        if (biomebase == BiomeBase.FOREST) {
             l1 += k1 + 5;
         }
 
-        if (biomebase == BiomeBase.a) {
+        if (biomebase == BiomeBase.RAINFOREST) {
             l1 += k1 + 5;
         }
 
-        if (biomebase == BiomeBase.c) {
+        if (biomebase == BiomeBase.SEASONAL_FOREST) {
             l1 += k1 + 2;
         }
 
-        if (biomebase == BiomeBase.g) {
+        if (biomebase == BiomeBase.TAIGA) {
             l1 += k1 + 5;
         }
 
-        if (biomebase == BiomeBase.h) {
+        if (biomebase == BiomeBase.DESERT) {
             l1 -= 20;
         }
 
-        if (biomebase == BiomeBase.k) {
+        if (biomebase == BiomeBase.TUNDRA) {
             l1 -= 20;
         }
 
-        if (biomebase == BiomeBase.i) {
+        if (biomebase == BiomeBase.PLAINS) {
             l1 -= 20;
         }
 
@@ -508,7 +508,7 @@ public class ChunkProviderGenerate implements IChunkProvider {
         }
 
         i2 = 0;
-        if (biomebase == BiomeBase.h) {
+        if (biomebase == BiomeBase.DESERT) {
             i2 += 10;
         }
 

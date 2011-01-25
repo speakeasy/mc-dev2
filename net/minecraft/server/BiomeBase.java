@@ -4,18 +4,18 @@ import java.util.Random;
 
 public class BiomeBase {
 
-    public static final BiomeBase a = (new BiomeRainforest()).b(588342).a("Rainforest").a(2094168);
-    public static final BiomeBase b = (new BiomeSwamp()).b(522674).a("Swampland").a(9154376);
-    public static final BiomeBase c = (new BiomeBase()).b(10215459).a("Seasonal Forest");
-    public static final BiomeBase d = (new BiomeForest()).b(353825).a("Forest").a(5159473);
-    public static final BiomeBase e = (new BiomeDesert()).b(14278691).a("Savanna");
-    public static final BiomeBase f = (new BiomeBase()).b(10595616).a("Shrubland");
-    public static final BiomeBase g = (new BiomeTaiga()).b(3060051).a("Taiga").b().a(8107825);
-    public static final BiomeBase h = (new BiomeDesert()).b(16421912).a("Desert");
-    public static final BiomeBase i = (new BiomeDesert()).b(16767248).a("Plains");
-    public static final BiomeBase j = (new BiomeDesert()).b(16772499).a("Ice Desert").b().a(12899129);
-    public static final BiomeBase k = (new BiomeBase()).b(5762041).a("Tundra").b().a(12899129);
-    public static final BiomeBase l = (new BiomeHell()).b(16711680).a("Hell");
+    public static final BiomeBase RAINFOREST = (new BiomeRainforest()).b(588342).a("Rainforest").a(2094168);
+    public static final BiomeBase SWAMPLAND = (new BiomeSwamp()).b(522674).a("Swampland").a(9154376);
+    public static final BiomeBase SEASONAL_FOREST = (new BiomeBase()).b(10215459).a("Seasonal Forest");
+    public static final BiomeBase FOREST = (new BiomeForest()).b(353825).a("Forest").a(5159473);
+    public static final BiomeBase SAVANNA = (new BiomeDesert()).b(14278691).a("Savanna");
+    public static final BiomeBase SHRUBLAND = (new BiomeBase()).b(10595616).a("Shrubland");
+    public static final BiomeBase TAIGA = (new BiomeTaiga()).b(3060051).a("Taiga").b().a(8107825);
+    public static final BiomeBase DESERT = (new BiomeDesert()).b(16421912).a("Desert");
+    public static final BiomeBase PLAINS = (new BiomeDesert()).b(16767248).a("Plains");
+    public static final BiomeBase ICE_DESERT = (new BiomeDesert()).b(16772499).a("Ice Desert").b().a(12899129);
+    public static final BiomeBase TUNDRA = (new BiomeBase()).b(5762041).a("Tundra").b().a(12899129);
+    public static final BiomeBase HELL = (new BiomeHell()).b(16711680).a("Hell");
     public String m;
     public int n;
     public byte o;
@@ -42,8 +42,8 @@ public class BiomeBase {
             }
         }
 
-        h.o = h.p = (byte) Block.SAND.bi;
-        j.o = j.p = (byte) Block.SAND.bi;
+        DESERT.o = DESERT.p = (byte) Block.SAND.bi;
+        ICE_DESERT.o = ICE_DESERT.p = (byte) Block.SAND.bi;
     }
 
     public WorldGenerator a(Random random) {
@@ -78,7 +78,7 @@ public class BiomeBase {
 
     public static BiomeBase a(float f1, float f2) {
         f2 *= f1;
-        return f1 < 0.1F ? k : (f2 < 0.2F ? (f1 < 0.5F ? k : (f1 < 0.95F ? e : h)) : (f2 > 0.5F && f1 < 0.7F ? b : (f1 < 0.5F ? g : (f1 < 0.97F ? (f2 < 0.35F ? f : d) : (f2 < 0.45F ? i : (f2 < 0.9F ? c : a))))));
+        return f1 < 0.1F ? TUNDRA : (f2 < 0.2F ? (f1 < 0.5F ? TUNDRA : (f1 < 0.95F ? SAVANNA : DESERT)) : (f2 > 0.5F && f1 < 0.7F ? SWAMPLAND : (f1 < 0.5F ? TAIGA : (f1 < 0.97F ? (f2 < 0.35F ? SHRUBLAND : FOREST) : (f2 < 0.45F ? PLAINS : (f2 < 0.9F ? SEASONAL_FOREST : RAINFOREST))))));
     }
 
     public Class[] a(EnumCreatureType enumcreaturetype) {
