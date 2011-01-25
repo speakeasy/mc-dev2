@@ -78,11 +78,11 @@ public class MetadataChunkBlock {
 
                             int k3 = 0;
 
-                            if (this.a == EnumSkyBlock.a) {
+                            if (this.a == EnumSkyBlock.SKY) {
                                 if (world.k(k1, k2, l1)) {
                                     k3 = 15;
                                 }
-                            } else if (this.a == EnumSkyBlock.b) {
+                            } else if (this.a == EnumSkyBlock.BLOCK) {
                                 k3 = Block.s[i3];
                             }
 

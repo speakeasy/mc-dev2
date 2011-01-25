@@ -18,7 +18,7 @@ public class BlockSnowBlock extends Block {
     }
 
     public void a(World world, int i, int j, int k, Random random) {
-        if (world.a(EnumSkyBlock.b, i, j, k) > 11) {
+        if (world.a(EnumSkyBlock.BLOCK, i, j, k) > 11) {
             this.a_(world, i, j, k, world.b(i, j, k));
             world.e(i, j, k, 0);
         }

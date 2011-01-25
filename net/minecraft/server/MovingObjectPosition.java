@@ -11,7 +11,7 @@ public class MovingObjectPosition {
     public Entity g;
 
     public MovingObjectPosition(int i, int j, int k, int l, Vec3D vec3d) {
-        this.a = EnumMovingObjectType.a;
+        this.a = EnumMovingObjectType.TILE;
         this.b = i;
         this.c = j;
         this.d = k;
@@ -20,7 +20,7 @@ public class MovingObjectPosition {
     }
 
     public MovingObjectPosition(Entity entity) {
-        this.a = EnumMovingObjectType.b;
+        this.a = EnumMovingObjectType.ENTITY;
         this.g = entity;
         this.f = Vec3D.b(entity.p, entity.q, entity.r);
     }

@@ -90,9 +90,9 @@ public class Block {
     public static final Block COBBLESTONE_STAIRS = (new BlockStairs(67, COBBLESTONE)).a("stairsStone");
     public static final Block WALL_SIGN = (new BlockSign(68, TileEntitySign.class, false)).c(1.0F).a(e).a("sign");
     public static final Block LEVER = (new BlockLever(69, 96)).c(0.5F).a(e).a("lever");
-    public static final Block STONE_PLATE = (new BlockPressurePlate(70, STONE.bh, EnumMobType.b)).c(0.5F).a(h).a("pressurePlate");
+    public static final Block STONE_PLATE = (new BlockPressurePlate(70, STONE.bh, EnumMobType.MOBS)).c(0.5F).a(h).a("pressurePlate");
     public static final Block IRON_DOOR_BLOCK = (new BlockDoor(71, Material.e)).c(5.0F).a(i).a("doorIron");
-    public static final Block WOOD_PLATE = (new BlockPressurePlate(72, WOOD.bh, EnumMobType.a)).c(0.5F).a(e).a("pressurePlate");
+    public static final Block WOOD_PLATE = (new BlockPressurePlate(72, WOOD.bh, EnumMobType.EVERYTHING)).c(0.5F).a(e).a("pressurePlate");
     public static final Block REDSTONE_ORE = (new BlockRedstoneOre(73, 51, false)).c(3.0F).b(5.0F).a(h).a("oreRedstone");
     public static final Block GLOWING_REDSTONE_ORE = (new BlockRedstoneOre(74, 51, true)).a(0.625F).c(3.0F).b(5.0F).a(h).a("oreRedstone");
     public static final Block REDSTONE_TORCH_OFF = (new BlockRedstoneTorch(75, 115, false)).c(0.0F).a(e).a("notGate");

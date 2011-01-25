@@ -2,13 +2,13 @@ package net.minecraft.server;
 
 public enum EnumCreatureType {
 
-    a("monster", 0, IMobs.class, 70, Material.a, false), b("creature", 1, EntityAnimals.class, 15, Material.a, true), c("waterCreature", 2, EntityWaterMob.class, 5, Material.f, true);
+    MONSTER("monster", 0, IMobs.class, 70, Material.a, false), CREATURE("creature", 1, EntityAnimals.class, 15, Material.a, true), WATER_CREATURE("waterCreature", 2, EntityWaterMob.class, 5, Material.f, true);
     private final Class d;
     private final int e;
     private final Material f;
     private final boolean g;
 
-    private static final EnumCreatureType[] h = new EnumCreatureType[] { a, b, c};
+    private static final EnumCreatureType[] h = new EnumCreatureType[] { MONSTER, CREATURE, WATER_CREATURE};
 
     private EnumCreatureType(String s, int i, Class oclass, int j, Material material, boolean flag) {
         this.d = oclass;

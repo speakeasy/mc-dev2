@@ -69,15 +69,15 @@ public class BlockPressurePlate extends Block {
         float f1 = 0.125F;
         List list = null;
 
-        if (this.a == EnumMobType.a) {
+        if (this.a == EnumMobType.EVERYTHING) {
             list = world.b((Entity) null, AxisAlignedBB.b((double) ((float) i + f1), (double) j, (double) ((float) k + f1), (double) ((float) (i + 1) - f1), (double) j + 0.25D, (double) ((float) (k + 1) - f1)));
         }
 
-        if (this.a == EnumMobType.b) {
+        if (this.a == EnumMobType.MOBS) {
             list = world.a(EntityLiving.class, AxisAlignedBB.b((double) ((float) i + f1), (double) j, (double) ((float) k + f1), (double) ((float) (i + 1) - f1), (double) j + 0.25D, (double) ((float) (k + 1) - f1)));
         }
 
-        if (this.a == EnumMobType.c) {
+        if (this.a == EnumMobType.PLAYERS) {
             list = world.a(EntityPlayer.class, AxisAlignedBB.b((double) ((float) i + f1), (double) j, (double) ((float) k + f1), (double) ((float) (i + 1) - f1), (double) j + 0.25D, (double) ((float) (k + 1) - f1)));
         }
 

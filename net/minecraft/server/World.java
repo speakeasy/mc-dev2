@@ -526,13 +526,13 @@ public class World implements IBlockAccess {
     }
 
     public void a(EnumSkyBlock enumskyblock, int i, int j, int k, int l) {
-        if (!this.q.e || enumskyblock != EnumSkyBlock.a) {
+        if (!this.q.e || enumskyblock != EnumSkyBlock.SKY) {
             if (this.f(i, j, k)) {
-                if (enumskyblock == EnumSkyBlock.a) {
+                if (enumskyblock == EnumSkyBlock.SKY) {
                     if (this.k(i, j, k)) {
                         l = 15;
                     }
-                } else if (enumskyblock == EnumSkyBlock.b) {
+                } else if (enumskyblock == EnumSkyBlock.BLOCK) {
                     int i1 = this.a(i, j, k);
 
                     if (Block.s[i1] > l) {
@@ -1347,7 +1347,7 @@ public class World implements IBlockAccess {
     }
 
     public void a(EnumSkyBlock enumskyblock, int i, int j, int k, int l, int i1, int j1, boolean flag) {
-        if (!this.q.e || enumskyblock != EnumSkyBlock.a) {
+        if (!this.q.e || enumskyblock != EnumSkyBlock.SKY) {
             ++y;
             if (y == 50) {
                 --y;
@@ -1472,7 +1472,7 @@ public class World implements IBlockAccess {
                 l1 = chunk.a(l, k1, j1);
                 l += i;
                 j1 += j;
-                if (l1 == 0 && this.j(l, k1, j1) <= this.l.nextInt(8) && this.a(EnumSkyBlock.a, l, k1, j1) <= 0) {
+                if (l1 == 0 && this.j(l, k1, j1) <= this.l.nextInt(8) && this.a(EnumSkyBlock.SKY, l, k1, j1) <= 0) {
                     EntityPlayer entityplayer1 = this.a((double) l + 0.5D, (double) k1 + 0.5D, (double) j1 + 0.5D, 8.0D);
 
                     if (entityplayer1 != null && entityplayer1.d((double) l + 0.5D, (double) k1 + 0.5D, (double) j1 + 0.5D) > 4.0D) {

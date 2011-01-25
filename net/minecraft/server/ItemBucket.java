@@ -32,7 +32,7 @@ public class ItemBucket extends Item {
         if (movingobjectposition == null) {
             return itemstack;
         } else {
-            if (movingobjectposition.a == EnumMovingObjectType.a) {
+            if (movingobjectposition.a == EnumMovingObjectType.TILE) {
                 int i = movingobjectposition.b;
                 int j = movingobjectposition.c;
                 int k = movingobjectposition.d;

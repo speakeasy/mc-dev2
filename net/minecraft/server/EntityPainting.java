@@ -220,7 +220,7 @@ public class EntityPainting extends Entity {
         }
 
         if (this.e == null) {
-            this.e = EnumArt.a;
+            this.e = EnumArt.KEBAB;
         }
 
         this.a(this.a);

@@ -72,7 +72,7 @@ public class EntityMobs extends EntityCreature implements IMobs {
         int j = MathHelper.b(this.z.b);
         int k = MathHelper.b(this.r);
 
-        if (this.l.a(EnumSkyBlock.a, i, j, k) > this.W.nextInt(32)) {
+        if (this.l.a(EnumSkyBlock.SKY, i, j, k) > this.W.nextInt(32)) {
             return false;
         } else {
             int l = this.l.j(i, j, k);

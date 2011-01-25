@@ -151,7 +151,7 @@ public class Chunk {
             }
         }
 
-        this.d.a(EnumSkyBlock.b, this.j * 16, b1 - 1, this.k * 16, this.j * 16 + 16, b1 + 1, this.k * 16 + 16);
+        this.d.a(EnumSkyBlock.BLOCK, this.j * 16, b1 - 1, this.k * 16, this.j * 16 + 16, b1 + 1, this.k * 16 + 16);
         this.o = true;
     }
 
@@ -170,10 +170,10 @@ public class Chunk {
         int l = this.d.d(i, j);
 
         if (l > k) {
-            this.d.a(EnumSkyBlock.a, i, k, j, i, l, j);
+            this.d.a(EnumSkyBlock.SKY, i, k, j, i, l, j);
             this.o = true;
         } else if (l < k) {
-            this.d.a(EnumSkyBlock.a, i, l, j, i, k, j);
+            this.d.a(EnumSkyBlock.SKY, i, l, j, i, k, j);
             this.o = true;
         }
     }
@@ -220,7 +220,7 @@ public class Chunk {
                     this.f.a(i, i2, k, 15);
                 }
             } else {
-                this.d.a(EnumSkyBlock.a, k1, l, l1, k1, i1, l1);
+                this.d.a(EnumSkyBlock.SKY, k1, l, l1, k1, i1, l1);
 
                 for (i2 = l; i2 < i1; ++i2) {
                     this.f.a(i, i2, k, 0);
@@ -250,7 +250,7 @@ public class Chunk {
             }
 
             if (i1 != j2) {
-                this.d.a(EnumSkyBlock.a, k1 - 1, i1, l1 - 1, k1 + 1, j2, l1 + 1);
+                this.d.a(EnumSkyBlock.SKY, k1 - 1, i1, l1 - 1, k1 + 1, j2, l1 + 1);
             }
 
             this.o = true;
@@ -287,10 +287,10 @@ public class Chunk {
                     this.g(i, j, k);
                 }
 
-                this.d.a(EnumSkyBlock.a, l1, j, i2, l1, j, i2);
+                this.d.a(EnumSkyBlock.SKY, l1, j, i2, l1, j, i2);
             }
 
-            this.d.a(EnumSkyBlock.b, l1, j, i2, l1, j, i2);
+            this.d.a(EnumSkyBlock.BLOCK, l1, j, i2, l1, j, i2);
             this.c(i, k);
             this.e.a(i, j, k, i1);
             if (l != 0) {
@@ -327,8 +327,8 @@ public class Chunk {
                 this.g(i, j, k);
             }
 
-            this.d.a(EnumSkyBlock.a, k1, j, l1, k1, j, l1);
-            this.d.a(EnumSkyBlock.b, k1, j, l1, k1, j, l1);
+            this.d.a(EnumSkyBlock.SKY, k1, j, l1, k1, j, l1);
+            this.d.a(EnumSkyBlock.BLOCK, k1, j, l1, k1, j, l1);
             this.c(i, k);
             if (l != 0 && !this.d.z) {
                 Block.m[l].e(this.d, k1, j, l1);
@@ -349,15 +349,15 @@ public class Chunk {
     }
 
     public int a(EnumSkyBlock enumskyblock, int i, int j, int k) {
-        return enumskyblock == EnumSkyBlock.a ? this.f.a(i, j, k) : (enumskyblock == EnumSkyBlock.b ? this.g.a(i, j, k) : 0);
+        return enumskyblock == EnumSkyBlock.SKY ? this.f.a(i, j, k) : (enumskyblock == EnumSkyBlock.BLOCK ? this.g.a(i, j, k) : 0);
     }
 
     public void a(EnumSkyBlock enumskyblock, int i, int j, int k, int l) {
         this.o = true;
-        if (enumskyblock == EnumSkyBlock.a) {
+        if (enumskyblock == EnumSkyBlock.SKY) {
             this.f.a(i, j, k, l);
         } else {
-            if (enumskyblock != EnumSkyBlock.b) {
+            if (enumskyblock != EnumSkyBlock.BLOCK) {
                 return;
             }
 

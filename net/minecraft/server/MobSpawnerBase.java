@@ -4,18 +4,18 @@ import java.util.Random;
 
 public class MobSpawnerBase {
 
-    public static final MobSpawnerBase a = (new MobSpawnerRainforest()).b(588342).a("Rainforest").a(2094168);
-    public static final MobSpawnerBase b = (new MobSpawnerSwamp()).b(522674).a("Swampland").a(9154376);
-    public static final MobSpawnerBase c = (new MobSpawnerBase()).b(10215459).a("Seasonal Forest");
-    public static final MobSpawnerBase d = (new MobSpawnerForest()).b(353825).a("Forest").a(5159473);
-    public static final MobSpawnerBase e = (new MobSpawnerDesert()).b(14278691).a("Savanna");
-    public static final MobSpawnerBase f = (new MobSpawnerBase()).b(10595616).a("Shrubland");
-    public static final MobSpawnerBase g = (new MobSpawnerTaiga()).b(3060051).a("Taiga").b().a(8107825);
-    public static final MobSpawnerBase h = (new MobSpawnerDesert()).b(16421912).a("Desert");
-    public static final MobSpawnerBase i = (new MobSpawnerDesert()).b(16767248).a("Plains");
-    public static final MobSpawnerBase j = (new MobSpawnerDesert()).b(16772499).a("Ice Desert").b().a(12899129);
-    public static final MobSpawnerBase k = (new MobSpawnerBase()).b(5762041).a("Tundra").b().a(12899129);
-    public static final MobSpawnerBase l = (new MobSpawnerHell()).b(16711680).a("Hell");
+    public static final MobSpawnerBase RAINFOREST = (new MobSpawnerRainforest()).b(588342).a("Rainforest").a(2094168);
+    public static final MobSpawnerBase SWAMPLAND = (new MobSpawnerSwamp()).b(522674).a("Swampland").a(9154376);
+    public static final MobSpawnerBase SEASONAL_FOREST = (new MobSpawnerBase()).b(10215459).a("Seasonal Forest");
+    public static final MobSpawnerBase FOREST = (new MobSpawnerForest()).b(353825).a("Forest").a(5159473);
+    public static final MobSpawnerBase SAVANNA = (new MobSpawnerDesert()).b(14278691).a("Savanna");
+    public static final MobSpawnerBase SHRUBLAND = (new MobSpawnerBase()).b(10595616).a("Shrubland");
+    public static final MobSpawnerBase TAIGA = (new MobSpawnerTaiga()).b(3060051).a("Taiga").b().a(8107825);
+    public static final MobSpawnerBase DESERT = (new MobSpawnerDesert()).b(16421912).a("Desert");
+    public static final MobSpawnerBase PLAINS = (new MobSpawnerDesert()).b(16767248).a("Plains");
+    public static final MobSpawnerBase ICE_DESERT = (new MobSpawnerDesert()).b(16772499).a("Ice Desert").b().a(12899129);
+    public static final MobSpawnerBase TUNDRA = (new MobSpawnerBase()).b(5762041).a("Tundra").b().a(12899129);
+    public static final MobSpawnerBase HELL = (new MobSpawnerHell()).b(16711680).a("Hell");
     public String m;
     public int n;
     public byte o;
@@ -42,8 +42,8 @@ public class MobSpawnerBase {
             }
         }
 
-        h.o = h.p = (byte) Block.SAND.bi;
-        j.o = j.p = (byte) Block.SAND.bi;
+        DESERT.o = DESERT.p = (byte) Block.SAND.bi;
+        ICE_DESERT.o = ICE_DESERT.p = (byte) Block.SAND.bi;
     }
 
     public WorldGenerator a(Random random) {
@@ -78,11 +78,11 @@ public class MobSpawnerBase {
 
     public static MobSpawnerBase a(float f1, float f2) {
         f2 *= f1;
-        return f1 < 0.1F ? k : (f2 < 0.2F ? (f1 < 0.5F ? k : (f1 < 0.95F ? e : h)) : (f2 > 0.5F && f1 < 0.7F ? b : (f1 < 0.5F ? g : (f1 < 0.97F ? (f2 < 0.35F ? f : d) : (f2 < 0.45F ? i : (f2 < 0.9F ? c : a))))));
+        return f1 < 0.1F ? TUNDRA : (f2 < 0.2F ? (f1 < 0.5F ? TUNDRA : (f1 < 0.95F ? SAVANNA : DESERT)) : (f2 > 0.5F && f1 < 0.7F ? SWAMPLAND : (f1 < 0.5F ? TAIGA : (f1 < 0.97F ? (f2 < 0.35F ? SHRUBLAND : FOREST) : (f2 < 0.45F ? PLAINS : (f2 < 0.9F ? SEASONAL_FOREST : RAINFOREST))))));
     }
 
     public Class[] a(EnumCreatureType enumcreaturetype) {
-        return enumcreaturetype == EnumCreatureType.a ? this.r : (enumcreaturetype == EnumCreatureType.b ? this.s : (enumcreaturetype == EnumCreatureType.c ? this.t : null));
+        return enumcreaturetype == EnumCreatureType.MONSTER ? this.r : (enumcreaturetype == EnumCreatureType.CREATURE ? this.s : (enumcreaturetype == EnumCreatureType.WATER_CREATURE ? this.t : null));
     }
 
     static {

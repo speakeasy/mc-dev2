@@ -424,31 +424,31 @@ public class ChunkProviderGenerate implements IChunkProvider {
             ++l1;
         }
 
-        if (mobspawnerbase == MobSpawnerBase.d) {
+        if (mobspawnerbase == MobSpawnerBase.FOREST) {
             l1 += k1 + 5;
         }
 
-        if (mobspawnerbase == MobSpawnerBase.a) {
+        if (mobspawnerbase == MobSpawnerBase.RAINFOREST) {
             l1 += k1 + 5;
         }
 
-        if (mobspawnerbase == MobSpawnerBase.c) {
+        if (mobspawnerbase == MobSpawnerBase.SEASONAL_FOREST) {
             l1 += k1 + 2;
         }
 
-        if (mobspawnerbase == MobSpawnerBase.g) {
+        if (mobspawnerbase == MobSpawnerBase.TAIGA) {
             l1 += k1 + 5;
         }
 
-        if (mobspawnerbase == MobSpawnerBase.h) {
+        if (mobspawnerbase == MobSpawnerBase.DESERT) {
             l1 -= 20;
         }
 
-        if (mobspawnerbase == MobSpawnerBase.k) {
+        if (mobspawnerbase == MobSpawnerBase.TUNDRA) {
             l1 -= 20;
         }
 
-        if (mobspawnerbase == MobSpawnerBase.i) {
+        if (mobspawnerbase == MobSpawnerBase.PLAINS) {
             l1 -= 20;
         }
 
@@ -508,7 +508,7 @@ public class ChunkProviderGenerate implements IChunkProvider {
         }
 
         i2 = 0;
-        if (mobspawnerbase == MobSpawnerBase.h) {
+        if (mobspawnerbase == MobSpawnerBase.DESERT) {
             i2 += 10;
         }
 
